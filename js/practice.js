@@ -46,7 +46,7 @@ const valueA = '5';
 console.log(Number(valueA));
 console.log(typeof Number(valueA));
 
-let numberAndString = Number('fadf');
+let numberAndString = Number('12and23');
 console.log(Number.parseInt(numberAndString));
 
 console.log(Number.isNaN(numberAndString));
@@ -58,6 +58,7 @@ console.log(Math.max( x, y, z));
 
 console.log(Math.random());
 console.log(Math.random() * (100 - 1) + 1);
+
 
 
 

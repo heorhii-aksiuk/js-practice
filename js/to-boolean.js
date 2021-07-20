@@ -1,6 +1,6 @@
 let massage = 'Yo!';
 
-let toBoolean = Boolean(massage);
+let toBoolean = Boolean(massage)
 
 console.log(massage);
 console.log(toBoolean);

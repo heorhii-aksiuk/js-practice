@@ -14,15 +14,3 @@
 
 // }
 //   console.log(smallestNumber);
-
-
-function makeArray(firstArray, secondArray, maxLength) {
-
-  const allArray = firstArray.concat(secondArray);
-  return allArray.split(0, maxLength);
-  
-  
-  }
-
-
-console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));

@@ -156,15 +156,64 @@
 // Если элемент больше чем валью, то запушить в массив этот элемент
 
 
-function filterArray(numbers, value) {
-  const biggerNumber = [];
+// function filterArray(numbers, value) {
+//   const biggerNumber = [];
 
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (numbers[i] > value){
-      biggerNumber.push(numbers[i]);
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value){
+//       biggerNumber.push(numbers[i]);
+//     }
+//   }
+// }
+
+//  filterArray([12, 24, 8, 41, 76], 38);
+// //  возвращает [41, 76]
+
+// Перебрать массив 1 через фор, и сравнить есть ли в массиве 2 элемент массива 1
+// если есть, запушить в новый массив
+
+
+
+// function getCommonElements(array1, array2) {
+//   const newArray = [];
+
+//   for ( let i = 0; i < array1.length; i += 1 ){
+
+//     if ( array2.includes(array1[i])) {
+
+//     newArray.push(array1[i]);
+//     }
+//   }
+//   return newArray;
+  
+// }
+
+
+// function getEvenNumbers(start, end) {
+//   const newArrey = [];
+//   for (let i = start; i <= end; i += 1) {
+//     if (i % 2 === 0) {
+//       newArrey.push(i);
+//     }
+//   }
+  
+
+
+//   return newArrey;
+//   }
+
+// getEvenNumbers(3, 11)
+
+
+function includes(array, value) {
+  
+  for( let element of array) {
+    
+    if (element === value){
+    return true;
     }
   }
+  return console.log(includes());
 }
 
- filterArray([12, 24, 8, 41, 76], 38);
-//  возвращает [41, 76]
+includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")

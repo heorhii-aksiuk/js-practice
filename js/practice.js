@@ -105,20 +105,20 @@
 
 
 
-function findLongestWord(string) {
-  let toString = string.split(' ');
-  let longestWord = toString[0];
+// function findLongestWord(string) {
+//   let toString = string.split(' ');
+//   let longestWord = toString[0];
 
-  for (let i = 0; i < toString.length; i += 1 ) {
-    if (toString[i].length > longestWord.length) {
-    longestWord = toString[i];
-    return console.log(longestWord);
-    }
+//   for (let i = 0; i < toString.length; i += 1 ) {
+//     if (toString[i].length > longestWord.length) {
+//     longestWord = toString[i];
+//     return console.log(longestWord);
+//     }
   
-  }
+//   }
   
-}
-findLongestWord("The quick brown fox jumped over the lazy dog");
+// }
+// findLongestWord("The quick brown fox jumped over the lazy dog");
 
 
 // function findLongestWord(string) {
@@ -149,3 +149,22 @@ findLongestWord("The quick brown fox jumped over the lazy dog");
 //   }
 //   return longestWord;
 // }
+
+
+// Сравнить каждый элемет массива с праметром валью
+// По умолчанию нужно саздать пустой массив 
+// Если элемент больше чем валью, то запушить в массив этот элемент
+
+
+function filterArray(numbers, value) {
+  const biggerNumber = [];
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] > value){
+      biggerNumber.push(numbers[i]);
+    }
+  }
+}
+
+ filterArray([12, 24, 8, 41, 76], 38);
+//  возвращает [41, 76]

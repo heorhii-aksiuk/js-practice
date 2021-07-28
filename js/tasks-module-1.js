@@ -38,9 +38,9 @@
 
 // Вариант 2. Тернарный оператор
 
-let winNumber = Math.ceil(Math.random() * (6 - 1) +1);
-let userNumberd = prompt(`Испытай удачу, введи число от 1 до 6`);
+// let winNumber = Math.ceil(Math.random() * (6 - 1) +1);
+// let userNumberd = prompt(`Испытай удачу, введи число от 1 до 6`);
 
-winNumber == userNumberd 
-? alert(`Поздравляю, ты победил! Число ${winNumber} выиграшное!`)
-: alert(`Ты проиграл, выиграшное число ${winNumber}, попробуй ещё!`)
+// winNumber == userNumberd 
+// ? alert(`Поздравляю, ты победил! Число ${winNumber} выиграшное!`)
+// : alert(`Ты проиграл, выиграшное число ${winNumber}, попробуй ещё!`)

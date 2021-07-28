@@ -44,3 +44,37 @@
 // winNumber == userNumberd 
 // ? alert(`Поздравляю, ты победил! Число ${winNumber} выиграшное!`)
 // : alert(`Ты проиграл, выиграшное число ${winNumber}, попробуй ещё!`)
+
+
+// Задача 3
+
+// Написати програму яка буде знаходити суму, різницю, добуток, частку двох чисел 
+// Користувач вводить 2 числа потім вводить знак операції і отримує результат в форматі
+//  "Сума чисел a i b = результат" (такий шаблон для кожної відповіді)
+
+let userFirstNumber = prompt('Введи первое число.');
+let userSign = prompt('Ввиди знак математического действия (+, -, * или /)');
+let userSecondNumber = prompt('Введи второе число');
+let result = 'ERROR';
+
+switch(userSign) {
+  case '+':
+    result = Number(userFirstNumber) + Number(userSecondNumber);
+  break;
+
+  case '-':
+    result = Number(userFirstNumber) - Number(userSecondNumber);
+  break;
+
+  case '*':
+    result = Number(userFirstNumber) * Number(userSecondNumber);
+  break;
+
+  case '/':
+    result = Number(userFirstNumber) / Number(userSecondNumber);
+  break;
+
+  default: 'ERROR';
+}
+
+alert(result);

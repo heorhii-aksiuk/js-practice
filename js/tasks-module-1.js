@@ -13,9 +13,9 @@
 
 // Вариант 2. Тернарный оператор
 
-// yearOfBirth % 4 === 0
-// ? console.log (`Год ${yearOfBirth} является высокостным`)
-// : console.log (`Год ${yearOfBirth} не является высокостным`);
+yearOfBirth % 4 === 0
+? console.log (`Год ${yearOfBirth} является высокостным`)
+: console.log (`Год ${yearOfBirth} не является высокостным`);
 
 // Задача 2
 
@@ -52,29 +52,29 @@
 // Користувач вводить 2 числа потім вводить знак операції і отримує результат в форматі
 //  "Сума чисел a i b = результат" (такий шаблон для кожної відповіді)
 
-// let userFirstNumber = prompt('Введи первое число.');
-// let userSign = prompt('Ввиди знак математического действия (+, -, * или /)');
-// let userSecondNumber = prompt('Введи второе число');
-// let result = 'ERROR';
+let userFirstNumber = prompt('Введи первое число.');
+let userSign = prompt('Ввиди знак математического действия (+, -, * или /)');
+let userSecondNumber = prompt('Введи второе число');
+let result = 'ERROR';
 
-// switch(userSign) {
-//   case '+':
-//     result = Number(userFirstNumber) + Number(userSecondNumber);
-//   break;
+switch(userSign) {
+  case '+':
+    result = Number(userFirstNumber) + Number(userSecondNumber);
+  break;
 
-//   case '-':
-//     result = Number(userFirstNumber) - Number(userSecondNumber);
-//   break;
+  case '-':
+    result = Number(userFirstNumber) - Number(userSecondNumber);
+  break;
 
-//   case '*':
-//     result = Number(userFirstNumber) * Number(userSecondNumber);
-//   break;
+  case '*':
+    result = Number(userFirstNumber) * Number(userSecondNumber);
+  break;
 
-//   case '/':
-//     result = Number(userFirstNumber) / Number(userSecondNumber);
-//   break;
+  case '/':
+    result = Number((userFirstNumber)) / Number(userSecondNumber);
+  break;
 
-//   default: 'ERROR';
-// }
+  default: 'ERROR';
+}
 
-// alert(result);
+alert(result); 

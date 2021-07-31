@@ -18,6 +18,11 @@
   "liveSassCompile.settings.generateMap": true,
   "liveServer.settings.port": 777,
   "liveSassCompile.settings.autoprefix": null,
+
+
+
+
+
 // Ниже настройки для отключение автозаполнения
 // OPTIONAL WORD WRAPPING
 // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).

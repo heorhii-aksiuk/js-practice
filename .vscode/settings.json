@@ -41,5 +41,12 @@
 // Controls if suggestions should automatically show up when typing trigger characters
 "editor.suggestOnTriggerCharacters": false,
 // Controls if suggestions should be accepted 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions.
-"editor.acceptSuggestionOnEnter": "off"
+"editor.acceptSuggestionOnEnter": "off",
+"editor.fontSize": 15,
+"scm.inputFontSize": 15,
+"editor.inlayHints.fontSize": 15,
+"debug.console.fontSize": 15,
+"editor.suggestFontSize": 15,
+"markdown.preview.fontSize": 15,
+"terminal.integrated.fontSize": 15
 }

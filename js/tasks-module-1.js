@@ -111,3 +111,73 @@
 // }
 
 // getProductPrice("Scanner")
+
+
+// function makeTask(data) {
+//   const completed = false;
+//   const category = 'General';
+//   const priority = 'Normal';
+// return console.log({completed, category, priority, ...data});
+
+// }
+
+//  makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" });
+
+// { category: "General", priority: "Normal", completed: false }
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+    
+//     for (let i = 0; i < this.potions.length; i += 1) {
+      
+//         if (potionName === this.potions[i]) {
+          
+//         this.potions.splice(i, 1)         
+//    }        
+//   }
+//  }
+// }
+
+// atTheOldToad.removePotion("Dragon breath");
+
+// console.log(atTheOldToad.potions);
+
+const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
+
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    if (this.potions.includes(potionName)) {
+      return `Potion ${potionName} is already equipped!`;
+    }
+
+    this.potions.push(potionName);
+  },
+  removePotion(potionName) {
+		for (let i = 0; i < this.potions.length; i += 1) {
+      if (this.potions[i]['name'] === potionName) {
+      this.potions.splice(i, 1)
+      }
+    }
+  },
+
+
+
+  updatePotionName(oldName, newName) {
+	for (let i = 0; i < this.potions.length; i += 1) {
+      if (this.potions[i]['name'] === oldName) {
+      this.potions.splice(i, 1, newName)
+      }
+    }
+  },
+
+  },
+
+};

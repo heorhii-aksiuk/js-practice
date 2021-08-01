@@ -13,9 +13,9 @@
 
 // Вариант 2. Тернарный оператор
 
-yearOfBirth % 4 === 0
-? console.log (`Год ${yearOfBirth} является высокостным`)
-: console.log (`Год ${yearOfBirth} не является высокостным`);
+// yearOfBirth % 4 === 0
+// ? console.log (`Год ${yearOfBirth} является высокостным`)
+// : console.log (`Год ${yearOfBirth} не является высокостным`);
 
 // Задача 2
 
@@ -52,29 +52,62 @@ yearOfBirth % 4 === 0
 // Користувач вводить 2 числа потім вводить знак операції і отримує результат в форматі
 //  "Сума чисел a i b = результат" (такий шаблон для кожної відповіді)
 
-let userFirstNumber = prompt('Введи первое число.');
-let userSign = prompt('Ввиди знак математического действия (+, -, * или /)');
-let userSecondNumber = prompt('Введи второе число');
-let result = 'ERROR';
+// let userFirstNumber = prompt('Введи первое число.');
+// let userSign = prompt('Ввиди знак математического действия (+, -, * или /)');
+// let userSecondNumber = prompt('Введи второе число');
+// let result = 'ERROR';
 
-switch(userSign) {
-  case '+':
-    result = Number(userFirstNumber) + Number(userSecondNumber);
-  break;
+// switch(userSign) {
+//   case '+':
+//     result = Number(userFirstNumber) + Number(userSecondNumber);
+//   break;
 
-  case '-':
-    result = Number(userFirstNumber) - Number(userSecondNumber);
-  break;
+//   case '-':
+//     result = Number(userFirstNumber) - Number(userSecondNumber);
+//   break;
 
-  case '*':
-    result = Number(userFirstNumber) * Number(userSecondNumber);
-  break;
+//   case '*':
+//     result = Number(userFirstNumber) * Number(userSecondNumber);
+//   break;
 
-  case '/':
-    result = Number((userFirstNumber)) / Number(userSecondNumber);
-  break;
+//   case '/':
+//     result = Number((userFirstNumber)) / Number(userSecondNumber);
+//   break;
 
-  default: 'ERROR';
-}
+//   default: 'ERROR';
+// }
 
-alert(result); 
+// alert(result); 
+
+// function countProps(object) {
+//   let propCount = 0;
+
+//   for (let key in object) {
+    
+//     if (object.hasOwnProperty(key)) {
+//       propCount += 1;
+//       console.log(key);
+//     }
+//   }
+//   return console.log(propCount);
+// }
+
+// countProps({ name: "Mango", age: 2 })
+
+// const products = [
+//   { name: 'Radar', price: 1300, quantity: 4 },
+//   { name: 'Scanner', price: 2700, quantity: 3 },
+//   { name: 'Droid', price: 400, quantity: 7 },
+//   { name: 'Grip', price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+// console.log(productName)
+// console.log(productName)
+//   if (productName === products.name) {
+//     return console.log(products.price);
+//   }
+
+// }
+
+// getProductPrice("Scanner")

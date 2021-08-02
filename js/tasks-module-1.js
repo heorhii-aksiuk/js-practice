@@ -79,121 +79,36 @@
 
 // alert(result); 
 
-// function countProps(object) {
-//   let propCount = 0;
+// Задача 4
 
-//   for (let key in object) {
-    
-//     if (object.hasOwnProperty(key)) {
-//       propCount += 1;
-//       console.log(key);
-//     }
-//   }
-//   return console.log(propCount);
-// }
+// Написати програму яка буде переводити температуру з цельсія в фаренгейти, або навпаки з фаренгейта в цельсії
 
-// countProps({ name: "Mango", age: 2 })
+// const toFahrenheit = function (celsius) {
 
-// const products = [
-//   { name: 'Radar', price: 1300, quantity: 4 },
-//   { name: 'Scanner', price: 2700, quantity: 3 },
-//   { name: 'Droid', price: 400, quantity: 7 },
-//   { name: 'Grip', price: 1200, quantity: 9 },
-// ];
+// let result = celsius * (9 / 5) + 32;
 
-// function getProductPrice(productName) {
-// console.log(productName)
-// console.log(productName)
-//   if (productName === products.name) {
-//     return console.log(products.price);
-//   }
-
-// }
-
-// getProductPrice("Scanner")
-
-
-// function makeTask(data) {
-//   const completed = false;
-//   const category = 'General';
-//   const priority = 'Normal';
-// return console.log({completed, category, priority, ...data});
-
-// }
-
-//  makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" });
-
-// { category: "General", priority: "Normal", completed: false }
-
-// const atTheOldToad = {
-//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
-//   removePotion(potionName) {
-    
-//     for (let i = 0; i < this.potions.length; i += 1) {
-      
-//         if (potionName === this.potions[i]) {
-          
-//         this.potions.splice(i, 1)         
-//    }        
-//   }
-//  }
-// }
-
-// atTheOldToad.removePotion("Dragon breath");
-
-// console.log(atTheOldToad.potions);
-
-// const atTheOldToad = {
-//   potions: [
-//     { name: 'Speed potion', price: 460 },
-//     { name: 'Dragon breath', price: 780 },
-//     { name: 'Stone skin', price: 520 },
-//   ],
-
-//   getPotions() {
-//     return this.potions;
-//   },
-//   addPotion(potionName) {
-//     if (this.potions.includes(potionName)) {
-//       return `Potion ${potionName} is already equipped!`;
-//     }
-
-//     this.potions.push(potionName);
-//   },
-//   removePotion(potionName) {
-// 		for (let i = 0; i < this.potions.length; i += 1) {
-//       if (this.potions[i]['name'] === potionName) {
-//       this.potions.splice(i, 1)
-//       }
-//     }
-//   },
-
-
-
-//   updatePotionName(oldName, newName) {
-// 	for (let i = 0; i < this.potions.length; i += 1) {
-//     if (this.potions[i]['name'] === oldName) {
-//       this.potions.splice(i, 1, newName)
-//       }
-//      }
-//     },
-//   },
+// return console.log(result);
 // };
 
-const makeShef = function (name) {
-  /*
-   * Параметр name это локальная переменная для функции makeShef.
-   * Это значит что она будет доступна функции makeDish через замыкание.
-   */
-  return function makeDish(dish) {
-    console.log(`${name} is cooking ${dish}`);
+// toFahrenheit(43);
+
+
+// const toCelsius = function (fahrenheit) {
+
+//   return console.log((fahrenheit - 32) * (5 / 9))
+// };
+
+// toCelsius(39);
+
+
+// Задача 5
+// Написати програму яка перевіряє чи введене число потрапляє в діапазон від 55 до 99 включно
+
+const isInclude = function (number) {
+  if (number >= 55 && number <= 99) {
+    return console.log(`Число ${number} входит в диапазон`);
   };
+  return console.log(`Число ${number} не входит в диапазон`);
 };
 
-const mango = makeShef('Mango');
-mango('apple pie'); // Mango is cooking apple pie
-mango('beef stew'); // Mango is cooking beef stew
-
-const poly = makeShef('Poly');
-poly('pancakes'); // Poly is cooking pancakes
-poly('eggs and bacon'); // Poly is cooking eggs and bacon
+isInclude(64);

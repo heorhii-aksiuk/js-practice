@@ -152,3 +152,43 @@
 //   }
 
 // alert(`Самое большое число из введенных это ${largestNumber}!`);
+
+// Задача 7
+
+// Написати програму яка переведе введену оцінку студента до болонського формату
+//  89 - 100 це A 75 - 88 це В 60 - 74 це С 45 - 59 це D 20 - 44 це Е до 20 це F
+
+const toBolon = (mark) => {
+
+  let bolonMark = '';
+
+  if (mark >= 0 && mark < 20) {
+    bolonMark = 'F';
+  }
+  else if (mark >= 20 && mark < 45) {
+    bolonMark = 'E';
+  } 
+  else if (mark >= 45 && mark < 60) {
+    bolonMark = 'D';
+  }
+  else if (mark >= 60 && mark < 75) {
+    bolonMark = 'C';
+  }
+  else if (mark >= 75 && mark < 90) {
+    bolonMark = 'B';
+  }
+  else if (mark >= 90 && mark <=100) {
+    bolonMark = 'A';
+  }
+  else {
+    return console.log(`Оценка ${mark} не верная. Оценка должна быть в диапазоне от 0 до 100 баллов`);
+  }
+
+  return console.log(`Ваша оценка - ${bolonMark}`);
+}
+
+toBolon(34);
+toBolon(334);
+toBolon(100);
+toBolon(60 - 43);
+toBolon(0 + 90);

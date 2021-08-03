@@ -156,17 +156,17 @@
 // Если элемент больше чем валью, то запушить в массив этот элемент
 
 
-// function filterArray(numbers, value) {
-//   const biggerNumber = [];
+function filterArray(numbers, value) {
+  const biggerNumber = [];
 
-//   for (let i = 0; i < numbers.length; i += 1) {
-//     if (numbers[i] > value){
-//       biggerNumber.push(numbers[i]);
-//     }
-//   }
-// }
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] > value){
+      biggerNumber.push(numbers[i]);
+    }
+  }
+}
 
-//  filterArray([12, 24, 8, 41, 76], 38);
+ filterArray([12, 24, 8, 41, 76], 38);
 // //  возвращает [41, 76]
 
 // Перебрать массив 1 через фор, и сравнить есть ли в массиве 2 элемент массива 1

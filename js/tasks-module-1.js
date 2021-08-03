@@ -102,13 +102,53 @@
 
 
 // Задача 5
+
 // Написати програму яка перевіряє чи введене число потрапляє в діапазон від 55 до 99 включно
 
-const isInclude = function (number) {
-  if (number >= 55 && number <= 99) {
-    return console.log(`Число ${number} входит в диапазон`);
-  };
-  return console.log(`Число ${number} не входит в диапазон`);
-};
+// const isInclude = function (number) {
+//   if (number >= 55 && number <= 99) {
+//     return console.log(`Число ${number} входит в диапазон`);
+//   };
+//   return console.log(`Число ${number} не входит в диапазон`);
+// };
 
-isInclude(64);
+// isInclude(64);
+
+// Задача 6
+
+// Написати програму де користувач вводить 3 числа, 
+// після вводу всіх трьох чисел йому на екрані показується найбільше з них.
+//  Додатково перевіряти чи це взагалі числа
+
+// 1. Сделать переменные-промпты для введения числ
+// 2. Предположить что число 1 самое большое
+// 3. Сравнить 2 числоа с 1, если оно больше, переписать значение
+// 4. Сравнить 3 с большим из двух предидущих, если оно больше - переписать значение
+// 5. Вывести через алерт результат
+
+// let firstNumber = prompt('Введите первое число');
+//   if (Number.isNaN(+firstNumber)) {
+//     alert(`Вы ввели ${firstNumber}, это не число!`);
+//   }
+
+// let secondNumber = prompt('Введите второе число');
+//  if (Number.isNaN(+secondNumber)) {
+//     alert(`Вы ввели ${secondNumber}, это не число!`);
+//   }
+
+// let thirtNumber = prompt('Введите последнее число');
+//   if (Number.isNaN(+thirtNumber)) {
+//     alert(`Вы ввели ${thirtNumber}, это не число!`);
+//     }
+
+// let largestNumber = +firstNumber;
+
+//   if (largestNumber < +secondNumber) {
+//     largestNumber = +secondNumber;
+//   }
+
+//    if (largestNumber < +thirtNumber) {
+//     largestNumber = +thirtNumber;
+//   }
+
+// alert(`Самое большое число из введенных это ${largestNumber}!`);

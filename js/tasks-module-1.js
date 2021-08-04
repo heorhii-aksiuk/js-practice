@@ -208,7 +208,7 @@ const toHoursAndMinutes = inMinutes => {
   hours = Math.floor(inMinutes / 60);
   minutes = Math.round(((inMinutes / 60) - hours) * 60);
 
-  if (minutes > 10) {
+  if (minutes >= 10) {
     tensMinutes = '';
   }
   

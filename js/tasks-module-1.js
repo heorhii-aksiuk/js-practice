@@ -187,48 +187,33 @@
 //   return console.log(`Ваша оценка - ${bolonMark}`);
 // }
 
-
-
-
 // toBolon(34);
 // toBolon(334);
 // toBolon(100);
 // toBolon(60 - 43);
 // toBolon(0 + 90);
 
+// Задача 8
 
+// Написати програму яка отримає від користувача число (кількість хвилин)
+//  і виведе на екран строку в форматі години і хвилини Приклад 70 покаже 1:10, 450 покаже 7:30, 1441 покаже 24:1
 
+let userMinutes = prompt('Введите количество минут, которые нужно преобразить в формат "часы:минуты"');
 
-const pizzaPalace = {
-  pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
-  order(pizzaName, onSuccess, onError) {
-    
-    for(let pizza of this.pizzas) {
-    	if(pizzaName !== pizza) {
-      
-      return onError(`В ассортименте нет пиццы с названием ${pizzaName}.`)
+const toHoursAndMinutes = inMinutes => {
+  let hours = 0;
+  let minutes = 0;
+  let tensMinutes = 0;
+  
+  hours = Math.floor(inMinutes / 60);
+  minutes = Math.round(((inMinutes / 60) - hours) * 60);
 
-      } else {
-      return onSuccess(); }
-    }
-  },
-};
-
-
-// Пиши код выше этой строки
-
-// Колбэк для onSuccess
-function makePizza(pizzaName) {
-  return console.log( `Ваш заказ принят. Готовим пиццу ${pizzaName}.`);
+  if (minutes > 10) {
+    tensMinutes = '';
+  }
+  
+  let result = alert(`${inMinutes} минут в в формате "часы:минуты" это - ${hours}:${tensMinutes}${minutes}`);
+  return console.log(result);
 }
 
-// Колбэк для onError
-function onOrderError(error) {
-  return `Ошибка! ${error}`;
-}
-
-// Вызовы метода с колбэками
-pizzaPalace.order('Аль Копчино', makePizza, onOrderError);
-pizzaPalace.order('Четыре нарезона', makePizza, onOrderError);
-pizzaPalace.order('Биг майк', makePizza, onOrderError);
-pizzaPalace.order('Венская', makePizza, onOrderError);
+toHoursAndMinutes(userMinutes);

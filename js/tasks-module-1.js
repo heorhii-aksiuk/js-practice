@@ -158,37 +158,77 @@
 // Написати програму яка переведе введену оцінку студента до болонського формату
 //  89 - 100 це A 75 - 88 це В 60 - 74 це С 45 - 59 це D 20 - 44 це Е до 20 це F
 
-const toBolon = (mark) => {
+// const toBolon = (mark) => {
 
-  let bolonMark = '';
+//   let bolonMark = '';
 
-  if (mark >= 0 && mark < 20) {
-    bolonMark = 'F';
-  }
-  else if (mark >= 20 && mark < 45) {
-    bolonMark = 'E';
-  } 
-  else if (mark >= 45 && mark < 60) {
-    bolonMark = 'D';
-  }
-  else if (mark >= 60 && mark < 75) {
-    bolonMark = 'C';
-  }
-  else if (mark >= 75 && mark < 90) {
-    bolonMark = 'B';
-  }
-  else if (mark >= 90 && mark <=100) {
-    bolonMark = 'A';
-  }
-  else {
-    return console.log(`Оценка ${mark} не верная. Оценка должна быть в диапазоне от 0 до 100 баллов`);
-  }
+//   if (mark >= 0 && mark < 20) {
+//     bolonMark = 'F';
+//   }
+//   else if (mark >= 20 && mark < 45) {
+//     bolonMark = 'E';
+//   } 
+//   else if (mark >= 45 && mark < 60) {
+//     bolonMark = 'D';
+//   }
+//   else if (mark >= 60 && mark < 75) {
+//     bolonMark = 'C';
+//   }
+//   else if (mark >= 75 && mark < 90) {
+//     bolonMark = 'B';
+//   }
+//   else if (mark >= 90 && mark <=100) {
+//     bolonMark = 'A';
+//   }
+//   else {
+//     return console.log(`Оценка ${mark} не верная. Оценка должна быть в диапазоне от 0 до 100 баллов`);
+//   }
 
-  return console.log(`Ваша оценка - ${bolonMark}`);
+//   return console.log(`Ваша оценка - ${bolonMark}`);
+// }
+
+
+
+
+// toBolon(34);
+// toBolon(334);
+// toBolon(100);
+// toBolon(60 - 43);
+// toBolon(0 + 90);
+
+
+
+
+const pizzaPalace = {
+  pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+  order(pizzaName, onSuccess, onError) {
+    
+    for(let pizza of this.pizzas) {
+    	if(pizzaName !== pizza) {
+      
+      return onError(`В ассортименте нет пиццы с названием ${pizzaName}.`)
+
+      } else {
+      return onSuccess(); }
+    }
+  },
+};
+
+
+// Пиши код выше этой строки
+
+// Колбэк для onSuccess
+function makePizza(pizzaName) {
+  return console.log( `Ваш заказ принят. Готовим пиццу ${pizzaName}.`);
 }
 
-toBolon(34);
-toBolon(334);
-toBolon(100);
-toBolon(60 - 43);
-toBolon(0 + 90);
+// Колбэк для onError
+function onOrderError(error) {
+  return `Ошибка! ${error}`;
+}
+
+// Вызовы метода с колбэками
+pizzaPalace.order('Аль Копчино', makePizza, onOrderError);
+pizzaPalace.order('Четыре нарезона', makePizza, onOrderError);
+pizzaPalace.order('Биг майк', makePizza, onOrderError);
+pizzaPalace.order('Венская', makePizza, onOrderError);

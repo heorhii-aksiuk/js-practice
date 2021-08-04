@@ -213,7 +213,7 @@ const toHoursAndMinutes = inMinutes => {
   }
   
   let result = alert(`${inMinutes} минут в в формате "часы:минуты" это - ${hours}:${tensMinutes}${minutes}`);
-  return console.log(result);
+  return result;
 }
 
 toHoursAndMinutes(userMinutes);

@@ -156,17 +156,17 @@
 // Если элемент больше чем валью, то запушить в массив этот элемент
 
 
-function filterArray(numbers, value) {
-  const biggerNumber = [];
+// function filterArray(numbers, value) {
+//   const biggerNumber = [];
 
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (numbers[i] > value){
-      biggerNumber.push(numbers[i]);
-    }
-  }
-}
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value){
+//       biggerNumber.push(numbers[i]);
+//     }
+//   }
+// }
 
- filterArray([12, 24, 8, 41, 76], 38);
+//  filterArray([12, 24, 8, 41, 76], 38);
 // //  возвращает [41, 76]
 
 // Перебрать массив 1 через фор, и сравнить есть ли в массиве 2 элемент массива 1
@@ -219,31 +219,145 @@ function filterArray(numbers, value) {
 // includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")
 
 
-const hotel = {
-  name: 'Resort Hotel',
-  stars: 5,
-  capacity: 100,
-};
+// const hotel = {
+//   name: 'Resort Hotel',
+//   stars: 5,
+//   capacity: 100,
+// };
 
-/*
- * Посмотрите в консоли из каких двух элементов состоит каждый подмассив.
- * Первый элемент это ключ свойства, второй это значение.
- */
-const entries = Object.entries(hotel);
+// /*
+//  * Посмотрите в консоли из каких двух элементов состоит каждый подмассив.
+//  * Первый элемент это ключ свойства, второй это значение.
+//  */
+// const entries = Object.entries(hotel);
 
-/*
- * На каждой итерации по entries выберем первый элемент подмассива (ключ)
- * в переменную key, а второй (значение) в переменную value
- */
-for (const entry of entries) {
-  const key = entry[0];
-  const value = entry[1];
+// /*
+//  * На каждой итерации по entries выберем первый элемент подмассива (ключ)
+//  * в переменную key, а второй (значение) в переменную value
+//  */
+// for (const entry of entries) {
+//   const key = entry[0];
+//   const value = entry[1];
 
-  console.log(`${key}: ${value}`);
-}
+//   console.log(`${key}: ${value}`);
+// }
 
 /*
  * name: Resort Hotel
  * stars: 5
  * capacity: 100
  */
+
+
+// const pizzaPalace = {
+//   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+//   order(pizzaName, onSuccess, onError) {
+//   	for (let pizza of this.pizzas) {
+//       if (pizzaName === pizza) {
+//       	return console.log(onSuccess(pizzaName));
+//       }
+
+//     }
+//     return console.log(onError(`В ассортименте нет пиццы с названием ${pizzaName}`));
+//   },
+// };
+// // Пиши код выше этой строки
+
+// // Колбэк для onSuccess
+// function makePizza(pizzaName) {
+//   return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
+// }
+
+// // Колбэк для onError
+// function onOrderError(error) {
+//   return `Ошибка! ${error}`;
+// }
+
+// // Вызовы метода с колбэками
+// pizzaPalace.order('Аль Копчино', makePizza, onOrderError);
+// pizzaPalace.order('Четыре нарезона', makePizza, onOrderError);
+// pizzaPalace.order('Биг майк', makePizza, onOrderError);
+// pizzaPalace.order('Венская', makePizza, onOrderError);
+
+
+// const pizzaPalace = {
+//   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+//   order(pizzaName, onSuccess, onError) {
+  	
+//       if (this.pizzas.includes(pizzaName)) {
+//       	return console.log(onSuccess(pizzaName));
+//       }
+
+//     return console.log(onError(`В ассортименте нет пиццы с названием ${pizzaName}`));
+//   },
+// };
+// // Пиши код выше этой строки
+
+// // Колбэк для onSuccess
+// function makePizza(pizzaName) {
+//   return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
+// }
+
+// // Колбэк для onError
+// function onOrderError(error) {
+//   return `Ошибка! ${error}`;
+// }
+
+// // Вызовы метода с колбэками
+// pizzaPalace.order('Аль Копчино', makePizza, onOrderError);
+// pizzaPalace.order('Четыре нарезона', makePizza, onOrderError);
+// pizzaPalace.order('Биг майк', makePizza, onOrderError);
+// pizzaPalace.order('Венская', makePizza, onOrderError);
+
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
+
+// // Пиши код ниже этой строки
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
+
+
+// // Пиши код ниже этой строки
+// function composeMessage(position) {
+// 	return console.log(`Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`);
+// }
+  	
+// 	const messages = [];
+
+// 	for( let i = 0; i < orders.length; i += 1) {
+//     let dish = orders.dish[i];
+//     let email = orders.email[i];
+//   	let pushMessage = composeMessage.call([i+1]);
+//     console.log(pushMessage);
+//      messages.push(pushMessage);
+// 	}
+
+
+  const orders = [
+  { email: 'solomon@topmail.ua', dish: 'Burger' },
+  { email: 'artemis@coldmail.net', dish: 'Pizza' },
+  { email: 'jacob@mail.com', dish: 'Taco' },
+];
+
+// Пиши код ниже этой строки
+function composeMessage(position) {
+
+  return console.log(`Готовим ${orders.dish[i]} для ${orders.email}. Ваш заказ ${position}-й в очереди.`)
+}
+
+const messages = [];
+
+for (let i = 0; i < orders.length; i += 1) {
+  
+  composeMessage.call(orders[i +1])
+  
+  messages.push(composeMessage(i +1));
+}

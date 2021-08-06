@@ -198,22 +198,84 @@
 // Написати програму яка отримає від користувача число (кількість хвилин)
 //  і виведе на екран строку в форматі години і хвилини Приклад 70 покаже 1:10, 450 покаже 7:30, 1441 покаже 24:1
 
-let userMinutes = prompt('Введите количество минут, которые нужно преобразить в формат "часы:минуты"');
+// let userMinutes = prompt('Введите количество минут, которые нужно преобразить в формат "часы:минуты"');
 
-const toHoursAndMinutes = inMinutes => {
-  let hours = 0;
-  let minutes = 0;
-  let tensMinutes = 0;
+// const toHoursAndMinutes = inMinutes => {
+//   let hours = 0;
+//   let minutes = 0;
+//   let tensMinutes = 0;
   
-  hours = Math.floor(inMinutes / 60);
-  minutes = Math.round(((inMinutes / 60) - hours) * 60);
+//   hours = Math.floor(inMinutes / 60);
+//   minutes = Math.round(((inMinutes / 60) - hours) * 60);
 
-  if (minutes >= 10) {
-    tensMinutes = '';
-  }
+//   if (minutes >= 10) {
+//     tensMinutes = '';
+//   }
   
-  let result = alert(`${inMinutes} минут в формате "часы:минуты" это - ${hours}:${tensMinutes}${minutes}`);
-  return result;
+//   let result = alert(`${inMinutes} минут в формате "часы:минуты" это - ${hours}:${tensMinutes}${minutes}`);
+//   return result;
+// }
+
+// toHoursAndMinutes(userMinutes);
+
+// Задача 9
+
+// Написати гру камінь ножиці папір. 
+// Де компютер загадує своє значення потім користувач вводить свій варіант і далі ми бачимо результат на екрані хто виграв
+
+// 1. Вывести окно с предложением ввести камень, ножнецы или бумага
+// 2. Создать функцию которая будет рамдомно выводить камень, ножницы и бумагу через мат рандом (цифровое значение приравнивать к строке)
+// 3. Прописать логику что над чем побеждает
+// 4. Сравнить данные от пользователя с компьютером и вывести результат в окно
+
+const rock = 'камень';
+const scissors = 'ножницы';
+const paper = 'бумага';
+
+const userChoose = prompt(`Игра "камень-ножницы-бумага". Введите свой выбор: "камень", "ножницы" или "бумага".`);
+
+const randomNumber = Math.floor(Math.random()*(4 - 1) + 1);
+
+let botChoose;
+
+switch(randomNumber) {
+  case 1:
+    botChoose = rock;
+  break;
+
+  case 2:
+    botChoose = scissors;
+  break;
+
+  case 3:
+    botChoose = paper;
+  break;
 }
 
-toHoursAndMinutes(userMinutes);
+if (botChoose === userChoose){
+  alert(`Ничия. Бот тоже поставил ${botChoose}`);
+
+} else if (botChoose === rock && userChoose === scissors) {
+  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
+
+} else if (botChoose === rock && userChoose === paper) {
+  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
+
+} else if (botChoose === scissors && userChoose === rock) {
+  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
+
+} else if (botChoose === scissors && userChoose === paper) {
+  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
+
+} else if (botChoose === paper && userChoose === rock) {
+  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
+
+} else if (botChoose === paper && userChoose === scissors) {
+  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
+
+} else {
+  alert(`Ошибка! Введи одно слово: "камень", "ножницы" или "бумага" без кавычек и ещё чего либо`);
+}
+
+console.log(botChoose);
+console.log(userChoose);

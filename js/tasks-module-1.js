@@ -228,54 +228,101 @@
 // 3. Прописать логику что над чем побеждает
 // 4. Сравнить данные от пользователя с компьютером и вывести результат в окно
 
+// const rock = 'камень';
+// const scissors = 'ножницы';
+// const paper = 'бумага';
+
+// const userChoose = prompt(`Игра "камень-ножницы-бумага". Введите свой выбор: "камень", "ножницы" или "бумага".`);
+
+// const randomNumber = Math.floor(Math.random()*(4 - 1) + 1);
+
+// let botChoose;
+
+// switch(randomNumber) {
+//   case 1:
+//     botChoose = rock;
+//   break;
+
+//   case 2:
+//     botChoose = scissors;
+//   break;
+
+//   case 3:
+//     botChoose = paper;
+//   break;
+// }
+
+// if (botChoose === userChoose){
+//   alert(`Ничия. Бот тоже поставил "${botChoose}"`);
+
+// } else if (botChoose === rock && userChoose === scissors) {
+//   alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
+
+// } else if (botChoose === rock && userChoose === paper) {
+//   alert(`Ура! Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
+
+// } else if (botChoose === scissors && userChoose === rock) {
+//   alert(`Ура! Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
+
+// } else if (botChoose === scissors && userChoose === paper) {
+//   alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
+
+// } else if (botChoose === paper && userChoose === rock) {
+//   alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
+
+// } else if (botChoose === paper && userChoose === scissors) {
+//   alert(`Ура! Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
+
+// } else {
+//   alert(`Ошибка! Введи одно слово: "камень", "ножницы" или "бумага" без кавычек и ещё чего либо`);
+// }
+
+// console.log(`Бот поставил: ${botChoose}`);
+// console.log(`Игрок поставил: ${userChoose}`);
+
+// Оптимизированый вариант
+
+// Переменные
 const rock = 'камень';
 const scissors = 'ножницы';
 const paper = 'бумага';
-
-const userChoose = prompt(`Игра "камень-ножницы-бумага". Введите свой выбор: "камень", "ножницы" или "бумага".`);
-
+const userChoose = prompt(`Игра "камень-ножницы-бумага". Введи свой выбор: "камень", "ножницы" или "бумага".`);
 const randomNumber = Math.floor(Math.random()*(4 - 1) + 1);
-
 let botChoose;
-
+// Свич для определения выбора компьютера
 switch(randomNumber) {
   case 1:
     botChoose = rock;
   break;
-
   case 2:
     botChoose = scissors;
   break;
-
   case 3:
     botChoose = paper;
   break;
-}
-
+};
+// Логика и определение победителя с выводом сообщения
 if (botChoose === userChoose){
-  alert(`Ничия. Бот тоже поставил ${botChoose}`);
+  alert(`Ничия. Бот тоже поставил "${botChoose}".`);
 
-} else if (botChoose === rock && userChoose === scissors) {
-  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
+} else if ((botChoose === rock && userChoose === scissors) ||
+          (botChoose === scissors && userChoose === paper) || 
+          (botChoose === paper && userChoose === rock))  {
+  alert(`Ты проиграл. Бот поставил "${botChoose}", а ты "${userChoose}".`);
 
-} else if (botChoose === rock && userChoose === paper) {
-  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
-
-} else if (botChoose === scissors && userChoose === rock) {
-  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
-
-} else if (botChoose === scissors && userChoose === paper) {
-  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
-
-} else if (botChoose === paper && userChoose === rock) {
-  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты проиграл`);
-
-} else if (botChoose === paper && userChoose === scissors) {
-  alert(`Бот поставил "${botChoose}", а ты "${userChoose}". Ты выиграл!`);
-
+} else if ((botChoose === rock && userChoose === paper) ||
+          (botChoose === scissors && userChoose === rock) || 
+          (botChoose === paper && userChoose === scissors)) {
+  alert(`Ты выиграл! Бот поставил "${botChoose}", а ты "${userChoose}".`);
+  
 } else {
-  alert(`Ошибка! Введи одно слово: "камень", "ножницы" или "бумага" без кавычек и ещё чего либо`);
-}
+  alert(`Ошибка! Введи одно слово: "камень", "ножницы" или "бумага" без кавычек и ещё чего либо!`);
+};
+// Провека выбора бота и игрока в консоли
+console.log(`Бот поставил: ${botChoose}`);
+console.log(`Игрок поставил: ${userChoose}`);
 
-console.log(botChoose);
-console.log(userChoose);
+
+
+
+

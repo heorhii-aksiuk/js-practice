@@ -283,10 +283,10 @@
 // Оптимизированый вариант
 
 // Переменные
+const userChoose = prompt(`Игра "камень-ножницы-бумага". Введи свой выбор: "камень", "ножницы" или "бумага".`);
 const rock = 'камень';
 const scissors = 'ножницы';
 const paper = 'бумага';
-const userChoose = prompt(`Игра "камень-ножницы-бумага". Введи свой выбор: "камень", "ножницы" или "бумага".`);
 const randomNumber = Math.floor(Math.random()*(4 - 1) + 1);
 let botChoose;
 // Свич для определения выбора компьютера
@@ -306,13 +306,13 @@ if (botChoose === userChoose){
   alert(`Ничия. Бот тоже поставил "${botChoose}".`);
 
 } else if ((botChoose === rock && userChoose === scissors) ||
-          (botChoose === scissors && userChoose === paper) || 
-          (botChoose === paper && userChoose === rock))  {
+           (botChoose === scissors && userChoose === paper) || 
+           (botChoose === paper && userChoose === rock))  {
   alert(`Ты проиграл. Бот поставил "${botChoose}", а ты "${userChoose}".`);
 
 } else if ((botChoose === rock && userChoose === paper) ||
-          (botChoose === scissors && userChoose === rock) || 
-          (botChoose === paper && userChoose === scissors)) {
+           (botChoose === scissors && userChoose === rock) || 
+           (botChoose === paper && userChoose === scissors)) {
   alert(`Ты выиграл! Бот поставил "${botChoose}", а ты "${userChoose}".`);
   
 } else {

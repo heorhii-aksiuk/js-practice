@@ -341,23 +341,85 @@
 // 	}
 
 
-  const orders = [
-  { email: 'solomon@topmail.ua', dish: 'Burger' },
-  { email: 'artemis@coldmail.net', dish: 'Pizza' },
-  { email: 'jacob@mail.com', dish: 'Taco' },
-];
+//   const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
 
-// Пиши код ниже этой строки
-function composeMessage(position) {
+// // Пиши код ниже этой строки
+// function composeMessage(position) {
 
-  return console.log(`Готовим ${orders.dish[i]} для ${orders.email}. Ваш заказ ${position}-й в очереди.`)
+//   return console.log(`Готовим ${orders.dish[i]} для ${orders.email}. Ваш заказ ${position}-й в очереди.`)
+// }
+
+// const messages = [];
+
+// for (let i = 0; i < orders.length; i += 1) {
+  
+//   composeMessage.call(orders[i +1])
+  
+//   messages.push(composeMessage(i +1));
+// }
+
+// Запушить сообщение в переменную меседж
+// перебрать массив
+// записать в сообщение данные
+
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
+
+// // Пиши код ниже этой строки
+
+// const messages = [];
+
+// function composeMessage(position) {
+//   messages.push(`Готовим ${this[position - 1].dish} для ${this[position - 1].email}. Ваш заказ ${position}-й в очереди.`)
+// }
+
+// for (let i = 0; i < orders.length; i += 1) {
+//   composeMessage.call(orders,(i + 1))
+// }
+
+
+
+// console.log(messages)
+
+
+
+const service = {
+  mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
+  subscribe(email) {
+    this.mailingList.push(email);
+    return `Почта ${email} добавлена в рассылку.`;
+  },
+  unsubscribe(email) {
+    this.mailingList = this.mailingList.filter((e) => e !== email);
+    return `Почта ${email} удалена из рассылки.`;
+  },
+};
+
+function logAndInvokeAction(email, action) {
+  console.log(`Выполняем действие с ${email}.`);
+  return action(email);
 }
 
-const messages = [];
+const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service));
+console.log(firstInvoke);
+// Почта kiwi@mail.uk добавлена в рассылку.
 
-for (let i = 0; i < orders.length; i += 1) {
-  
-  composeMessage.call(orders[i +1])
-  
-  messages.push(composeMessage(i +1));
-}
+console.log(service.mailingList);
+/* ['mango@mail.com', 
+    'poly@hotmail.de', 
+    'ajax@jmail.net', 
+    'kiwi@mail.uk']*/
+const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));
+console.log(secondInvoke);
+// Почта poly@hotmail.de удалена из рассылки.
+
+console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
+

@@ -19,34 +19,26 @@ const capitalize = function (sentence) {
   let letter;
   let lettersArray = [];
   let firstLetter;
-  let wordsArray;
+  let wordsArray = [];
+  let finalSentence;
+
   for (let word of sentenceArray) {
     letter = word.split('');
     lettersArray.push(letter);
   }
-    for (let i = 0; i < lettersArray.length; i += 1) {
+
+  for (let i = 0; i < lettersArray.length; i += 1) {
     firstLetter = lettersArray[i][0];
-    lettersArray[i].splice(0, 1, firstLetter.toUpperCase());
-  }
-  console.log(lettersArray)
-
-
+    lettersArray[i].splice(0, 1, ' ', firstLetter.toUpperCase());
   
-    // for (let i = 0; i < lettersArray.length; i += 1) {
-    //   wordsArray = i + i;
-    //   console.log(wordsArray)
+    for (let j = 0; j < lettersArray[i].length; j += 1) {
+      wordsArray += lettersArray[i][j];
+    }
+  } 
+  finalSentence = wordsArray.slice(1);
 
-    // }
+  return console.log(finalSentence);
+}
 
-
-  
-  // wordsArray = lettersArray.join(',');
-  
-
-  // return console.log(lettersArray);
-
-//   return console.log(sentenceArray);
-};
-
-
-capitalize('the quick brown fox')
+capitalize('the quick brown fox');
+capitalize('hello my dear friend');

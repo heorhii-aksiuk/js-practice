@@ -9,9 +9,9 @@
 // Перебрать массив слов и каждыое слово разбить на буквы DONE!
 // Сшить это слово по буквам в массив DONE!
 // Массив слова перебрать сделать первый элемент с большой буквы DONE!
-// Сшить обратно в слово
-// Сшить обратно в фразу
-// Вернуть значение
+// Сшить обратно в слово DONE!
+// Сшить обратно в фразу DONE!
+// Вернуть значение DONE!
 
 
 // const capitalize = function (sentence) {
@@ -49,8 +49,8 @@
 // aeiouAEIOU - рядок з голосними в англ алфавіті
 
 // 1. Разбить строку на массив букв DONE!
-// 2. Перебрать буквы
-// 3. Если буква гласная, записать в результующую переменную +1
+// 2. Перебрать буквы DONE!
+// 3. Если буква гласная, записать в результующую переменную +1 DONE!
 
 // const countVowels = function (sentence) {
 
@@ -84,15 +84,30 @@
 // 3. Перемножить параметры и получить результат DONE!
 // 3. Вернуть результат с дописаным значениям пикселей DONE!
 
-const remToPixels = function (rem, baseFontSize) {
-  const remValue = Number.parseFloat(rem);
-  const baseFontSizeValue = Number.parseInt(baseFontSize);
-  const resultValue = remValue * baseFontSizeValue;
-  const result = `${resultValue}px`;
+// const remToPixels = function (rem, baseFontSize) {
+//   const remValue = Number.parseFloat(rem);
+//   const baseFontSizeValue = Number.parseInt(baseFontSize);
+//   const resultValue = remValue * baseFontSizeValue;
+//   const result = `${resultValue}px`;
 
-  return console.log(result);
-}
+//   return console.log(result);
+// }
 
-remToPixels('2rem', '20px');
+// remToPixels('2rem', '20px');
 
+// Задача 4
+
+// Написати ф-ю що приймає число (температура в цельсіях) і виводить результат в фаренгейтах
+
+// 1. Обьявить функцию DONE!
+// 2. Сделать вычисления DONE!
+// 3. Вернуть результат DONE!
+
+// const toCelsiusFromFahrenheit = function (celsius) {
+//   const result = (celsius * (9 / 5)) + 32;
+
+//   return console.log(result);
+// };
+
+// toCelsiusFromFahrenheit(25.5);
 

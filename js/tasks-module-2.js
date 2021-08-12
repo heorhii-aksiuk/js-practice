@@ -52,24 +52,47 @@
 // 2. Перебрать буквы
 // 3. Если буква гласная, записать в результующую переменную +1
 
-const countVowels = function (sentence) {
+// const countVowels = function (sentence) {
 
-  const lettersArray = sentence.toLowerCase().split(''); 
-  let result = 0;
+//   const lettersArray = sentence.toLowerCase().split(''); 
+//   let result = 0;
 
-  for (let letter of lettersArray) {
+//   for (let letter of lettersArray) {
   
-    if (letter === "a" ||
-        letter === "e" ||
-        letter === "i" ||
-        letter === "o" ||
-        letter === "u") {
-      result += 1;
-    };
-  };
-  return console.log(result);
-};
+//     if (letter === "a" ||
+//         letter === "e" ||
+//         letter === "i" ||
+//         letter === "o" ||
+//         letter === "u") {
+//       result += 1;
+//     };
+//   };
+//   return console.log(result);
+// };
 
-countVowels('The Quick Brown Fox') // 5
-countVowels('hello my friend') // 4
+// countVowels('The Quick Brown Fox') // 5
+// countVowels('hello my friend') // 4
+
+// Задача 3
+
+// Написати ф-ю яка приймає 2 параметра 
+// (розміри в ремах - "2rem) і велечину базового шрифта ("20px")
+//  і вертає конвертований розмір в пікселях
+
+// 1. Объявить функкцию DONE!
+// 2. У полученных данных взять только цифры DONE!
+// 3. Перемножить параметры и получить результат DONE!
+// 3. Вернуть результат с дописаным значениям пикселей DONE!
+
+const remToPixels = function (rem, baseFontSize) {
+  const remValue = Number.parseFloat(rem);
+  const baseFontSizeValue = Number.parseInt(baseFontSize);
+  const resultValue = remValue * baseFontSizeValue;
+  const result = `${resultValue}px`;
+
+  return console.log(result);
+}
+
+remToPixels('2rem', '20px');
+
 

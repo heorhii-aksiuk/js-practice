@@ -111,3 +111,16 @@
 
 // toCelsiusFromFahrenheit(25.5);
 
+// Задача 5
+
+// Написати ф-ю calculateDogAge яка приймає один параметр - вік собачки.
+//  Результатом її роботи буде вік перевединий на людський (1 рік собаки це 7 років в людини);
+
+// const calculateDogAge = function(dogAge) {
+//   const dogAgeInHumans = dogAge * 7;
+
+//   return console.log(dogAgeInHumans);
+// }
+
+// calculateDogAge(5);
+// calculateDogAge(12);

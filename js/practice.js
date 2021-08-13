@@ -391,35 +391,60 @@
 
 
 
-const service = {
-  mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
-  subscribe(email) {
-    this.mailingList.push(email);
-    return `Почта ${email} добавлена в рассылку.`;
-  },
-  unsubscribe(email) {
-    this.mailingList = this.mailingList.filter((e) => e !== email);
-    return `Почта ${email} удалена из рассылки.`;
-  },
-};
+// const service = {
+//   mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
+//   subscribe(email) {
+//     this.mailingList.push(email);
+//     return `Почта ${email} добавлена в рассылку.`;
+//   },
+//   unsubscribe(email) {
+//     this.mailingList = this.mailingList.filter((e) => e !== email);
+//     return `Почта ${email} удалена из рассылки.`;
+//   },
+// };
 
-function logAndInvokeAction(email, action) {
-  console.log(`Выполняем действие с ${email}.`);
-  return action(email);
+// function logAndInvokeAction(email, action) {
+//   console.log(`Выполняем действие с ${email}.`);
+//   return action(email);
+// }
+
+// const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service));
+// console.log(firstInvoke);
+// // Почта kiwi@mail.uk добавлена в рассылку.
+
+// console.log(service.mailingList);
+// /* ['mango@mail.com', 
+//     'poly@hotmail.de', 
+//     'ajax@jmail.net', 
+//     'kiwi@mail.uk']*/
+// const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));
+// console.log(secondInvoke);
+// // Почта poly@hotmail.de удалена из рассылки.
+
+// console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
+
+function Storage (items) {
+  this.items = items;
 }
 
-const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service));
-console.log(firstInvoke);
-// Почта kiwi@mail.uk добавлена в рассылку.
+Storage.prototype.getItems = function() {
+  return this.items;
+}
 
-console.log(service.mailingList);
-/* ['mango@mail.com', 
-    'poly@hotmail.de', 
-    'ajax@jmail.net', 
-    'kiwi@mail.uk']*/
-const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));
-console.log(secondInvoke);
-// Почта poly@hotmail.de удалена из рассылки.
+Storage.prototype.addItem = function(newItem) {
+  this.items.push(newItem);
+}
 
-console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
+Storage.prototype.removeItem = function(item ) {
+  this.items.splice(this.items.indexOf(item), 1);
+}
 
+
+
+// Пиши код выше этой строки
+const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
+console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+storage.addItem('Дроид');
+console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+storage.removeItem('Пролонгер');
+console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]ы", "Антигравитатор", "Дроид"]

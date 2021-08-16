@@ -496,62 +496,136 @@
 // console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
 
 
-function StringBuilder(baseValue) {
-  this.value = baseValue;
-}
+// function StringBuilder(baseValue) {
+//   this.value = baseValue;
+// }
 
-StringBuilder.prototype.getValue = function () {
-  return this.value;
-};
+// StringBuilder.prototype.getValue = function () {
+//   return this.value;
+// };
 
-StringBuilder.prototype.padEnd = function (str) {
-  this.value += str;
-};
+// StringBuilder.prototype.padEnd = function (str) {
+//   this.value += str;
+// };
 
-StringBuilder.prototype.padStart = function (str) {
-  this.value = str + this.value;
-};
+// StringBuilder.prototype.padStart = function (str) {
+//   this.value = str + this.value;
+// };
 
-StringBuilder.prototype.padBoth = function (str) {
-  this.padStart(str);
-  this.padEnd(str);
-};
+// StringBuilder.prototype.padBoth = function (str) {
+//   this.padStart(str);
+//   this.padEnd(str);
+// };
 
-// Пиши код выше этой строки
-const builder = new StringBuilder('.');
-console.log(builder.getValue()); // '.'
-builder.padStart('^');
-console.log(builder.getValue()); // '^.'
-builder.padEnd('^');
-console.log(builder.getValue()); // '^.^'
-builder.padBoth('=');
-console.log(builder.getValue()); // '=^.^='
-
-
+// // Пиши код выше этой строки
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // '.'
+// builder.padStart('^');
+// console.log(builder.getValue()); // '^.'
+// builder.padEnd('^');
+// console.log(builder.getValue()); // '^.^'
+// builder.padBoth('=');
+// console.log(builder.getValue()); // '=^.^='
 
 
-class StringBuilder {
 
-  #value;
 
-  constructor(baseValue) {
-    this.#value = baseValue;
-  };
+// class StringBuilder {
+
+//   #value;
+
+//   constructor(baseValue) {
+//     this.#value = baseValue;
+//   };
   
-  getValue() {
-    return this.#value;
-  }
+//   getValue() {
+//     return this.#value;
+//   }
 
-  padEnd(str) {
-    this.#value += str;
-  }
+//   padEnd(str) {
+//     this.#value += str;
+//   }
 
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
+//   padStart(str) {
+//     this.#value = str + this.#value;
+//   }
 
-  padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
-  }
-}
+//   padBoth(str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   }
+// }
+
+// class Car {
+//   model;
+//   price;
+//   #brand;
+
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   getBrand() {
+//     return this.#brand;
+//   }
+
+//   changeBrand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+
+//   getModel() {
+//     return this.model;
+//   }
+
+//   updateModel(newModel) {
+//     this.model = newModel;
+//   }
+
+//   getPrice() {
+//     return this.price;
+//   }
+
+//   setPrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
+
+
+
+// class Car {
+//   #model;
+//   #price;
+//   #brand;
+
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.#model = model;
+//     this.#price = price;
+//   }
+
+//   get brand() {
+//     return this.#brand;
+//   }
+
+//   set brand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+
+//   get model() {
+//     return this.#model;
+//   }
+
+//   set model(newModel) {
+//     this.#model = newModel;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     this.#price = newPrice;
+//   }
+// }

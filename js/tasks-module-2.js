@@ -130,5 +130,53 @@
 // Написати ф-ю rgbToHex яка приймає колір
 //  в форматі rgb і повертає колір в форматі hex
 
-// Берем число хекс и делим на 16, получиное целое добавляем единицу и переводим в 16-ю систему, это первое значение
-// Берм остаток  добавляем единицу и переводим в 16-ю систему, это второй показатель
+
+const rgbToHex = function(r, g, b) {
+  if(r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
+    return console.log(`ERROR! Wrong format of RGB!`);
+
+  const calcHex = function(hexToCalc) {
+    let hexFirstValue = Math.floor(hexToCalc / 16);
+    let hexSecondValue = hexToCalc % 16;
+
+    const to16Bit = function(hexValue) {
+      switch(hexValue) {
+        case 10:
+          hexValue = 'a';
+        break;
+        case 11:
+          hexValue = 'b';
+        break;
+        case 12:
+          hexValue = 'c';
+        break;
+        case 13:
+          hexValue = 'd';
+        break;
+        case 14:
+          hexValue = 'e';
+        break;
+        case 15:
+          hexValue = 'f';
+        break;
+        default: hexValue = hexValue;
+      };
+    return hexValue;
+  };
+
+  hexFirstValue = to16Bit(hexFirstValue);
+  hexSecondValue = to16Bit(hexSecondValue);
+
+  return `${hexFirstValue}${hexSecondValue}`;
+};
+
+  let hexR = calcHex(r);
+  let hexG = calcHex(g);
+  let hexB = calcHex(b);
+  let hex = `#${hexR}${hexG}${hexB}`;
+  
+  return console.log(hex);
+};
+
+rgbToHex (41, 171, 128); // #29ab80
+rgbToHex (246, 71, 228); // #f647e4

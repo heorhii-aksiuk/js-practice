@@ -631,41 +631,79 @@
 // }
 
 
-const tweets = [
-  { id: '000', likes: 5, tags: ['js', 'nodejs'] },
-  { id: '001', likes: 2, tags: ['html', 'css'] },
-  { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
-  { id: '003', likes: 8, tags: ['css', 'react'] },
-  { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
-];
+// const tweets = [
+//   { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+//   { id: '001', likes: 2, tags: ['html', 'css'] },
+//   { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+//   { id: '003', likes: 8, tags: ['css', 'react'] },
+//   { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+// ];
 
-const getTags = tweets =>
-  tweets.reduce((allTags, tweet) => {
-    allTags.push(...tweet.tags);
+// const getTags = tweets =>
+//   tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
 
-    return allTags;
-  }, []);
+//     return allTags;
+//   }, []);
 
-const tags = getTags(tweets);
+// const tags = getTags(tweets);
 
-// Вынесем callback-функцию отдельно, а в reducе передадим ссылку на нее.
-// Это стандартная практика если callback-функция довольно большая.
+// // Вынесем callback-функцию отдельно, а в reducе передадим ссылку на нее.
+// // Это стандартная практика если callback-функция довольно большая.
 
-// Если в объекте-аккумуляторе acc нету своего свойства с ключем tag,
-// то создаем его и записывает ему значение 0.
-// В противном случае увеличиваем значение на 1.
-const getTagStats = (acc, tag) => {
-  if (!acc.hasOwnProperty(tag)) {
-    acc[tag] = 0;
-  }
+// // Если в объекте-аккумуляторе acc нету своего свойства с ключем tag,
+// // то создаем его и записывает ему значение 0.
+// // В противном случае увеличиваем значение на 1.
+// const getTagStats = (acc, tag) => {
+//   if (!acc.hasOwnProperty(tag)) {
+//     acc[tag] = 0;
+//   }
 
-  acc[tag] += 1;
+//   acc[tag] += 1;
 
-  return acc;
-};
+//   return acc;
+// };
 
-// Начальное значение аккумулятора это пустой объект {}
-const countTags = tags => tags.reduce(getTagStats, {});
+// // Начальное значение аккумулятора это пустой объект {}
+// const countTags = tags => tags.reduce(getTagStats, {});
 
-const tagCount = countTags(tags);
-console.log(tagCount);
+// const tagCount = countTags(tags);
+// console.log(tagCount);
+
+// function filterArray(numbers, value) {
+  //   const filteredNumbers = [];
+  //   // Пиши код ниже этой строки
+  
+
+  // numbers.forEach(number => { 
+  //   if(number > value) 
+  // 	return filteredNumbers.push(number)});
+  
+  
+  //   // Пиши код выше этой строки
+  //   return filteredNumbers;
+  // }
+
+  // function getCommonElements(firstArray, secondArray) {
+  //   const commonElements = [];
+  //   // Пиши код ниже этой строки
+  
+  //   for (let i = 0; i < firstArray.length; i += 1) {
+  //     if (secondArray.includes(firstArray[i])) {
+  //       commonElements.push(firstArray[i]);
+  //     }
+  //   }
+  
+  // firstArray.forEach(firstArrayElement => {
+  // 	if (secondArray.includes(firstArrayElement)) {
+  //     commonElements.push(firstArrayElement)  
+  //       }
+  // })
+  	
+  
+  
+  //   return console.log(commonElements);
+  //   // Пиши код выше этой строки
+  // }
+
+  // getCommonElements([1, 2, 3], [2, 1, 17, 19])

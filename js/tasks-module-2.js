@@ -131,52 +131,93 @@
 //  в форматі rgb і повертає колір в форматі hex
 
 
-const rgbToHex = function(r, g, b) {
-  if(r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
-    return console.log(`ERROR! Wrong format of RGB!`);
+// const rgbToHex = function(r, g, b) {
+//   if(r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
+//     return console.log(`ERROR! Wrong format of RGB!`);
 
-  const calcHex = function(hexToCalc) {
-    let hexFirstValue = Math.floor(hexToCalc / 16);
-    let hexSecondValue = hexToCalc % 16;
+//   const calcHex = function(hexToCalc) {
+//     let hexFirstValue = Math.floor(hexToCalc / 16);
+//     let hexSecondValue = hexToCalc % 16;
 
-    const to16Bit = function(hexValue) {
-      switch(hexValue) {
-        case 10:
-          hexValue = 'a';
-        break;
-        case 11:
-          hexValue = 'b';
-        break;
-        case 12:
-          hexValue = 'c';
-        break;
-        case 13:
-          hexValue = 'd';
-        break;
-        case 14:
-          hexValue = 'e';
-        break;
-        case 15:
-          hexValue = 'f';
-        break;
-        default: hexValue = hexValue;
-      };
-    return hexValue;
-  };
+//     const to16Bit = function(hexValue) {
+//       switch(hexValue) {
+//         case 10:
+//           hexValue = 'a';
+//         break;
+//         case 11:
+//           hexValue = 'b';
+//         break;
+//         case 12:
+//           hexValue = 'c';
+//         break;
+//         case 13:
+//           hexValue = 'd';
+//         break;
+//         case 14:
+//           hexValue = 'e';
+//         break;
+//         case 15:
+//           hexValue = 'f';
+//         break;
+//         default: hexValue = hexValue;
+//       };
+//     return hexValue;
+//   };
 
-  hexFirstValue = to16Bit(hexFirstValue);
-  hexSecondValue = to16Bit(hexSecondValue);
+//   hexFirstValue = to16Bit(hexFirstValue);
+//   hexSecondValue = to16Bit(hexSecondValue);
 
-  return `${hexFirstValue}${hexSecondValue}`;
-};
+//   return `${hexFirstValue}${hexSecondValue}`;
+// };
 
-  let hexR = calcHex(r);
-  let hexG = calcHex(g);
-  let hexB = calcHex(b);
-  let hex = `#${hexR}${hexG}${hexB}`;
+//   let hexR = calcHex(r);
+//   let hexG = calcHex(g);
+//   let hexB = calcHex(b);
+//   let hex = `#${hexR}${hexG}${hexB}`;
   
-  return console.log(hex);
-};
+//   return console.log(hex);
+// };
 
-rgbToHex (41, 171, 128); // #29ab80
-rgbToHex (246, 71, 228); // #f647e4
+// rgbToHex (41, 171, 128); // #29ab80
+// rgbToHex (246, 71, 228); // #f647e4
+
+// Задача 7
+/* 
+Написати ф-ю яка приймає масив і видаляє звідти всі унікальні елементи
+nonUniqueElements([1, 2, 3, 1, 3]) // [1, 3, 1, 3]
+nonUniqueElements([1, 2, 3, 4, 5]) // []
+nonUniqueElements([5, 5, 5, 5, 5]) // [5, 5, 5, 5, 5]
+nonUniqueElements([10, 9, 10, 10, 9, 8]) // [10, 9, 10, 10, 9] */
+
+/* 
+1. Объявить функцию DONE!
+2. Скопировать массив DONE!
+3. Перебрать массив DONE!
+4. На каждой итерации вырезаем первый элемент и добавляем в новый массив
+5. Сравнить, если такое значение есть в обоих массивах, продолжить выполнение итераций
+если, такое значение только в одном массиве, удалить элемент с последнего массива
+ */
+
+const nonUniqueElements = function(array) {
+  const initialArray = [...array];
+  const resultArray = [];
+  
+  for (let i = 0; i < array.length; i += 1) {
+
+    resultArray.push(array[i]);
+    initialArray.shift();
+
+    if (initialArray.includes(array[i]) && resultArray.includes(array[i])){
+      
+    } else {  resultArray.pop();
+
+    }
+    console.log(initialArray)
+  }
+  return resultArray;
+}
+
+console.log(nonUniqueElements([1, 2, 3, 1, 3]));
+
+
+

@@ -197,7 +197,8 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) // [10, 9, 10, 10, 9] */
 5. Сравнить, если такое значение есть в обоих массивах, продолжить выполнение итераций
 если, такое значение только в одном массиве, удалить элемент с последнего массива
 
-Берем первый элемент вырезаем и вставляем в буфер как число переменную, проверяем инклудом оставшийся массив а так же новый массив через или с подставкой в инклуд этого элемента,
+Берем первый элемент вырезаем и вставляем в буфер как число переменную, 
+проверяем инклудом оставшийся массив а так же новый массив через или с подставкой в инклуд этого элемента,
 если есть, пушим в новый массив, если нет, ничего не делаем, на каждой итерации обновляем значения буфера переменной
 
  */
@@ -205,23 +206,23 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) // [10, 9, 10, 10, 9] */
 const nonUniqueElements = function(array) {
   const initialArray = [...array];
   const resultArray = [];
+  let element;
   
   for (let i = 0; i < array.length; i += 1) {
-
-    resultArray.push(array[i]);
+    element = array[i];
     initialArray.shift();
 
-    if (initialArray.includes(array[i]) && resultArray.includes(array[i])){
-      
-    } else {  resultArray.pop();
-
-    }
-    console.log(initialArray)
-  }
+    if (initialArray.includes(element) || resultArray.includes(element)){
+      resultArray.push(element);
+    };
+  };
   return resultArray;
-}
+};
 
-console.log(nonUniqueElements([1, 2, 3, 1, 3]));
+nonUniqueElements([1, 2, 3, 1, 3]); // [1, 3, 1, 3]
+nonUniqueElements([1, 2, 3, 4, 5]); // []
+nonUniqueElements([5, 5, 5, 5, 5]); // [5, 5, 5, 5, 5]
+nonUniqueElements([10, 9, 10, 10, 9, 8]); // [10, 9, 10, 10, 9]
 
 
 

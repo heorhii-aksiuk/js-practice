@@ -196,34 +196,73 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) // [10, 9, 10, 10, 9] */
 4. На каждой итерации вырезаем первый элемент и добавляем в новый массив
 5. Сравнить, если такое значение есть в обоих массивах, продолжить выполнение итераций
 если, такое значение только в одном массиве, удалить элемент с последнего массива
-
-Берем первый элемент вырезаем и вставляем в буфер как число переменную, 
-проверяем инклудом оставшийся массив а так же новый массив через или с подставкой в инклуд этого элемента,
-если есть, пушим в новый массив, если нет, ничего не делаем, на каждой итерации обновляем значения буфера переменной
-
  */
 
-const nonUniqueElements = function(array) {
-  const initialArray = [...array];
-  const resultArray = [];
-  let element;
+// const nonUniqueElements = function(array) {
+//   const initialArray = [...array];
+//   const resultArray = [];
+//   let element;
   
-  for (let i = 0; i < array.length; i += 1) {
-    element = array[i];
-    initialArray.shift();
+//   for (let i = 0; i < array.length; i += 1) {
+//     element = array[i];
+//     initialArray.shift();
 
-    if (initialArray.includes(element) || resultArray.includes(element))
-      resultArray.push(element);
-  };
-  return resultArray;
-};
+//     if (initialArray.includes(element) || resultArray.includes(element))
+//       resultArray.push(element);
+//   };
+//   return resultArray;
+// };
 
-nonUniqueElements([1, 2, 3, 1, 3]); // [1, 3, 1, 3]
-nonUniqueElements([1, 2, 3, 4, 5]); // []
-nonUniqueElements([5, 5, 5, 5, 5]); // [5, 5, 5, 5, 5]
-nonUniqueElements([10, 9, 10, 10, 9, 8]); // [10, 9, 10, 10, 9]
+// nonUniqueElements([1, 2, 3, 1, 3]); // [1, 3, 1, 3]
+// nonUniqueElements([1, 2, 3, 4, 5]); // []
+// nonUniqueElements([5, 5, 5, 5, 5]); // [5, 5, 5, 5, 5]
+// nonUniqueElements([10, 9, 10, 10, 9, 8]); // [10, 9, 10, 10, 9]
 
-console.log(nonUniqueElements([1, 2, 3, 1, 3]))
+// console.log(nonUniqueElements([1, 2, 3, 1, 3]))
+
+// Задача 8
+
+/* Написати ф-ю median яка приймає масив і знаходить його медіану
+Медіана – це числове значення, яке ділить відсортований масив чисел на більшу і меншу половини.
+У відсортованому масиві з непарним числом елементів медіана – це число в середині масиву. 
+Для масиву з парним числом елементів, де нема ні одного елемента точно посередині,
+медіана – це середнє значення двох чисел, які знаходяться в середині масиву. 
+В цій задачі заданий непустий масив натуральних чисел. Вам потрібно знайти медіану даного масиву.
+ */
+
+/* 
+1. Объявить функцию DONE!
+2. Высчитать длинну массива DONE!
+3. Поделить массив на два
+4. Если число не целое, в массиве не четное количество элементов, 
+округливаем это число в низ, и под этим индексом медиана, возращаем ее как результат
+5. Если число целое, то результат между этим чилом и этим чилом минус 1, берм эти два числа,
+слаживаем, и выводим результат.
+*/
+
+const median = function(array) {
+  let arrayLength = array.length;
+  let result = 0;
+    
+    if(!array.length % 2 === 0) {
+      result = array[(array.length / 2) - 0.5]
+    } else {
+      result = ((array[(array.length / 2)]) + (array[(((array.length / 2) - 1))])) / 2;
+
+    }
+    console.log(((result = array[(array.length / 2)]) + (array[(((array.length / 2) - 1))])) / 2)
 
 
+
+
+    return result;
+
+
+}
+
+median([1, 2, 3, 4, 5])
+median([3, 6, 10, 15, 20, 99])
+
+console.log(median([3, 6, 10, 15, 20, 99]))
+console.log(median([1, 2, 3, 4, 5]))
 

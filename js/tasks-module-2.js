@@ -233,36 +233,27 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) // [10, 9, 10, 10, 9] */
 /* 
 1. Объявить функцию DONE!
 2. Высчитать длинну массива DONE!
-3. Поделить массив на два
+3. Поделить массив на два DONE!
 4. Если число не целое, в массиве не четное количество элементов, 
-округливаем это число в низ, и под этим индексом медиана, возращаем ее как результат
+округливаем это число в низ, и под этим индексом медиана, возращаем ее как результат DONE!
 5. Если число целое, то результат между этим чилом и этим чилом минус 1, берм эти два числа,
-слаживаем, и выводим результат.
+слаживаем, и выводим результат. DONE!
 */
 
 const median = function(array) {
-  let arrayLength = array.length;
-  let result = 0;
+  let medianIndex = (array.length / 2) - 0.5;  
+  let rightIndex = medianIndex + 0.5;          
+  let leftIndex = medianIndex - 0.5;           
+
+  let result = array.length % 2 === 0 
+    ? (array[rightIndex] + array[leftIndex]) / 2
+    : array[medianIndex];
     
-    if(!array.length % 2 === 0) {
-      result = array[(array.length / 2) - 0.5]
-    } else {
-      result = ((array[(array.length / 2)]) + (array[(((array.length / 2) - 1))])) / 2;
-
-    }
-    console.log(((result = array[(array.length / 2)]) + (array[(((array.length / 2) - 1))])) / 2)
-
-
-
-
-    return result;
-
-
+  return result;
 }
 
-median([1, 2, 3, 4, 5])
-median([3, 6, 10, 15, 20, 99])
+median([3, 6, 10, 15, 20, 99]); // 12.5
+median([1, 2, 3, 4, 5]);        // 3  
 
-console.log(median([3, 6, 10, 15, 20, 99]))
-console.log(median([1, 2, 3, 4, 5]))
+
 

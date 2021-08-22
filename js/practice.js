@@ -903,8 +903,8 @@ const users = [
 
 // console.log(getFriends(users))
 
-const getActiveUsers = (users) => {
-   return users.filter(user => user.isActive)
-};
+// const getActiveUsers = (users) => {
+//    return users.filter(user => user.isActive)
+// };
 
-console.log(getActiveUsers(users))
+// console.log(getActiveUsers(users))

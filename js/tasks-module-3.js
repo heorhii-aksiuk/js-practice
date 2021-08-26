@@ -53,12 +53,12 @@ isObjectEmpty({name: 'user, age: {21}}) // false */
 
 В обєкті має бути такі поля і методи:
 
-1. Поле для збереження розміру піци
-2. Поле для збереження списку добавок
-3. Поле для збереження списку соусів
-4. Метод для додавання добавки (Можна додати добавку якщо вона відсутня інакше показувати помилку)
-5. Метод для додавання соусу (Можна додати соус якщо він відсутній інакше показувати, також помилка показувється якщо пробуємо видалити добавку, а там ще жодної немає)
-6. Метод для видалення добавки (Можна видалити добавку якщо вона присутня в піці інакше показувати помилку, також помилка показувється якщо пробуємо видалити соус, а там ще жодного немає)
+1. DONE! Поле для збереження розміру піци
+2. DONE! Поле для збереження списку добавок
+3. DONE! Поле для збереження списку соусів
+4. DONE! Метод для додавання добавки (Можна додати добавку якщо вона відсутня інакше показувати помилку)
+5. DONE! Метод для додавання соусу (Можна додати соус якщо він відсутній інакше показувати)
+6. DONE! Метод для видалення добавки (Можна видалити добавку якщо вона присутня в піці інакше показувати помилку, також помилка показувється якщо пробуємо видалити соус, а там ще жодного немає)
 7. Метод для видалення соусу (Можна видалити соус якщо він присутній в піці інакше показувати помилку)
 8. Метод для розрахунку загальної ціни піци (розмір + добавки + соуси) (ціна округлена до двох знаків після коми)
 9. Метод для розрахунку загальної кількості калорій піци (розмір + добавки + соуси)
@@ -90,26 +90,37 @@ BOLOGNESE: { price : 7.5, cal: 50, time: 3 }
 
 const pizza = {
   size: SIZES.BIG,
+  stuffing: [],
+  sauce: [],
+
   setSize(newSize) { 
     this.size = newSize
   },
-  stuffing: [],
-  sauce: []
+  setStuffing(newStuffing) {
+    return this.stuffing.indexOf(newStuffing) === -1
+      ? this.stuffing.push(newStuffing)
+      : console.log(`This stuffing is already in!.`);
+  },
 
+  deleteStuffing(delStuffing) {
+    return !(this.stuffing.indexOf(delStuffing) === -1)
+      ? this.stuffing.splice(this.stuffing.indexOf(delStuffing), 1)
+      :  console.log(`This stuffing is already delete.`);
+  },
 
+  setSauce(newSauce) {
+    return this.sauce.indexOf(newSauce) === -1
+      ? this.sauce.push(newSauce)
+      : console.log(`This sauce is already in.`);
+  },
+};
 
+pizza.setSize(SIZES.MEDIUM);
+pizza.setStuffing(STUFFING.BEACON);
+pizza.setStuffing(STUFFING.CHICKEN);
+pizza.setSauce(SAUCES.BOLOGNESE);
+pizza.setSauce(SAUCES.BOLOGNESE);
+pizza.deleteStuffing(STUFFING.CHICKEN);
+pizza.deleteStuffing(STUFFING.CHICKEN);
 
-
-
-
-}
-
-
-
-
-pizza.setSize(SIZES.MEDIUM)
-
-
-
-
-console.log(pizza)
+console.log(pizza);

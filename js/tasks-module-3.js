@@ -59,7 +59,7 @@ isObjectEmpty({name: 'user, age: {21}}) // false */
 4. DONE! Метод для додавання добавки (Можна додати добавку якщо вона відсутня інакше показувати помилку)
 5. DONE! Метод для додавання соусу (Можна додати соус якщо він відсутній інакше показувати)
 6. DONE! Метод для видалення добавки (Можна видалити добавку якщо вона присутня в піці інакше показувати помилку, також помилка показувється якщо пробуємо видалити соус, а там ще жодного немає)
-7. Метод для видалення соусу (Можна видалити соус якщо він присутній в піці інакше показувати помилку)
+7. DONE! Метод для видалення соусу (Можна видалити соус якщо він присутній в піці інакше показувати помилку)
 8. Метод для розрахунку загальної ціни піци (розмір + добавки + соуси) (ціна округлена до двох знаків після коми)
 9. Метод для розрахунку загальної кількості калорій піци (розмір + добавки + соуси)
 10. Метод який показує загальну інформацію про замовлення (ціну, калорії, список добавок і соусів) (Якщо піца валідна інакше показувати помилку)
@@ -67,12 +67,14 @@ isObjectEmpty({name: 'user, age: {21}}) // false */
 12. Метод що показує час приготуванни в хвилинах в залежності від складності піци
 13. Метод валідації піци який поверне true якщо піца відповідає вимогам , а саме (вибраний розмір піци, є мінімум одна добавка, і мінімум один соус) інакше false (І виводить строку чого не вистачає (коржа, добавки, чи соусу)) (використовувати this)
 Створити всі методи і перевірити чи вони працюють 
+
+Сделать так, чтобы добавки добавлялись отдельно, а их ключи отдельно, или хз
 */
 
 const SIZES = {
 BIG: { price: 25, cal: 100, time: 15 },
 SMALL : { price : 15, cal: 50, time: 7 },
-MEDIUM: { price : 15, cal: 50, time: 7 }
+MEDIUM: { price : 20, cal: 75, time: 10 }
 };
 const STUFFING = {
 CHEESE: { price : 6.5, cal: 45, time: 2 },
@@ -113,6 +115,14 @@ const pizza = {
       ? this.sauce.push(newSauce)
       : console.log(`This sauce is already in.`);
   },
+
+  deleteSauce(delSauce) {
+    return !(this.sauce.indexOf(delSauce) === -1)
+      ? this.sauce.splice(this.sauce.indexOf(delSauce), 1)
+      : console.log(`This sauce is already delete.`);
+  }
+
+
 };
 
 pizza.setSize(SIZES.MEDIUM);
@@ -122,5 +132,22 @@ pizza.setSauce(SAUCES.BOLOGNESE);
 pizza.setSauce(SAUCES.BOLOGNESE);
 pizza.deleteStuffing(STUFFING.CHICKEN);
 pizza.deleteStuffing(STUFFING.CHICKEN);
+pizza.deleteSauce(SAUCES.BOLOGNESE)
+pizza.deleteSauce(SAUCES.BOLOGNESE)
+
 
 console.log(pizza);
+console.table(pizza);
+
+let notANumb = 23
+
+console.log(typeof notANumb);
+
+
+
+function filter_list(array) {
+  return[...array].filter(el => typeof el === 'number')
+
+}
+
+console.log(filter_list([1,'a','b',0,15]));

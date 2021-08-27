@@ -95,6 +95,10 @@ const pizza = {
   stuffing: [],
   sauce: [],
 
+  showSize() {
+    return
+  },
+
   setSize(newSize) { 
     this.size = newSize
   },
@@ -134,20 +138,9 @@ pizza.deleteStuffing(STUFFING.CHICKEN);
 pizza.deleteStuffing(STUFFING.CHICKEN);
 pizza.deleteSauce(SAUCES.BOLOGNESE)
 pizza.deleteSauce(SAUCES.BOLOGNESE)
+pizza.showSize()
+console.log(pizza.showSize());
 
 
 console.log(pizza);
 console.table(pizza);
-
-let notANumb = 23
-
-console.log(typeof notANumb);
-
-
-
-function filter_list(array) {
-  return[...array].filter(el => typeof el === 'number')
-
-}
-
-console.log(filter_list([1,'a','b',0,15]));

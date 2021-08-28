@@ -14,34 +14,34 @@
 // Вернуть значение DONE!
 
 
-// const capitalize = function (sentence) {
-//   const sentenceArray = sentence.split(' ');
-//   let letter;
-//   let lettersArray = [];
-//   let firstLetter;
-//   let wordsArray = [];
-//   let finalSentence;
+const capitalize = function (sentence) {
+  const sentenceArray = sentence.split(' ');
+  let letter;
+  let lettersArray = [];
+  let firstLetter;
+  let wordsArray = [];
+  let finalSentence;
 
-//   for (let word of sentenceArray) {
-//     letter = word.split('');
-//     lettersArray.push(letter);
-//   }
+  for (let word of sentenceArray) {
+    letter = word.split('');
+    lettersArray.push(letter);
+  }
 
-//   for (let i = 0; i < lettersArray.length; i += 1) {
-//     firstLetter = lettersArray[i][0];
-//     lettersArray[i].splice(0, 1, ' ', firstLetter.toUpperCase());
+  for (let i = 0; i < lettersArray.length; i += 1) {
+    firstLetter = lettersArray[i][0];
+    lettersArray[i].splice(0, 1, ' ', firstLetter.toUpperCase());
   
-//     for (let j = 0; j < lettersArray[i].length; j += 1) {
-//       wordsArray += lettersArray[i][j];
-//     }
-//   } 
-//   finalSentence = wordsArray.slice(1);
+    for (let j = 0; j < lettersArray[i].length; j += 1) {
+      wordsArray += lettersArray[i][j];
+    }
+  } 
+  finalSentence = wordsArray.slice(1);
 
-//   return console.log(finalSentence);
-// }
+  return console.log(finalSentence);
+}
 
-// capitalize('the quick brown fox');
-// capitalize('hello my dear friend');
+capitalize('the quick brown fox');
+capitalize('hello my dear friend');
 
 // Задача 2
 

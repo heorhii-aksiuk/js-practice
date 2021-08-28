@@ -56,10 +56,10 @@ isObjectEmpty({name: 'user, age: {21}}) // false */
 1. DONE! Поле для збереження розміру піци
 2. DONE! Поле для збереження списку добавок
 3. DONE! Поле для збереження списку соусів
-4. DONE! Метод для додавання добавки (Можна додати добавку якщо вона відсутня інакше показувати помилку)
-5. DONE! Метод для додавання соусу (Можна додати соус якщо він відсутній інакше показувати)
-6. DONE! Метод для видалення добавки (Можна видалити добавку якщо вона присутня в піці інакше показувати помилку, також помилка показувється якщо пробуємо видалити соус, а там ще жодного немає)
-7. DONE! Метод для видалення соусу (Можна видалити соус якщо він присутній в піці інакше показувати помилку)
+4. Метод для додавання добавки (Можна додати добавку якщо вона відсутня інакше показувати помилку)
+5. Метод для додавання соусу (Можна додати соус якщо він відсутній інакше показувати)
+6. Метод для видалення добавки (Можна видалити добавку якщо вона присутня в піці інакше показувати помилку, також помилка показувється якщо пробуємо видалити соус, а там ще жодного немає)
+7. Метод для видалення соусу (Можна видалити соус якщо він присутній в піці інакше показувати помилку)
 8. Метод для розрахунку загальної ціни піци (розмір + добавки + соуси) (ціна округлена до двох знаків після коми)
 9. Метод для розрахунку загальної кількості калорій піци (розмір + добавки + соуси)
 10. Метод який показує загальну інформацію про замовлення (ціну, калорії, список добавок і соусів) (Якщо піца валідна інакше показувати помилку)
@@ -71,76 +71,30 @@ isObjectEmpty({name: 'user, age: {21}}) // false */
 Сделать так, чтобы добавки добавлялись отдельно, а их ключи отдельно, или хз
 */
 
-const SIZES = {
-BIG: { price: 25, cal: 100, time: 15 },
-SMALL : { price : 15, cal: 50, time: 7 },
-MEDIUM: { price : 20, cal: 75, time: 10 }
-};
-const STUFFING = {
-CHEESE: { price : 6.5, cal: 45, time: 2 },
-BEACON : { price : 10, cal: 70, time: 6 },
-TOMATO : { price : 12.1, cal: 4, time: 5 },
-CHICKEN : { price : 9.3, cal: 30, time: 5.1 }
-};
-const SAUCES = {
-MUSTARD: { price : 3, cal: 5, time: 1 },
-KETCHUP: { price : 4.2, cal: 20, time: 1.5 },
-BOLOGNESE: { price : 7.5, cal: 50, time: 3 }
-}
-
-
+const SIZES = [
+  { type: 'small', price : 15, cal: 50, time: 7 },
+  { type: 'medium', price : 20, cal: 75, time: 10 },
+  { type: 'big', price: 25, cal: 100, time: 15 },
+];
+const SAUCES = [
+  { type: 'mustard', price: 3, cal: 5, time: 1 },
+  { type: 'ketchup', price : 4.2, cal: 20, time: 1.5 },
+  { type: 'bolognese', price : 7.5, cal: 50, time: 3 },
+]
+const STUFFING = [
+  { type: 'cheese', price : 6.5, cal: 45, time: 2 },
+  { type: 'chicken', price : 9.3, cal: 30, time: 5.1 },
+  { type: 'beacon', price : 10, cal: 70, time: 6 },
+  { type: 'tomato', price : 12.1, cal: 4, time: 5 },
+];
 
 const pizza = {
-  size: SIZES.BIG,
+  size: SIZES.find(size => size.type === 'medium'),
+  sauce: SAUCES.find(sauce => sauce.type === 'ketchup'),
   stuffing: [],
-  sauce: [],
-
-  showSize() {
-    return
-  },
-
-  setSize(newSize) { 
-    this.size = newSize
-  },
-  setStuffing(newStuffing) {
-    return this.stuffing.indexOf(newStuffing) === -1
-      ? this.stuffing.push(newStuffing)
-      : console.log(`This stuffing is already in!.`);
-  },
-
-  deleteStuffing(delStuffing) {
-    return !(this.stuffing.indexOf(delStuffing) === -1)
-      ? this.stuffing.splice(this.stuffing.indexOf(delStuffing), 1)
-      :  console.log(`This stuffing is already delete.`);
-  },
-
-  setSauce(newSauce) {
-    return this.sauce.indexOf(newSauce) === -1
-      ? this.sauce.push(newSauce)
-      : console.log(`This sauce is already in.`);
-  },
-
-  deleteSauce(delSauce) {
-    return !(this.sauce.indexOf(delSauce) === -1)
-      ? this.sauce.splice(this.sauce.indexOf(delSauce), 1)
-      : console.log(`This sauce is already delete.`);
-  }
-
-
 };
-
-pizza.setSize(SIZES.MEDIUM);
-pizza.setStuffing(STUFFING.BEACON);
-pizza.setStuffing(STUFFING.CHICKEN);
-pizza.setSauce(SAUCES.BOLOGNESE);
-pizza.setSauce(SAUCES.BOLOGNESE);
-pizza.deleteStuffing(STUFFING.CHICKEN);
-pizza.deleteStuffing(STUFFING.CHICKEN);
-pizza.deleteSauce(SAUCES.BOLOGNESE)
-pizza.deleteSauce(SAUCES.BOLOGNESE)
-pizza.showSize()
-console.log(pizza.showSize());
-
 
 console.log(pizza);
 console.table(pizza);
+console.log(pizza.size.type);
+

@@ -76,25 +76,49 @@ const SIZES = [
   { type: 'medium', price : 20, cal: 75, time: 10 },
   { type: 'big', price: 25, cal: 100, time: 15 },
 ];
+const small = SIZES.find(size => size.type === 'small')
+const medium = SIZES.find(size => size.type === 'medium')
+const big = SIZES.find(size => size.type === 'big')
+
 const SAUCES = [
   { type: 'mustard', price: 3, cal: 5, time: 1 },
   { type: 'ketchup', price : 4.2, cal: 20, time: 1.5 },
   { type: 'bolognese', price : 7.5, cal: 50, time: 3 },
 ]
+const mustard = SAUCES.find(size => size.type === 'mustard')
+const ketchup = SAUCES.find(size => size.type === 'ketchup')
+const bolognese = SAUCES.find(size => size.type === 'bolognese')
+
 const STUFFING = [
   { type: 'cheese', price : 6.5, cal: 45, time: 2 },
   { type: 'chicken', price : 9.3, cal: 30, time: 5.1 },
   { type: 'beacon', price : 10, cal: 70, time: 6 },
   { type: 'tomato', price : 12.1, cal: 4, time: 5 },
 ];
+const cheese = STUFFING.find(size => size.type === 'cheese')
+const chicken = STUFFING.find(size => size.type === 'chicken')
+const beacon = STUFFING.find(size => size.type === 'beacon')
+const tomato = STUFFING.find(size => size.type === 'tomato')
 
 const pizza = {
-  size: SIZES.find(size => size.type === 'medium'),
-  sauce: SAUCES.find(sauce => sauce.type === 'ketchup'),
+  size: medium,
+  sauce: ketchup,
   stuffing: [],
+
+  changeSauce(newSauce) {
+    return this.sauce = newSauce;
+  },
+
+  addStuffing(addedStuffing) {
+    this.stuffing.push(addedStuffing)
+  },
 };
 
 console.log(pizza);
-console.table(pizza);
 console.log(pizza.size.type);
+pizza.changeSauce(mustard);
+console.log(pizza.sauce.type);
+pizza.addStuffing(cheese);
+pizza.addStuffing(chicken);
 
+console.table(pizza);

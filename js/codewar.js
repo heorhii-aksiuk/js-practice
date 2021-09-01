@@ -17,20 +17,30 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 */
 
-const validatePIN = function (pin) {
-  let clearPin = pin.trim();
-  let filteredArray = clearPin.split('')
-    .filter(el => el >= 0 && el <= 9);
+// const validatePIN = function (pin) {
+//   let clearPin = pin.trim();
+//   let filteredArray = clearPin.split('')
+//     .filter(el => el >= 0 && el <= 9);
   
-  return filteredArray.length === clearPin.length
-    && (clearPin.length === 4 || clearPin.length === 6)
-  ? true
-  : false;
+//   return filteredArray.length === clearPin.length
+//     && (clearPin.length === 4 || clearPin.length === 6)
+//   ? true
+//   : false;
+// };
+
+// console.log(validatePIN("0089")); // true
+// console.log(validatePIN("-1.234")); // false
+// console.log(validatePIN("098765")); // true
+// console.log(validatePIN("123")); // false
+
+
+const removeChar = function(str){
+  let arrayFromStr = str.split('');
+  arrayFromStr.shift();
+  arrayFromStr.pop();
+
+  return arrayFromStr.join('');
 };
 
-console.log(validatePIN("0089")); // true
-console.log(validatePIN("-1.234")); // false
-console.log(validatePIN("098765")); // true
-console.log(validatePIN("123")); // false
-
-
+removeChar('eloquent');
+console.log(removeChar('eloquent'));

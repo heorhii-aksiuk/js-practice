@@ -56,10 +56,27 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // findShort('bitcoin take over the world maybe who knows perhaps');
 
-function minMax(arr) {
-  return [[...arr].sort((a, b) => a - b)[0], [...arr].sort((a, b) => b - a)[0]];
+// function minMax(arr) {
+//   return [[...arr].sort((a, b) => a - b)[0], [...arr].sort((a, b) => b - a)[0]];
+// }
+
+// const arr = [5, 3, 7, 9, 34, 56, 3, 5, 3, 7];
+// minMax(arr);
+// console.log(minMax(arr));
+
+// function reverseLetter(str) {
+//   return str
+//     .split('')
+//     .filter(e => e.match(/[a-z]/i))
+//     .reverse()
+//     .join('');
+// }
+
+// console.log(reverseLetter('ultr53o?n')); //"nortlu"
+
+function oddOrEven(array) {
+  array.reduce();
+  //enter code here
 }
 
-const arr = [5, 3, 7, 9, 34, 56, 3, 5, 3, 7];
-minMax(arr);
-console.log(minMax(arr));
+console.log(oddOrEven([1023, 1, 3]));

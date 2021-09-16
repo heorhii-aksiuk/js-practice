@@ -74,9 +74,21 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // console.log(reverseLetter('ultr53o?n')); //"nortlu"
 
-function oddOrEven(array) {
-  array.reduce();
-  //enter code here
+// function oddOrEven(array) {
+//   let total = 0;
+//   array.forEach(el => (total += el));
+//   return total % 2 === 0 ? 'even' : 'odd';
+// }
+
+// console.log(oddOrEven([1023, 1, 3]));
+
+// const oddOrEven = array =>
+//   array.reduce((acc, el) => acc + el, 0) % 2 === 0 ? 'even' : 'odd';
+
+// console.log(oddOrEven([1023, 1, 4]));
+
+function smallEnough(a, limit) {
+  return a.every(el => el <= limit);
 }
 
-console.log(oddOrEven([1023, 1, 3]));
+console.log(smallEnough([66, 501], 200));

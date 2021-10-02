@@ -71,39 +71,32 @@
 // return total;
 // }
 
-
 // calculateTotalPrice([2, 3, 6, 4])
-
 
 // 1. Создать со строки массив
 // 2. Высчитать длинну каждого элемента в массиве
-// 3. Сравнить длинну каждого элемента с первым элементом который будет считаться изначально самым длинным 
+// 3. Сравнить длинну каждого элемента с первым элементом который будет считаться изначально самым длинным
 // 4. Если длинна элемента больше, то перезаписать значение большего элемента
-
 
 // function findLongestWord(string) {
 //   let toString = string.split(' ');
-  
 
 //   for (let i = 0; i < toString.length; i += 1 ) {
 //   let longestWord = toString[0];
-    
+
 //     if (toString[i].length <= longestWord.length) {
 //       continue;
 
 //     } else {
- 
+
 //     longestWord = toString[i];
-   
+
 //     }
 
 //   return console.log(longestWord);
 //   }
 // }
 // findLongestWord("The quick brown fox jumped over the lazy dog");
-
-
-
 
 // function findLongestWord(string) {
 //   let toString = string.split(' ');
@@ -114,12 +107,11 @@
 //     longestWord = toString[i];
 //     return console.log(longestWord);
 //     }
-  
+
 //   }
-  
+
 // }
 // findLongestWord("The quick brown fox jumped over the lazy dog");
-
 
 // function findLongestWord(string) {
 //   let toString = string.split(' ');
@@ -135,7 +127,6 @@
 // }
 // findLongestWord("The quick brown fox jumped over the lazy dog");
 
-
 // function findLongestWord(string) {
 //   let toString = string.split(' ');
 //   let longestWord = toString[0];
@@ -144,17 +135,14 @@
 //     if (word.length > longestWord.length) {
 //     longestWord = word;
 
-    
 //     }
 //   }
 //   return longestWord;
 // }
 
-
 // Сравнить каждый элемет массива с праметром валью
-// По умолчанию нужно саздать пустой массив 
+// По умолчанию нужно саздать пустой массив
 // Если элемент больше чем валью, то запушить в массив этот элемент
-
 
 // function filterArray(numbers, value) {
 //   const biggerNumber = [];
@@ -172,8 +160,6 @@
 // Перебрать массив 1 через фор, и сравнить есть ли в массиве 2 элемент массива 1
 // если есть, запушить в новый массив
 
-
-
 // function getCommonElements(array1, array2) {
 //   const newArray = [];
 
@@ -185,9 +171,8 @@
 //     }
 //   }
 //   return newArray;
-  
-// }
 
+// }
 
 // function getEvenNumbers(start, end) {
 //   const newArrey = [];
@@ -196,19 +181,16 @@
 //       newArrey.push(i);
 //     }
 //   }
-  
-
 
 //   return newArrey;
 //   }
 
 // getEvenNumbers(3, 11)
 
-
 // function includes(array, value) {
-  
+
 //   for( let element of array) {
-    
+
 //     if (element === value){
 //     return true;
 //     }
@@ -217,7 +199,6 @@
 // }
 
 // includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")
-
 
 // const hotel = {
 //   name: 'Resort Hotel',
@@ -247,7 +228,6 @@
  * stars: 5
  * capacity: 100
  */
-
 
 // const pizzaPalace = {
 //   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
@@ -279,11 +259,10 @@
 // pizzaPalace.order('Биг майк', makePizza, onOrderError);
 // pizzaPalace.order('Венская', makePizza, onOrderError);
 
-
 // const pizzaPalace = {
 //   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
 //   order(pizzaName, onSuccess, onError) {
-  	
+
 //       if (this.pizzas.includes(pizzaName)) {
 //       	return console.log(onSuccess(pizzaName));
 //       }
@@ -309,7 +288,6 @@
 // pizzaPalace.order('Биг майк', makePizza, onOrderError);
 // pizzaPalace.order('Венская', makePizza, onOrderError);
 
-
 // const orders = [
 //   { email: 'solomon@topmail.ua', dish: 'Burger' },
 //   { email: 'artemis@coldmail.net', dish: 'Pizza' },
@@ -323,13 +301,12 @@
 //   { email: 'artemis@coldmail.net', dish: 'Pizza' },
 //   { email: 'jacob@mail.com', dish: 'Taco' },
 // ];
-
 
 // // Пиши код ниже этой строки
 // function composeMessage(position) {
 // 	return console.log(`Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`);
 // }
-  	
+
 // 	const messages = [];
 
 // 	for( let i = 0; i < orders.length; i += 1) {
@@ -339,7 +316,6 @@
 //     console.log(pushMessage);
 //      messages.push(pushMessage);
 // 	}
-
 
 //   const orders = [
 //   { email: 'solomon@topmail.ua', dish: 'Burger' },
@@ -356,16 +332,15 @@
 // const messages = [];
 
 // for (let i = 0; i < orders.length; i += 1) {
-  
+
 //   composeMessage.call(orders[i +1])
-  
+
 //   messages.push(composeMessage(i +1));
 // }
 
 // Запушить сообщение в переменную меседж
 // перебрать массив
 // записать в сообщение данные
-
 
 // const orders = [
 //   { email: 'solomon@topmail.ua', dish: 'Burger' },
@@ -385,11 +360,7 @@
 //   composeMessage.call(orders,(i + 1))
 // }
 
-
-
 // console.log(messages)
-
-
 
 // const service = {
 //   mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
@@ -413,9 +384,9 @@
 // // Почта kiwi@mail.uk добавлена в рассылку.
 
 // console.log(service.mailingList);
-// /* ['mango@mail.com', 
-//     'poly@hotmail.de', 
-//     'ajax@jmail.net', 
+// /* ['mango@mail.com',
+//     'poly@hotmail.de',
+//     'ajax@jmail.net',
 //     'kiwi@mail.uk']*/
 // const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));
 // console.log(secondInvoke);
@@ -439,8 +410,6 @@
 //   this.items.splice(this.items.indexOf(item), 1);
 // }
 
-
-
 // // Пиши код выше этой строки
 // const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
 // console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
@@ -448,7 +417,6 @@
 // console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
 // storage.removeItem('Пролонгер');
 // console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]ы", "Антигравитатор", "Дроид"]
-
 
 // function Storage(items) {
 //   this.items = items;
@@ -467,21 +435,19 @@
 //   this.items.splice(itemIndex, 1);
 // };
 
-
-
 // class Storage {
 //   constructor(items) {
 //     this.items = items;
 //   };
-  
+
 //   getItems() {
 //     return this.items;
 //   };
-  
+
 //   addItem(newItem) {
 //     this.items.push(newItem);
 //   };
-  
+
 //   removeItem(item) {
 //     const itemIndex = this.items.indexOf(item);
 //     this.items.splice(itemIndex, 1);
@@ -494,7 +460,6 @@
 // console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
 // storage.removeItem("Пролонгер");
 // console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
-
 
 // function StringBuilder(baseValue) {
 //   this.value = baseValue;
@@ -527,9 +492,6 @@
 // builder.padBoth('=');
 // console.log(builder.getValue()); // '=^.^='
 
-
-
-
 // class StringBuilder {
 
 //   #value;
@@ -537,7 +499,7 @@
 //   constructor(baseValue) {
 //     this.#value = baseValue;
 //   };
-  
+
 //   getValue() {
 //     return this.#value;
 //   }
@@ -592,8 +554,6 @@
 //   }
 // }
 
-
-
 // class Car {
 //   #model;
 //   #price;
@@ -629,7 +589,6 @@
 //     this.#price = newPrice;
 //   }
 // }
-
 
 // const tweets = [
 //   { id: '000', likes: 5, tags: ['js', 'nodejs'] },
@@ -671,93 +630,86 @@
 // console.log(tagCount);
 
 // function filterArray(numbers, value) {
-  //   const filteredNumbers = [];
-  //   // Пиши код ниже этой строки
-  
+//   const filteredNumbers = [];
+//   // Пиши код ниже этой строки
 
-  // numbers.forEach(number => { 
-  //   if(number > value) 
-  // 	return filteredNumbers.push(number)});
-  
-  
-  //   // Пиши код выше этой строки
-  //   return filteredNumbers;
-  // }
+// numbers.forEach(number => {
+//   if(number > value)
+// 	return filteredNumbers.push(number)});
 
-  // function getCommonElements(firstArray, secondArray) {
-  //   const commonElements = [];
-  //   // Пиши код ниже этой строки
-  
-  //   for (let i = 0; i < firstArray.length; i += 1) {
-  //     if (secondArray.includes(firstArray[i])) {
-  //       commonElements.push(firstArray[i]);
-  //     }
-  //   }
-  
-  // firstArray.forEach(firstArrayElement => {
-  // 	if (secondArray.includes(firstArrayElement)) {
-  //     commonElements.push(firstArrayElement)  
-  //       }
-  // })
-  	
-  
-  
-  //   return console.log(commonElements);
-  //   // Пиши код выше этой строки
-  // }
+//   // Пиши код выше этой строки
+//   return filteredNumbers;
+// }
 
-  // getCommonElements([1, 2, 3], [2, 1, 17, 19])
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Пиши код ниже этой строки
 
+//   for (let i = 0; i < firstArray.length; i += 1) {
+//     if (secondArray.includes(firstArray[i])) {
+//       commonElements.push(firstArray[i]);
+//     }
+//   }
 
-  // 6.9
+// firstArray.forEach(firstArrayElement => {
+// 	if (secondArray.includes(firstArrayElement)) {
+//     commonElements.push(firstArrayElement)
+//       }
+// })
 
-  // function changeEven(numbers, value) {
-  //   const changeNumbers = [];
+//   return console.log(commonElements);
+//   // Пиши код выше этой строки
+// }
 
-  //   numbers.forEach(number => number % 2 === 0 
-  //     ? changeNumbers.push(number + value) 
-  //     : changeNumbers.push(number));
+// getCommonElements([1, 2, 3], [2, 1, 17, 19])
 
-	//   return changeNumbers;
-  // }
+// 6.9
 
-  // console.log(changeEven([2, 8, 3, 7, 4, 6], 10))
+// function changeEven(numbers, value) {
+//   const changeNumbers = [];
+
+//   numbers.forEach(number => number % 2 === 0
+//     ? changeNumbers.push(number + value)
+//     : changeNumbers.push(number));
+
+//   return changeNumbers;
+// }
+
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10))
 
 // 6.14
 
-
-  // Пиши код ниже этой строки
+// Пиши код ниже этой строки
 // const getUserEmails = users => {
 //   return users.map(user => user.email)
 
 //   };
-  // Пиши код выше этой строки
+// Пиши код выше этой строки
 
-  // 6.16
+// 6.16
 
-  // const books = [
-  //   {
-  //     title: 'Последнее королевство',
-  //     author: 'Бернард Корнуэлл',
-  //     genres: ['приключения', 'историческое']
-  //   },
-  //   {
-  //     title: 'На берегу спокойных вод',
-  //     author: 'Роберт Шекли',
-  //     genres: ['фантастика', 'мистика']
-  //   },
-  //   {
-  //     title: 'Красна как кровь',
-  //     author: 'Ли Танит',
-  //     genres: ['ужасы', 'мистика', 'приключения']
-  //   }
-  // ];
-  // // Пиши код ниже этой строки
-  // const allGenres = books.map(book => book.genres);
-  // const uniqueGenres = allGenres.filter((ganre, index, array) => array.indexOf(ganre) === index);
+// const books = [
+//   {
+//     title: 'Последнее королевство',
+//     author: 'Бернард Корнуэлл',
+//     genres: ['приключения', 'историческое']
+//   },
+//   {
+//     title: 'На берегу спокойных вод',
+//     author: 'Роберт Шекли',
+//     genres: ['фантастика', 'мистика']
+//   },
+//   {
+//     title: 'Красна как кровь',
+//     author: 'Ли Танит',
+//     genres: ['ужасы', 'мистика', 'приключения']
+//   }
+// ];
+// // Пиши код ниже этой строки
+// const allGenres = books.map(book => book.genres);
+// const uniqueGenres = allGenres.filter((ganre, index, array) => array.indexOf(ganre) === index);
 
-
-  // 6.17
+// 6.17
 
 /*   Используя метод filter() дополни код так, чтобы:
 В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating)
@@ -801,7 +753,7 @@ const users = [
     isActive: false,
     balance: 2811,
     gender: 'male',
-    age: 37
+    age: 37,
   },
   {
     name: 'Sharlene Bush',
@@ -811,7 +763,7 @@ const users = [
     isActive: true,
     balance: 3821,
     gender: 'female',
-    age: 34
+    age: 34,
   },
   {
     name: 'Ross Vazquez',
@@ -821,7 +773,7 @@ const users = [
     isActive: false,
     balance: 3793,
     gender: 'male',
-    age: 24
+    age: 24,
   },
   {
     name: 'Elma Head',
@@ -831,7 +783,7 @@ const users = [
     isActive: true,
     balance: 2278,
     gender: 'female',
-    age: 21
+    age: 21,
   },
   {
     name: 'Carey Barr',
@@ -841,7 +793,7 @@ const users = [
     isActive: true,
     balance: 3951,
     gender: 'male',
-    age: 27
+    age: 27,
   },
   {
     name: 'Blackburn Dotson',
@@ -851,7 +803,7 @@ const users = [
     isActive: false,
     balance: 1498,
     gender: 'male',
-    age: 38
+    age: 38,
   },
   {
     name: 'Sheree Anthony',
@@ -861,14 +813,13 @@ const users = [
     isActive: true,
     balance: 2764,
     gender: 'female',
-    age: 39
-  }
-]
+    age: 39,
+  },
+];
 
 /* Дополни функцию getUsersWithEyeColor(users, color) так, 
 чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) 
 совпадает со значением параметра color. */
-
 
 // const getUserEmails = users => {
 //   return users.map(user => user.email)
@@ -876,7 +827,6 @@ const users = [
 //   };
 
 // console.log(getUserEmails(users))
-
 
 // const getUsersWithEyeColor = (users, color) => {
 //   return users.filter(user => {
@@ -896,7 +846,6 @@ const users = [
 
 // console.log(getUsersWithAge(users, 20, 30))
 
-
 // const getFriends = (users) => {
 //   return users.flatMap(user => user.friends).filter((user, index, array) => array.indexOf(user) === index)
 // };
@@ -908,3 +857,13 @@ const users = [
 // };
 
 // console.log(getActiveUsers(users))
+
+const userData = {
+  name: 'Макс',
+};
+
+function birthdayMessage(name) {
+  return `С Днём Рождения, ${name}!`;
+}
+
+alert(birthdayMessage(userData.name));

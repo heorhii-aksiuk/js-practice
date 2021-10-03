@@ -108,10 +108,18 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 //   ]),
 // );
 
-function bump(x) {
-  return [...x].filter(el => el === 'n').length <= 15 ? 'Woohoo!' : 'Car Dead';
+// function bump(x) {
+//   return [...x].filter(el => el === 'n').length <= 15 ? 'Woohoo!' : 'Car Dead';
+// }
+
+// console.log(bump('_nnnnnnn_n__n______nn__nn_nnn'));
+
+// console.log(bump('______n___n_'));
+
+function maxNumber(n) {
+  return +[...(n + '')].sort().reverse().join('');
 }
 
-console.log(bump('_nnnnnnn_n__n______nn__nn_nnn'));
+const number = 42695201;
 
-console.log(bump('______n___n_'));
+console.log(maxNumber(number));

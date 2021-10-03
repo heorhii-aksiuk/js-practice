@@ -858,12 +858,16 @@ const users = [
 
 // console.log(getActiveUsers(users))
 
-const userData = {
-  name: 'Макс',
-};
+// const userData = {
+//   name: 'Макс',
+// };
 
-function birthdayMessage(name) {
-  return `С Днём Рождения, ${name}!`;
-}
+// function birthdayMessage(name) {
+//   return `С Днём Рождения, ${name}!`;
+// }
 
-alert(birthdayMessage(userData.name));
+// alert(birthdayMessage(userData.name));
+
+// let message = ('b' + 'a' + +'a' + 'a').toLowerCase();
+
+// console.log(message);

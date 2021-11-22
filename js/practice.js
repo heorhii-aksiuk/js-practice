@@ -870,4 +870,163 @@ const users = [
 
 // let message = ('b' + 'a' + +'a' + 'a').toLowerCase();
 
-// console.log(message);
+// console.log(someNumber);
+
+
+// var someNumber = 123;
+
+// // console.log(someString);
+
+// let someString;
+
+// console.log(CONST_NUMBER);
+
+// someString = 'test';
+
+// const CONST_NUMBER = 45;
+
+
+// function someFunction() {
+
+//   return CONST_NUMBER; 
+// }
+
+// console.log(someFunction());
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const summ = numbers.reduce((acc, value) => acc + value, 1);
+
+// console.log(summ); // 
+
+// const songs = [
+//   {
+//     id: 1,
+//     name: 'Curl of the Burl',
+//     artist: 'Mastodon',
+//   },
+//   {
+//     id: 2,
+//     name: 'Oblivion',
+//     artist: 'Mastodon',
+//   },
+//   {
+//     id: 3,
+//     name: 'Flying Whales',
+//     artist: 'Gojira',
+//   },
+//   {
+//     id: 4,
+//     name: "L'Enfant Sauvage",
+//     artist: 'Gojira',
+//   },
+// ];
+
+// const obj = songs.reduce((acc, currValue) => {
+//   const artist = currValue.artist;
+//   const artistCount = acc[artist] ? acc[artist] + 1 : 1;
+//   console.log(acc);
+
+//   return {
+//     ...acc,
+//     [artist]: artistCount,
+//   };
+// }, {});
+
+
+
+// function foo () {
+// 	console.log("Simple function call");
+// 	console.log(this === window); 
+// }
+
+// foo();	//prints true on console
+// console.log(this === window) //Prints true on console.
+// console.log(this);
+
+// function Person(fn, ln) {
+// 	this.first_name = fn;
+// 	this.last_name = ln;
+
+// 	this.displayName = function() {
+// 		console.log(`Name: ${this.first_name} ${this.last_name}`);
+// 	}
+// }
+
+// let person = new Person("John", "Reed");
+// person.displayName();  // Prints Name: John Reed
+// let person2 = new Person("Paul", "Adams");
+// person2.displayName();  // Prints Name: Paul Adams
+
+// function foo () {
+// 	'use strict';
+// 	console.log("Simple function call")
+// 	console.log(this === window); 
+// }
+
+// let user = {
+// 	count: 10,
+// 	foo: foo,
+// 	foo1: function() {
+// 		console.log(this === window);
+// 	}
+// }
+
+// user.foo()  // Prints false because now “this” refers to user object instead of global object.
+// let fun1 = user.foo1;
+// fun1() // Prints true as this method is invoked as a simple function.
+// user.foo1()  // Prints false on console as foo1 is invoked as a object’s method
+
+// function Person(fn, ln) {
+// 	this.first_name = fn;
+// 	this.last_name = ln;
+
+// 	this.displayName = function() {
+// 		console.log(`Name: ${this.first_name} ${this.last_name}`);
+// 	}
+// }
+
+// let person = new Person("John", "Reed");
+// person.displayName(); // Prints Name: John Reed
+// let person2 = new Person("Paul", "Adams");
+// person2.displayName(); // Prints Name: Paul Adams
+
+// person.displayName.call(person2); // Here we are setting value of this to be person2 object
+// //Prints Name: Paul Adams
+
+// function Person(fn, ln) {
+// 	this.first_name = fn;
+// 	this.last_name = ln;
+
+// 	this.displayName = function() {
+// 		console.log(`Name: ${this.first_name} ${this.last_name}`);
+// 	}
+// }
+
+// let person = new Person("John", "Reed");
+// person.displayName(); // Prints Name: John Reed
+// let person2 = new Person("Paul", "Adams");
+// person2.displayName(); // Prints Name: Paul Adams
+
+// let person2Display = person.displayName.bind(person2);  // Creates new function with value of “this” equals to person2 object
+// person2Display(); // Prints Name: Paul Adams
+
+
+function multiply(p, q, callback) {
+	callback(p * q);
+}
+
+let user = {
+	a: 2,
+	b:3,
+	findMultiply: function() {
+		multiply(this.a, this.b, function(total) {
+			console.log(total);
+			console.log(this === window);
+		})
+	}
+}
+
+user.findMultiply();
+//Prints 6
+//Prints true

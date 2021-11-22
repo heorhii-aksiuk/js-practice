@@ -124,25 +124,25 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // console.log(maxNumber(number));
 
-function rowWeights(array) {
-  let firstArraySum = [...array]
-    .filter(el => array.indexOf(el) % 2 === 0)
-    .reduce((acc, el) => {
-      acc += el;
-      return acc;
-    }, 0);
-  let secondArraySum = [...array]
-    .filter(el => array.indexOf(el) % 2 !== 0)
-    .reduce((acc, el) => {
-      acc += el;
-      return acc;
-    }, 0);
+// function rowWeights(array) {
+//   let firstArraySum = [...array]
+//     .filter(el => array.indexOf(el) % 2 === 0)
+//     .reduce((acc, el) => {
+//       acc += el;
+//       return acc;
+//     }, 0);
+//   let secondArraySum = [...array]
+//     .filter(el => array.indexOf(el) % 2 !== 0)
+//     .reduce((acc, el) => {
+//       acc += el;
+//       return acc;
+//     }, 0);
 
-  return [firstArraySum, secondArraySum];
-}
+//   return [firstArraySum, secondArraySum];
+// }
 
-const array = [100, 51, 50, 100];
+// const array = [100, 51, 50, 100];
 
-console.log(rowWeights(array));
+// console.log(rowWeights(array));
 
 // тут проблема с одинаковыми элементами в массиве

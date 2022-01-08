@@ -147,13 +147,33 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // тут проблема с одинаковыми элементами в массиве
 
-function minValue(values) {
-  return Number(
-    [...values]
-      .filter((value, index) => values.indexOf(value) === index)
-      .sort((a, b) => a - b)
-      .join(''),
-  );
+// function minValue(values) {
+//   return Number(
+//     [...values]
+//       .filter((value, index) => values.indexOf(value) === index)
+//       .sort((a, b) => a - b)
+//       .join(''),
+//   );
+// }
+
+// console.log(minValue([4, 7, 5, 7, 10]));
+
+// Your task is to write function factorial.
+
+function factorial(n) {
+  let array = [];
+  let result;
+
+  if (n === 0) {
+    result = 1;
+  } else {
+    for (let i = n; i > 0; i -= 1) {
+      array.push(i);
+    }
+    result = array.reduce((el, acc) => el * acc);
+  }
+  return result;
 }
 
-console.log(minValue([4, 7, 5, 7, 10]));
+console.log(factorial(7));
+//  5040;

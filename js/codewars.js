@@ -160,20 +160,31 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // Your task is to write function factorial.
 
-function factorial(n) {
-  let array = [];
-  let result;
+// function factorial(n) {
+//   let array = [];
+//   let result;
 
-  if (n === 0) {
-    result = 1;
-  } else {
-    for (let i = n; i > 0; i -= 1) {
-      array.push(i);
-    }
-    result = array.reduce((el, acc) => el * acc);
-  }
-  return result;
+//   if (n === 0) {
+//     result = 1;
+//   } else {
+//     for (let i = n; i > 0; i -= 1) {
+//       array.push(i);
+//     }
+//     result = array.reduce((el, acc) => el * acc);
+//   }
+//   return result;
+// }
+
+// console.log(factorial(7));
+// //  5040;
+
+// function getEvenNumbers(numbersArray) {
+//   return [...numbersArray].filter(el => el % 2 === 0);
+// }
+
+// console.log(getEvenNumbers([1, 2, 3, 6, 8, 10]));
+
+function findOdd(A) {
+  //happy coding!
+  return 0;
 }
-
-console.log(factorial(7));
-//  5040;

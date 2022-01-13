@@ -184,25 +184,29 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // console.log(getEvenNumbers([1, 2, 3, 6, 8, 10]));
 
+// function uniqueInOrder(iterable) {
+//   let initialArray = [];
+//   let resultArray = [];
+//   let prevEl = null;
+
+//   if (typeof iterable === 'string') {
+//     initialArray = iterable.split('');
+//   } else {
+//     initialArray = iterable;
+//   }
+
+//   initialArray.forEach(el => {
+//     if (el !== prevEl) {
+//       resultArray.push(el);
+//       prevEl = el;
+//     }
+//   });
+
+//   return resultArray;
+// }
+
 function uniqueInOrder(iterable) {
-  let initialArray = [];
-  let resultArray = [];
-  let prevEl = null;
-
-  if (typeof iterable === 'string') {
-    initialArray = iterable.split('');
-  } else {
-    initialArray = iterable;
-  }
-
-  initialArray.forEach(el => {
-    if (el !== prevEl) {
-      resultArray.push(el);
-      prevEl = el;
-    }
-  });
-
-  return resultArray;
+  return [...iterable].filter((el, index) => el !== iterable[index - 1]);
 }
 
 console.log(uniqueInOrder('ABBCcAD'));

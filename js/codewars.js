@@ -205,9 +205,15 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 //   return resultArray;
 // }
 
-function uniqueInOrder(iterable) {
-  return [...iterable].filter((el, index) => el !== iterable[index - 1]);
+// function uniqueInOrder(iterable) {
+//   return [...iterable].filter((el, index) => el !== iterable[index - 1]);
+// }
+
+// console.log(uniqueInOrder('ABBCcAD'));
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+
+function solution(numbers) {
+  return numbers ? [...numbers].sort((a, b) => a - b) : [];
 }
 
-console.log(uniqueInOrder('ABBCcAD'));
-console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+console.log(solution([1, 2, 3, 10, 5]));

@@ -218,10 +218,24 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // console.log(solution([1, 2, 3, 10, 5]));
 
-function removeUrlAnchor(url) {
-  return url.includes('#')
-    ? [...url].slice(0, [...url].indexOf('#')).join('')
-    : url;
+// function removeUrlAnchor(url) {
+//   return url.includes('#')
+//     ? [...url].slice(0, [...url].indexOf('#')).join('')
+//     : url;
+// }
+
+// console.log(removeUrlAnchor('www.codewars.com#about'));
+
+function XO(str) {
+  let xArray = [];
+  let oArray = [];
+
+  [...str.toLowerCase()].forEach(el => {
+    if (el === 'x') xArray.push(el);
+    if (el === 'o') oArray.push(el);
+  });
+
+  return xArray.length === oArray.length;
 }
 
-console.log(removeUrlAnchor('www.codewars.com#about'));
+console.log(XO('xxOo'));

@@ -7,15 +7,17 @@ function unitTest(testName, tests) {
   let unitTestResultMessage = null;
   const loger = item => console.log(item);
 
-  if (tests) {
+  console.group(`Unit test "${testName}"`);
+  console.log(`🔎 Tests start...`);
+
+  if (tests.length > 0) {
     unitTestResult = true;
-    console.log(`🔎 Unit test "${testName}" start`);
     tests
       .map((response, index) => {
         let sign = response ? passedSign : failedSign;
         let testNumber = index + 1;
         let testResult = response ? passed : failed;
-        let testMessage = `${sign} Test ${testNumber} is ${testResult}`;
+        let testMessage = `   ${sign} Test ${testNumber}: ${testResult}`;
         if (!response) unitTestResult = false;
         return testMessage;
       })
@@ -26,11 +28,14 @@ function unitTest(testName, tests) {
     unitTestResultMessage = `🤦‍♂️ Unit test is broken... Tests aren't found!`;
   } else if (unitTestResult === false) {
     unitTestResultMessage = `🚫 Unit test are failed!`;
+    console.log(`...Tests finish.🏁 `);
   } else {
-    unitTestResultMessage = `😎😎😎 All tests are passed!`;
+    unitTestResultMessage = `😎 All tests are passed!`;
+    console.log(`...tests finish 🏁 `);
   }
-  console.log(`🏁 Unit test "${testName}" finish`);
-  return console.log(unitTestResultMessage);
+
+  console.log(unitTestResultMessage);
+  console.groupEnd();
 }
 
 const test = (expected, result) => {
@@ -38,6 +43,7 @@ const test = (expected, result) => {
   return testResult;
 };
 
+const testing = 8;
 const task21Tests = [
   test(isNumberInRange(10, 30, 17), true),
   test(isNumberInRange(10, 30, 5), false),

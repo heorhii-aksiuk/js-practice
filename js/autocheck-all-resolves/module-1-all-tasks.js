@@ -1,51 +1,51 @@
-function unitTest(testName, ...tests) {
+function unitTest(testName, tests) {
   const passed = 'passed';
   const failed = 'failed';
   const passedSign = '✔';
   const failedSign = '❌';
   let unitTestResult = undefined;
   let unitTestResultMessage = null;
+  const loger = item => console.log(item);
 
   if (tests) {
     unitTestResult = true;
-    tests.forEach((response, index) => {
-      const sign = response ? passedSign : failedSign;
-      const testNumber = index + 1;
-      const testResult = response ? passed : failed;
-      const testMessage = `${sign} Test ${testNumber} is ${testResult}`;
-      console.log(testMessage);
-      if (!response) unitTestResult = false;
-    });
+    console.log(`🔎 Unit test "${testName}" start`);
+    tests
+      .map((response, index) => {
+        let sign = response ? passedSign : failedSign;
+        let testNumber = index + 1;
+        let testResult = response ? passed : failed;
+        let testMessage = `${sign} Test ${testNumber} is ${testResult}`;
+        if (!response) unitTestResult = false;
+        return testMessage;
+      })
+      .forEach(item => loger(item));
   }
 
   if (unitTestResult === undefined) {
-    unitTestResultMessage = `🤦‍♂️ UnitTest is broken... Tests aren't found!`;
+    unitTestResultMessage = `🤦‍♂️ Unit test is broken... Tests aren't found!`;
   } else if (unitTestResult === false) {
-    unitTestResultMessage = `🚫 UnitTest: ${testName} - Some tests are failed!`;
+    unitTestResultMessage = `🚫 Unit test are failed!`;
   } else {
-    unitTestResultMessage = `😎😎😎 UnitTest: ${testName} - All tests are passed!`;
+    unitTestResultMessage = `😎😎😎 All tests are passed!`;
   }
-
-  console.log(unitTestResultMessage);
-
-  return unitTestResultMessage;
+  console.log(`🏁 Unit test "${testName}" finish`);
+  return console.log(unitTestResultMessage);
 }
 
-unitTest('22', true, false, true);
-// const test = (expected, result) => expected === result;
+const test = (expected, result) => {
+  const testResult = expected === result;
+  return testResult;
+};
 
-// console.log(test(5, 5));
+const task21Tests = [
+  test(isNumberInRange(10, 30, 17), true),
+  test(isNumberInRange(10, 30, 5), false),
+  test(isNumberInRange(20, 50, 24), true),
+  test(isNumberInRange(20, 50, 76), false),
+];
 
-// test(isNumberInRange(10, 30, 17));
-
-// const task21Tests = [
-//   test(isNumberInRange(40, 30, 17)),
-//   test(isNumberInRange(10, 30, 17)),
-//   test(isNumberInRange(10, 50, 17)),
-//   test(isNumberInRange(10, 56, 17)),
-// ];
-
-// allTestsPass('Task 21', task21Tests);
+unitTest('Task 21', task21Tests);
 
 // Task 21
 /*
@@ -112,9 +112,4 @@ function isNumberInRange(start, end, number) {
   return isInRange;
 }
 
-//Test
-
-console.log(isNumberInRange(10, 30, 17)); //
-console.log(isNumberInRange(10, 30, 5)); //
-console.log(isNumberInRange(20, 50, 24)); //
-console.log(isNumberInRange(20, 50, 76)); //
+// Test

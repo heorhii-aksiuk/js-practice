@@ -744,78 +744,78 @@
 //  users.filter(user => if (user.eyeColor === color)
 //      user.name };
 
-const users = [
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-    age: 37,
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-    age: 34,
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-    age: 24,
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-    age: 21,
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-    age: 27,
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-    age: 38,
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-    age: 39,
-  },
-];
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
 
 /* Дополни функцию getUsersWithEyeColor(users, color) так, 
 чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) 
@@ -872,7 +872,6 @@ const users = [
 
 // console.log(someNumber);
 
-
 // var someNumber = 123;
 
 // // console.log(someString);
@@ -885,10 +884,9 @@ const users = [
 
 // const CONST_NUMBER = 45;
 
-
 // function someFunction() {
 
-//   return CONST_NUMBER; 
+//   return CONST_NUMBER;
 // }
 
 // console.log(someFunction());
@@ -897,7 +895,7 @@ const users = [
 
 // const summ = numbers.reduce((acc, value) => acc + value, 1);
 
-// console.log(summ); // 
+// console.log(summ); //
 
 // const songs = [
 //   {
@@ -933,11 +931,9 @@ const users = [
 //   };
 // }, {});
 
-
-
 // function foo () {
 // 	console.log("Simple function call");
-// 	console.log(this === window); 
+// 	console.log(this === window);
 // }
 
 // foo();	//prints true on console
@@ -961,7 +957,7 @@ const users = [
 // function foo () {
 // 	'use strict';
 // 	console.log("Simple function call")
-// 	console.log(this === window); 
+// 	console.log(this === window);
 // }
 
 // let user = {
@@ -1011,22 +1007,31 @@ const users = [
 // let person2Display = person.displayName.bind(person2);  // Creates new function with value of “this” equals to person2 object
 // person2Display(); // Prints Name: Paul Adams
 
+// function multiply(p, q, callback) {
+// 	callback(p * q);
+// }
 
-function multiply(p, q, callback) {
-	callback(p * q);
-}
+// let user = {
+// 	a: 2,
+// 	b:3,
+// 	findMultiply: function() {
+// 		multiply(this.a, this.b, function(total) {
+// 			console.log(total);
+// 			console.log(this === window);
+// 		})
+// 	}
+// }
 
-let user = {
-	a: 2,
-	b:3,
-	findMultiply: function() {
-		multiply(this.a, this.b, function(total) {
-			console.log(total);
-			console.log(this === window);
-		})
-	}
-}
-
-user.findMultiply();
+// user.findMultiply();
 //Prints 6
 //Prints true
+
+function checkStorage(available, ordered) {
+  let message;
+
+  if (!!ordered) return message;
+}
+
+const ordered = 0;
+const oderedBoolian = !!ordered;
+console.log(oderedBoolian);

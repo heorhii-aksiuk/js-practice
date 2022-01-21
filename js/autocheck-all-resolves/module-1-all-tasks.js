@@ -1,40 +1,39 @@
-function unitTest(testName, tests) {
-  const passed = 'passed';
-  const failed = 'failed';
-  const passedSign = '✔';
-  const failedSign = '❌';
-  let unitTestResult = undefined;
-  let unitTestResultMessage = null;
-  const loger = item => console.log(item);
+function runTest(testName, tests) {
+  const testTitle = `Unit test "${testName}"`;
+  const testStartMessage = '🔎 Tests start...';
+  const testErrorMessage = '🤦‍♂️ Error... Tests aren`t found!';
+  const testFailedMessage = '🚫 Unit test are failed!';
+  const testPassedMessage = '😎 All tests are passed!';
+  const testFinishMessage = '🏁 Tests finish. ';
+  let testResultMessage;
 
-  console.group(`Unit test "${testName}"`);
-  console.log(`🔎 Tests start...`);
+  function subTestRunner() {
+    const subTestLoger = message => console.log(message);
+    const subTestResultMessage = (subtTestNumber, subTestResult) =>
+      subTestResult
+        ? `✔ Test #${subtTestNumber}: passed`
+        : `❌ Test #${subtTestNumber}: failed`;
 
-  if (tests.length > 0) {
-    unitTestResult = true;
-    tests
-      .map((response, index) => {
-        let sign = response ? passedSign : failedSign;
-        let testNumber = index + 1;
-        let testResult = response ? passed : failed;
-        let testMessage = `   ${sign} Test ${testNumber}: ${testResult}`;
-        if (!response) unitTestResult = false;
-        return testMessage;
-      })
-      .forEach(item => loger(item));
+    if (Array.isArray(tests)) {
+      console.log(testStartMessage);
+      testResultMessage = testPassedMessage;
+
+      tests
+        .map((subTestResult, index) => {
+          if (!subTestResult) testResultMessage = testFailedMessage;
+          return subTestResultMessage(++index, subTestResult);
+        })
+        .forEach(subTestLoger);
+
+      console.log(testFinishMessage);
+    } else {
+      testResultMessage = testErrorMessage;
+    }
   }
 
-  if (unitTestResult === undefined) {
-    unitTestResultMessage = `🤦‍♂️ Unit test is broken... Tests aren't found!`;
-  } else if (unitTestResult === false) {
-    unitTestResultMessage = `🚫 Unit test are failed!`;
-    console.log(`...Tests finish.🏁 `);
-  } else {
-    unitTestResultMessage = `😎 All tests are passed!`;
-    console.log(`...tests finish 🏁 `);
-  }
-
-  console.log(unitTestResultMessage);
+  console.group(testTitle);
+  subTestRunner();
+  console.log(testResultMessage);
   console.groupEnd();
 }
 
@@ -43,15 +42,27 @@ const test = (expected, result) => {
   return testResult;
 };
 
-const testing = 8;
+// Task 21
+// Функция isNumberInRange(start, end, number) проверяет, входит ли число в промежуток.;
+
+function isNumberInRange(start, end, number) {
+  const isInRange = number >= start && number <= end;
+
+  return isInRange;
+}
+
+// Testing
+
+const testing = 'test';
 const task21Tests = [
   test(isNumberInRange(10, 30, 17), true),
   test(isNumberInRange(10, 30, 5), false),
   test(isNumberInRange(20, 50, 24), true),
   test(isNumberInRange(20, 50, 76), false),
+  test(isNumberInRange(20, 50, 76), false),
 ];
 
-unitTest('Task 21', task21Tests);
+runTest('Task 21', task21Tests);
 
 // Task 21
 /*
@@ -112,10 +123,10 @@ end - конец числового промежутка
 
 // Solution
 
-function isNumberInRange(start, end, number) {
-  const isInRange = number >= start && number <= end;
+// function isNumberInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
 
-  return isInRange;
-}
+//   return isInRange;
+// }
 
 // Test

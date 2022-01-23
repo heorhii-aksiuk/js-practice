@@ -8,11 +8,11 @@ function runTest(testName, tests) {
   let testResultMessage;
 
   function subTestRunner() {
-    const subTestLoger = message => console.log(message);
-    const subTestResultMessage = (subtTestNumber, subTestResult) =>
+    const subTestLogger = message => console.log(message);
+    const subTestResultMessage = (subTestNumber, subTestResult) =>
       subTestResult
-        ? `✔ Test #${subtTestNumber}: passed`
-        : `❌ Test #${subtTestNumber}: failed`;
+        ? `✔ Test #${subTestNumber}: passed`
+        : `❌ Test #${subTestNumber}: failed`;
 
     if (Array.isArray(tests)) {
       console.log(testStartMessage);
@@ -23,7 +23,7 @@ function runTest(testName, tests) {
           if (!subTestResult) testResultMessage = testFailedMessage;
           return subTestResultMessage(++index, subTestResult);
         })
-        .forEach(subTestLoger);
+        .forEach(subTestLogger);
 
       console.log(testFinishMessage);
     } else {
@@ -47,16 +47,14 @@ const test = (expected, result) => {
 
 function isNumberInRange(start, end, number) {
   const isInRange = number >= start && number <= end;
-
   return isInRange;
 }
 
 // Testing
 
-const testing = 'test';
 const task21Tests = [
   test(isNumberInRange(10, 30, 17), true),
-  test(isNumberInRange(10, 30, 5), false),
+  test(isNumberInRange(10, 30, 5), true),
   test(isNumberInRange(20, 50, 24), true),
   test(isNumberInRange(20, 50, 76), false),
   test(isNumberInRange(20, 50, 76), false),
@@ -110,7 +108,7 @@ console.log("Поли" && "Манго"); // true && true -> 'Манго'
 number - число, вхождение которого проверяется
 start - начало числового промежутка
 end - конец числового промежутка
-Присвой переменной isInRange выражение проверки вхождения number в числовой промеждуток от start до end. То есть число должно быть больше либо равно start и меньше либо равно end. Результатом выражения проверки будет буль true или false.
+Присвой переменной isInRange выражение проверки вхождения number в числовой промежуток от start до end. То есть число должно быть больше либо равно start и меньше либо равно end. Результатом выражения проверки будет буль true или false.
 
 Тесты
 Объявлена функция isNumberInRange(start, end, number)

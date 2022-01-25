@@ -195,7 +195,7 @@ console.log(!""); // !'' -> !false -> true
 const isOnline = true;
 const isNotOnline = !isOnline; // !isOnline -> !true -> false
 Задание
-Функция isNumberNotInRange(start, end, number) проверяет, не входит ли число в промежуток. То есть число должно быть меньше либо равно start и больше либо равно end. Результатом выражения проверки будет буль true или false.
+Функция getDiscount(start, end, number) проверяет, не входит ли число в промежуток. То есть число должно быть меньше либо равно start и больше либо равно end. Результатом выражения проверки будет буль true или false.
 
 Она объявляет три параметра, значения которых будут задаваться во время её вызова:
 
@@ -254,3 +254,38 @@ runTest('Task 23', task23Tests);
 Вызов getDiscount(5000) возвращает 0.02
 Вызов getDiscount(20000) возвращает 0.05
 Вызов getDiscount(50000) возвращает 0.1 */
+
+// Solution
+
+function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+
+  if (totalSpent >= 50000) {
+    discount = GOLD_DISCOUNT;
+  } else if (totalSpent >= 20000 && totalSpent < 50000) {
+    discount = SILVER_DISCOUNT;
+  } else if (totalSpent >= 5000 && totalSpent < 20000) {
+    discount = BRONZE_DISCOUNT;
+  } else if (totalSpent < 5000) {
+    discount = BASE_DISCOUNT;
+  }
+  return discount;
+}
+
+// Testing
+
+const task24Tests = [
+  test(getDiscount(137000), 0.1),
+  test(getDiscount(46900), 0.05),
+  test(getDiscount(8250), 0.02),
+  test(getDiscount(1300), 0),
+  test(getDiscount(5000), 0.02),
+  test(getDiscount(20000), 0.05),
+  test(getDiscount(50000), 0.1),
+];
+
+runTest('Task 24', task24Tests);

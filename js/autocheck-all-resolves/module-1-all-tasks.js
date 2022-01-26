@@ -257,23 +257,42 @@ runTest('Task 23', task23Tests);
 
 // Solution
 
+// function getDiscount(totalSpent) {
+//   const BASE_DISCOUNT = 0;
+//   const BRONZE_DISCOUNT = 0.02;
+//   const SILVER_DISCOUNT = 0.05;
+//   const GOLD_DISCOUNT = 0.1;
+//   let discount;
+
+//   if (totalSpent >= 50000) {
+//     discount = GOLD_DISCOUNT;
+//   } else if (totalSpent >= 20000 && totalSpent < 50000) {
+//     discount = SILVER_DISCOUNT;
+//   } else if (totalSpent >= 5000 && totalSpent < 20000) {
+//     discount = BRONZE_DISCOUNT;
+//   } else if (totalSpent < 5000) {
+//     discount = BASE_DISCOUNT;
+//   }
+//   return discount;
+// }
+
+// Solution2
+
 function getDiscount(totalSpent) {
   const BASE_DISCOUNT = 0;
   const BRONZE_DISCOUNT = 0.02;
   const SILVER_DISCOUNT = 0.05;
   const GOLD_DISCOUNT = 0.1;
-  let discount;
 
-  if (totalSpent >= 50000) {
-    discount = GOLD_DISCOUNT;
-  } else if (totalSpent >= 20000 && totalSpent < 50000) {
-    discount = SILVER_DISCOUNT;
-  } else if (totalSpent >= 5000 && totalSpent < 20000) {
-    discount = BRONZE_DISCOUNT;
-  } else if (totalSpent < 5000) {
-    discount = BASE_DISCOUNT;
+  if (totalSpent < 5000) {
+    return BASE_DISCOUNT;
+  } else if (totalSpent < 20000) {
+    return BRONZE_DISCOUNT;
+  } else if (totalSpent < 50000) {
+    return SILVER_DISCOUNT;
+  } else if (totalSpent >= 50000) {
+    return GOLD_DISCOUNT;
   }
-  return discount;
 }
 
 // Testing
@@ -289,3 +308,105 @@ const task24Tests = [
 ];
 
 runTest('Task 24', task24Tests);
+
+// Task 25 ======================================================
+
+/* Тернарный оператор
+Тернарный оператор используется как более синтаксически краткая замена инструкции if...else, когда одной и той же переменной необходимо присвоить разные значения по условию.
+
+<условие> ? <выражение если условие истинно> : <выражение если условие ложно>
+Работает по такой схеме:
+
+Вычисляется условие.
+Если условие истинно, то есть приводится к true, вычисляется выражение после ?.
+Если условие ложно, то есть приводится к false, вычисляется выражение после :.
+Значение вычисленного выражения возвращается как результат работы тернарного оператора.
+let type;
+const age = 20;
+
+if (age >= 18) {
+  type = "adult";
+} else {
+  type = "child";
+}
+
+console.log(type); // "adult"
+Выполним рефакторинг, заменив if...else тернарным оператором.
+
+const age = 20;
+const type = age >= 18 ? "adult" : "child";
+console.log(type); // "adult"
+Внимание
+Тернарный оператор должен использоваться в простых операциях присваивания или возврата. Применять его для замены сложных ветвлений — плохая практика (антипаттерн).
+
+Задание
+Выполни рефакторинг решения задачи «Склад товаров», заменив инструкцию if...else тернарным оператором.
+
+Тесты
+Объявлена функция checkStorage(available, ordered).
+Использован тернарный оператор.
+Вызов checkStorage(100, 50) возвращает "The order is accepted, our manager will contact you"
+Вызов checkStorage(100, 130) возвращает "Not enough goods in stock!"
+Вызов checkStorage(200, 20) возвращает "The order is accepted, our manager will contact you"
+Вызов checkStorage(200, 150) возвращает "The order is accepted, our manager will contact you"
+Вызов checkStorage(150, 180) возвращает "Not enough goods in stock!" */
+
+// Task 25 Solution
+
+function checkStorage(available, ordered) {
+  return ordered > available
+    ? 'Not enough goods in stock!'
+    : 'The order is accepted, our manager will contact you';
+}
+
+// Task 25 Testing
+
+const accepted = 'The order is accepted, our manager will contact you';
+const rejected = 'Not enough goods in stock!';
+
+const task25Tests = [
+  test(checkStorage(100, 50), accepted),
+  test(checkStorage(100, 130), rejected),
+  test(checkStorage(200, 20), accepted),
+  test(checkStorage(200, 150), accepted),
+  test(checkStorage(150, 180), rejected),
+];
+
+runTest('Task 25', task25Tests);
+
+// Task 26 ======================================================
+
+/* Задача: проверка пароля
+Задание
+Функция checkPassword(password) сравнивает переданный ей пароль (параметр password) с сохранённым паролем администратора (константа ADMIN_PASSWORD) и возвращает строку с сообщением о результате.
+
+Используя тернарный оператор дополни функцию так, что:
+
+Если значения password и ADMIN_PASSWORD совпадают, присвой переменной message строку "Access is allowed".
+В противном случае, присвой message строку "Access denied, wrong password!".
+Тесты
+Объявлена функция checkPassword(password)
+Использован тернарный оператор
+Вызов checkPassword("jqueryismyjam") возвращает "Access is allowed"
+Вызов checkPassword("angul4r1sl1f3") возвращает "Access denied, wrong password!"
+Вызов checkPassword("r3actsux") возвращает "Access denied, wrong password!" */
+
+// Task 26 Solution
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+
+  return password !== ADMIN_PASSWORD
+    ? 'Access denied, wrong password!'
+    : 'Access is allowed';
+}
+
+// Task 26 Testing
+
+const task26Tests = [
+  test(checkPassword('jqueryismyjam'), 'Access is allowed'),
+  test(checkPassword('angul4r1sl1f3'), 'Access denied, wrong password!'),
+  test(checkPassword('r3actsux'), 'Access denied, wrong password!'),
+];
+
+runTest('Task 26', task26Tests);

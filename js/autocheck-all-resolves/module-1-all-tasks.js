@@ -410,3 +410,213 @@ const task26Tests = [
 ];
 
 runTest('Task 26', task26Tests);
+
+// Task 27 ======================================================
+
+/* Инструкция switch
+В некоторых случаях неудобство чтения сложных ветвлений if...else можно избежать, используя более «плоский» синтаксис инструкции ветвления switch.
+
+Область применения switch ограничена задачами с одним общим вопросом (что сравнивать) и множеством вариантов ответов (с чем сравнивать).
+
+switch (значение) {
+  case значение:
+    инструкции;
+    break;
+
+  case значение:
+    инструкции;
+    break;
+}
+Его синтаксис состоит из блока switch(значение) - что нужно сравнить и множества отдельных случаев case значение: - с чем нужно сравнить. Для сравнения используется оператор строгого равенства ===. То есть нельзя сравнить на больше или меньше, только на равенство.
+
+Значение в блоке switch(значение) - строка или число, которое сравнивается на строгое равенство со всеми значениями в блоках case значение: по порядку, сверху вниз.
+
+Оператор break в завершении каждого блока case необходим, чтобы прервать дальнейшие проверки и сразу перейти к коду за switch в том случае, когда проверка на равенство вернула true.
+
+Задание
+Функция getSubscriptionPrice(type) получает строку с типом подписки пользователя (параметр type), проверяет её на совпадение с тремя возможными типами ежемесячной подписки и возвращает цену хранящуюся в переменной price.
+
+Если значение параметра type это строка:
+
+"starter" - цена подписки 0 кредитов.
+"professional" - цена подписки 20 кредитов.
+"organization" - цена подписки 50 кредитов.
+Изначально в теле функции была инструкция if...else, которая выглядела вот так.
+
+if (type === "starter") {
+  price = 0;
+} else if (type === "professional") {
+  price = 20;
+} else if (type === "organization") {
+  price = 50;
+}
+После рефакторинга инструкция if..else была заменена на switch. Дополни код инструкции switch, чтобы функция работала правильно.
+
+Тесты
+Объявлена функция getSubscriptionPrice(type)
+Вызов getSubscriptionPrice("professional") возвращает число 20
+Вызов getSubscriptionPrice("organization") возвращает число 50
+Вызов getSubscriptionPrice("starter") возвращает число 0 */
+
+// Task 27 Solution
+
+function getSubscriptionPrice(type) {
+  switch (type) {
+    case 'starter':
+      return 0;
+    case 'professional':
+      return 20;
+    case 'organization':
+      return 50;
+    default:
+      return 'Invalid arguments';
+  }
+}
+
+// Task 27 Testing
+
+const task27Tests = [
+  test(getSubscriptionPrice('professional'), 20),
+  test(getSubscriptionPrice('organization'), 50),
+  test(getSubscriptionPrice('starter'), 0),
+];
+
+runTest('Task 27', task27Tests);
+
+// Task 28 ======================================================
+
+/* Инструкция switch c блоком default
+Если ни одного совпадения значений не произошло, необходимо выполнить код по умолчанию, как в блоке else для инструкции if...else. Для этого после всех блоков case добавляется блок default.
+
+switch (значение) {
+  case значение:
+    инструкции;
+    break;
+
+  case значение:
+    инструкции;
+    break;
+
+  default:
+    инструкции;
+}
+Оператор break после блока default не нужен, так как это и так последнее что будет выполнено в switch и управление будет передано коду за ним.
+
+Задание
+Функция checkPassword(password) получает пароль в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
+
+Если значение параметра password:
+
+равно null, значит пользователь отменил операцию и в message записывается строка "Canceled by user!".
+совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка "Welcome!".
+не удовлетворяет ни одному из предыдущих условий, в переменную message записывается строка "Access denied, wrong password!".
+Проведи рефакторинг кода, заменив инструкцию if..else на switch, и не забудь о блоке default (аналог else).
+
+Тесты
+Объявлена функция checkPassword(password)
+Вызов checkPassword("mangohackzor") возвращает "Access denied, wrong password!"
+Вызов checkPassword(null) возвращает "Canceled by user!"
+Вызов checkPassword("polyhax") возвращает "Access denied, wrong password!"
+Вызов checkPassword('"jqueryismyjam") возвращает "Welcome!" */
+
+// Task 28 Solution
+
+function checkPasswordV2(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+
+  switch (password) {
+    case null:
+      return 'Canceled by user!';
+
+    case ADMIN_PASSWORD:
+      return 'Welcome!';
+
+    default:
+      return 'Access denied, wrong password!';
+  }
+}
+
+// Task 28 Testing
+
+const task28Tests = [
+  test(checkPasswordV2('mangohackzor'), 'Access denied, wrong password!'),
+  test(checkPasswordV2(null), 'Canceled by user!'),
+  test(checkPasswordV2('polyhax'), 'Access denied, wrong password!'),
+  test(checkPasswordV2('jqueryismyjam'), 'Welcome!'),
+];
+
+runTest('Task 28', task28Tests);
+
+// Task 29 ======================================================
+
+/* Задача: доставка товара
+Задание
+Функция getShippingCost(country) должна проверять возможность доставки товара в страну пользователя (параметр country) и возвращать сообщение о результате хранящееся в переменной message. Обязательно используй инструкцию switch.
+
+Формат возвращаемой строки "Shipping to <country> will cost <price> credits", где вместо <country> и <price> необходимо подставить соотвествующие значения.
+
+Список стран и стоимость доставки:
+
+China - 100 кредитов
+Chile - 250 кредитов
+Australia - 170 кредитов
+Jamaica - 120 кредитов
+Из списка видно, что доставка есть не везде. Если указанной страны нет в списке, то функция должна вернуть строку "Sorry, there is no delivery to your country"
+
+Тесты
+Объявлена функция getShippingCost(country)
+В теле функции использована инструкция switch
+Вызов getShippingCost("Australia") возвращает "Shipping to Australia will cost 170 credits"
+Вызов getShippingCost("Germany") возвращает "Sorry, there is no delivery to your country"
+Вызов getShippingCost("China") возвращает "Shipping to China will cost 100 credits"
+Вызов getShippingCost("Chile") возвращает "Shipping to Chile will cost 250 credits"
+Вызов getShippingCost("Jamaica") возвращает "Shipping to Jamaica will cost 120 credits"
+Вызов getShippingCost("Sweden") возвращает "Sorry, there is no delivery to your country" */
+
+// Task 29 Solution
+
+function getShippingCost(country) {
+  let price;
+
+  switch (country) {
+    case 'China':
+      price = 100;
+      break;
+    case 'Jamaica':
+      price = 120;
+      break;
+    case 'Australia':
+      price = 170;
+      break;
+    case 'Chile':
+      price = 250;
+      break;
+
+    default:
+      return 'Sorry, there is no delivery to your country';
+  }
+
+  return `Shipping to ${country} will cost ${price} credits`;
+}
+
+// Task 29 Testing
+
+const task29Tests = [
+  test(
+    getShippingCost('Australia'),
+    'Shipping to Australia will cost 170 credits',
+  ),
+  test(
+    getShippingCost('Germany'),
+    'Sorry, there is no delivery to your country',
+  ),
+  test(getShippingCost('China'), 'Shipping to China will cost 100 credits'),
+  test(getShippingCost('Chile'), 'Shipping to Chile will cost 250 credits'),
+  test(getShippingCost('Jamaica'), 'Shipping to Jamaica will cost 120 credits'),
+  test(
+    getShippingCost('Sweden'),
+    'Sorry, there is no delivery to your country',
+  ),
+];
+
+runTest('Task 29', task29Tests);

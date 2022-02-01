@@ -1026,12 +1026,21 @@
 //Prints 6
 //Prints true
 
-function checkStorage(available, ordered) {
-  let message;
+// function checkStorage(available, ordered) {
+//   let message;
 
-  if (!!ordered) return message;
-}
+//   if (!!ordered) return message;
+// }
 
-const ordered = 0;
-const oderedBoolian = !!ordered;
-console.log(oderedBoolian);
+// const ordered = 0;
+// const orderedBoolian = !!ordered;
+// console.log(orderedBoolian);
+
+// const array = [1, 2, 5, 7, 3, 6];
+
+// function getMedian(array) {
+//   const sum = array.reduce((acc, elem) => acc + elem);
+//   return sum / array.length;
+// }
+
+// console.log(getMedian(array));

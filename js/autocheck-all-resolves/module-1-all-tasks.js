@@ -620,3 +620,47 @@ const task29Tests = [
 ];
 
 runTest('Task 29', task29Tests);
+
+// Task 30 ======================================================
+
+/* Длина строки
+Для того чтобы узнать длину строки, то есть количество её символов, у строк есть встроенное свойство length, значение которого можно получить обратившить к нему через точку после имени переменной или строкового литерала.
+
+const productName = "Repair droid";
+
+// Если в переменной хранится строка
+console.log(productName.length); // 12
+
+// Если строковый литерал
+console.log("Repair droid".length); // 12
+Задание
+Функция getNameLength(name) принимает имя (параметр name) и возвращает строку, в которой указана его длина. Дополни шаблонную строку в переменной message длиной строки из параметра name.
+
+Тесты
+Объявлена функция getNameLength(name)
+Вызов функции getNameLength("Poly") возвращает "Name Poly is 4 characters long"
+Вызов функции getNameLength("Harambe") возвращает "Name Harambe is 6 characters long"
+Вызов функции getNameLength("Billy") возвращает "Name Billy is 5 characters long"
+Вызов функции getNameLength("Joe") возвращает "Name Joe is 3 characters long" */
+
+// Task 30 Solution
+
+// function getNameLength(name) {
+//   const message = `Name ${name} is ${name.length} characters long`;
+//   return message;
+// }
+
+// Task 30 Solution 2
+
+const getNameLength = name => `Name ${name} is ${name.length} characters long`;
+
+// Task 30 Testing
+
+const task30Tests = [
+  test(getNameLength('Poly'), 'Name Poly is 4 characters long'),
+  test(getNameLength('Harambe'), 'Name Harambe is 7 characters long'),
+  test(getNameLength('Billy'), 'Name Billy is 5 characters long'),
+  test(getNameLength('Joe'), 'Name Joe is 3 characters long'),
+];
+
+runTest('Task 30', task30Tests);

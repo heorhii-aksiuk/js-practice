@@ -664,3 +664,27 @@ const task30Tests = [
 ];
 
 runTest('Task 30', task30Tests);
+
+// Task 33 ======================================================
+
+// Task 33 Solution
+
+const formatMessage = (message, maxLength) =>
+  message.length > maxLength ? message.slice(0, maxLength) + '...' : message;
+
+// Task 33 Testing
+
+const task33Tests = [
+  test(getNameLength('Poly'), 'Name Poly is 4 characters long'),
+  test(getNameLength('Harambe'), 'Name Harambe is 7 characters long'),
+  test(getNameLength('Billy'), 'Name Billy is 5 characters long'),
+  test(getNameLength('Joe'), 'Name Joe is 3 characters long'),
+];
+
+runTest('Task 33', task33Tests);
+
+const checkForSpam = message =>
+  message.toLowerCase().includes('spam') ||
+  message.toLowerCase().includes('sale');
+
+console.log(checkForSpam('JavaScript weekly newsletter'));

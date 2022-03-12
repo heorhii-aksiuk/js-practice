@@ -1044,3 +1044,93 @@
 // }
 
 // console.log(getMedian(array));
+
+// function makeTask(data) {
+//   const completed = false
+//   const category = 'General'
+//   const priority = 'Normal'
+
+//   return {
+//     category,
+//     priority,
+//     completed,
+//     ...data,
+//   }
+// }
+
+// console.log(makeTask({ priority: 'Low', text: 'Choose shampoo' }))
+
+// const bookShelf = {
+//   books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+//   updateBook(oldName, newName) {
+//     const index = this.books.indexOf(oldName)
+//     this.books.splice(index, 1, newName)
+//   },
+// }
+
+// bookShelf.updateBook('Haze', 'Dungeon chronicles')
+
+// console.log(bookShelf.books)
+
+const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
+
+  getPotions() {
+    return this.potions
+  },
+
+  addPotion(newPotion) {
+    for (let potion of this.potions) {
+      if (potion.name === newPotion.name) {
+        return `Error! Potion ${newPotion.name} is already in your inventory!`
+      }
+    }
+    this.potions.push(newPotion)
+  },
+
+  removePotion(potionName) {
+    let potionIndex
+
+    for (let potion of this.potions) {
+      if (potion.name === potionName) {
+        potionIndex = this.potions.indexOf(potion)
+      }
+    }
+
+    if (potionIndex === undefined) {
+      return `Potion ${potionName} is not in inventory!`
+    }
+    this.potions.splice(potionIndex, 1)
+  },
+
+  updatePotionName(oldName, newName) {
+    let potionIndex
+
+    for (let potion of this.potions) {
+      if (potion.name === oldName) {
+        potionIndex = this.potions.indexOf(potion)
+        this.potions[potionIndex].name = newName
+      }
+    }
+
+    if (potionIndex === undefined) {
+      return `Potion ${potionName} is not in inventory!`
+    }
+  },
+}
+
+// atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })
+// atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })
+
+// console.log(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 }))
+// console.log(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 }))
+
+// console.log(atTheOldToad.removePotion('Invisibility'))
+// console.log(atTheOldToad.removePotion('Invisibility'))
+atTheOldToad.removePotion('Speed potion')
+
+console.log(atTheOldToad.getPotions())

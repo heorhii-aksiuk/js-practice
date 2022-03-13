@@ -1,38 +1,19 @@
-function generatePassword(
-  numberOfSymbols = 10,
-  special = null,
-  numberOfSpecial = 1,
-) {
+function generatePassword(length = 10) {
   let counter = 0
-  let resultArray = []
-  const symbols =
-    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+  let output = ''
+  let symbols = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 
-  while (counter < numberOfSymbols) {
-    let symbol = symbols[Math.floor(Math.random() * symbols.length)]
+  while (counter < length) {
+    const randomIndex = Math.floor(Math.random() * symbols.length)
+    const symbol = symbols[randomIndex]
 
-    if (symbol === resultArray[resultArray.length - 1]) continue
+    if (symbol === output[output.length - 1]) continue
 
-    resultArray.push(symbol)
+    output += symbol
     counter += 1
   }
 
-  if (special) {
-    counter = 0
-
-    while (counter < numberOfSpecial) {
-      let symbol = special[Math.floor(Math.random() * special.length)]
-
-      if (symbol === resultArray[resultArray.length - 1]) continue
-
-      resultArray.push(symbol)
-      counter += 1
-    }
-  }
-
-  const output = resultArray.join('')
-
-  return console.log(output)
+  return output
 }
 
-generatePassword(12, '*&%#', 2)
+console.log(generatePassword(12))

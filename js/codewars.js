@@ -226,16 +226,92 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // console.log(removeUrlAnchor('www.codewars.com#about'));
 
-function XO(str) {
-  let xArray = [];
-  let oArray = [];
+// function XO(str) {
+//   let xArray = [];
+//   let oArray = [];
 
-  [...str.toLowerCase()].forEach(el => {
-    if (el === 'x') xArray.push(el);
-    if (el === 'o') oArray.push(el);
-  });
+//   [...str.toLowerCase()].forEach(el => {
+//     if (el === 'x') xArray.push(el);
+//     if (el === 'o') oArray.push(el);
+//   });
 
-  return xArray.length === oArray.length;
+//   return xArray.length === oArray.length;
+// }
+
+// console.log(XO('xxOo'));
+
+// function reversedSequence(number) {
+//   let count = 0
+//   let output = []
+
+//   while (number > count) {
+//     output.push(number - count)
+//     count += 1
+//   }
+//   return output
+// }
+
+// console.log(reversedSequence(7))
+
+// const noOdds = (values) => values.filter((value) => value % 2 === 0)
+// console.log(noOdds([7, 6, 5, 4, 3, 2, 1]))
+
+// const sumDigits = (number) =>
+//   number > 0 ? String(number)
+//     .split('')
+//     .reduce((acc, el) => { Number(acc) + Number(el) : String(number)
+//     .split('')
+//     .reduce((acc, el) => { Number(acc) + Number(el)
+
+//     })
+
+// console.log(sumDigits(374))
+
+// const digits = (n) => n.length
+
+// function drawing(length) {
+//   let count = 0
+//   let output = ''
+
+//   while (count < length) {
+//     output += '*'
+//     console.log(output)
+//     count += 1
+//   }
+// }
+//
+// drawing(5)
+
+// const array = [3, 4]
+// console.log(array.splice(1))
+
+// var numbers = [1, 2, 3, 4, 5];
+
+// numbers.square();  // must return [1, 4, 9, 16, 25]
+// numbers.cube();    // must return [1, 8, 27, 64, 125]
+// numbers.average(); // must return 3
+// numbers.sum();     // must return 15
+// numbers.even();    // must return [2, 4]
+// numbers.odd();     // must return [1, 3, 5]
+
+// class MyMath {
+//   square() {
+//     return this.map((el) => Math.pow(el))
+//   }
+// }
+
+// const numbers = () => [1, 2, 3, 4, 5]
+
+// console.log(numbers())
+
+const array = [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]
+
+function highestRank(array) {
+  return array.reduce((output, item) => {
+    if (output.length < array.filter((elem) => elem === item).length)
+      output = array.filter((elem) => elem === item)
+    return output
+  }, [])[0]
 }
 
-console.log(XO('xxOo'));
+console.log(highestRank(array))

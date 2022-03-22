@@ -1123,55 +1123,271 @@
 //   },
 // }
 
-const atTheOldToad = {
-  potions: [
-    { name: 'Speed potion', price: 460 },
-    { name: 'Dragon breath', price: 780 },
-    { name: 'Stone skin', price: 520 },
-  ],
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Speed potion', price: 460 },
+//     { name: 'Dragon breath', price: 780 },
+//     { name: 'Stone skin', price: 520 },
+//   ],
 
-  getPotions() {
-    return this.potions
+//   getPotions() {
+//     return this.potions
+//   },
+
+//   addPotion(newPotion) {
+//     if (this.potions.find(({ name }) => name === newPotion.name)) {
+//       return `Error! Potion ${newPotion.name} is already in your inventory!`
+//     }
+//     this.potions.push(newPotion)
+//   },
+
+//   removePotion(potionName) {
+//     const potionIndex = this.potions.findIndex(
+//       ({ name }) => name === potionName,
+//     )
+
+//     if (potionIndex === -1) {
+//       return `Potion ${potionName} is not in inventory!`
+//     }
+//     this.potions.splice(potionIndex, 1)
+//   },
+
+//   updatePotionName(oldName, newName) {
+//     const potionIndex = this.potions.findIndex(({ name }) => name === oldName)
+
+//     if (potionIndex === -1) {
+//       return `Potion ${oldName} is not in inventory!`
+//     }
+//     this.potions[potionIndex].name = newName
+//   },
+// }
+
+// // atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })
+// // atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })
+
+// console.log(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 }))
+// console.log(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 }))
+
+// console.log(atTheOldToad.removePotion('Invisibility'))
+// console.log(atTheOldToad.removePotion('Invisibility'))
+// atTheOldToad.removePotion('Speed potion')
+// atTheOldToad.addPotion({ name: 'Power potion', price: 270 })
+// atTheOldToad.updatePotionName('Dragon breath', 'Polymorth')
+
+// console.log(atTheOldToad.getPotions())
+
+// const pizzaPalace = {
+//   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (!this.pizzas.includes(pizzaName)) {
+//       return onError(`В ассортименте нет пиццы с названием ${pizzaName}.`)
+//     } else {
+//       return onSuccess(pizzaName)
+//     }
+//   },
+// }
+
+// function makePizza(pizzaName) {
+//   return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`
+// }
+
+// function onOrderError(error) {
+//   return `Ошибка! ${error}`
+// }
+
+// console.log(pizzaPalace.order('Аль Копчино', makePizza, onOrderError))
+// console.log(pizzaPalace.order('Четыре нарезона', makePizza, onOrderError))
+// console.log(pizzaPalace.order('Биг майк', makePizza, onOrderError))
+// console.log(pizzaPalace.order('Венская', makePizza, onOrderError))
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ]
+
+// function composeMessage(position) {
+//   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`
+// }
+
+// const messages = []
+
+// for (let i = 0; i < orders.length; i += 1) {
+//   const message = composeMessage.call(orders[i], i + 1)
+//   messages.push(message)
+// }
+
+// console.log(messages)
+
+// function findNumbers(array, number) {
+//   const output = []
+//   array.reduce((acc, elem) => {
+//     if (acc === 0) {
+//       console.log(acc)
+//       acc += elem
+//       console.log(acc)
+//     }
+
+//     console.log(acc + elem === number)
+//     if (acc + elem === number) {
+//       console.log([acc, elem])
+//     }
+//     return acc
+//   })
+// }
+
+// console.log(findNumbers([-1, 2, 3, 7, 10], 9))
+
+// class User {
+//   email
+
+//   constructor(email) {
+//     this.email = email
+//   }
+
+//   get email() {
+//     return this.email
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail
+//   }
+// }
+// class Admin extends User {
+//   static AccessLevel = {
+//     BASIC: 'basic',
+//     SUPERUSER: 'superuser',
+//   }
+
+//   constructor({ email, accessLevel }) {
+//     super(email)
+//     this.accessLevel = accessLevel
+//     this.blacklistedEmails = []
+//   }
+
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email)
+//   }
+
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email)
+//   }
+// }
+
+// const mango = new Admin({
+//   email: 'mango@mail.com',
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// })
+
+// console.log(mango.email) // mango@mail.com
+// console.log(mango.accessLevel) // superuser
+// mango.blacklist('poly@mail.com')
+// console.log(mango.blacklistedEmails) // 'poly@mail.com'
+// console.log(mango.isBlacklisted('mango@mail.com')) //  false
+// console.log(mango.isBlacklisted('poly@mail.com')) // true
+
+// function changeEven(numbers, value) {
+//   let output = []
+
+//   numbers.forEach((item) => {
+//     if (item % 2 === 0) {
+//       output.push(item + value)
+//     }
+
+//     output.push(item)
+//   })
+
+//   return output
+// }
+
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10))
+
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
   },
-
-  addPotion(newPotion) {
-    if (this.potions.find(({ name }) => name === newPotion.name)) {
-      return `Error! Potion ${newPotion.name} is already in your inventory!`
-    }
-    this.potions.push(newPotion)
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
   },
-
-  removePotion(potionName) {
-    const potionIndex = this.potions.findIndex(
-      ({ name }) => name === potionName,
-    )
-
-    if (potionIndex === -1) {
-      return `Potion ${potionName} is not in inventory!`
-    }
-    this.potions.splice(potionIndex, 1)
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
   },
-
-  updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.findIndex(({ name }) => name === oldName)
-
-    if (potionIndex === -1) {
-      return `Potion ${oldName} is not in inventory!`
-    }
-    this.potions[potionIndex].name = newName
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
   },
-}
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
+]
 
-// atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })
-// atTheOldToad.addPotion({ name: 'Invisibility', price: 620 })
+// const getUsersWithFriend = (users) => {
+//   const output = users.friends.flatMap((user) => user)
+//   return output
+// }
 
-console.log(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 }))
-console.log(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 }))
+// console.log(getUsersWithFriend(users))
 
-console.log(atTheOldToad.removePotion('Invisibility'))
-console.log(atTheOldToad.removePotion('Invisibility'))
-atTheOldToad.removePotion('Speed potion')
-atTheOldToad.addPotion({ name: 'Power potion', price: 270 })
-atTheOldToad.updatePotionName('Dragon breath', 'Polymorth')
+// const getFriends = (users) => {
+//   const output = []
+//   users.forEach((user) => {
+//     user.friends.forEach((friend) => {
+//       if (!output.includes(friend)) output.push(friend)
+//     })
+//   })
+// }
 
-console.log(atTheOldToad.getPotions())
+const getSortedFriends = (users) =>
+  [...users]
+    .flatMap((user) => user.friends)
+    .filter((user, index, array) => array.indexOf(user) === index)
+    .sort((a, b) => a.localeCompare(b))
+
+console.log(getSortedFriends(users))

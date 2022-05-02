@@ -304,14 +304,135 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 
 // console.log(numbers())
 
-const array = [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]
+// const array = [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]
 
-function highestRank(array) {
-  return array.reduce((output, item) => {
-    if (output.length < array.filter((elem) => elem === item).length)
-      output = array.filter((elem) => elem === item)
-    return output
-  }, [])[0]
+// function highestRank(array) {
+//   return array.reduce((output, item) => {
+//     if (output.length < array.filter((elem) => elem === item).length)
+//       output = array.filter((elem) => elem === item)
+//     return output
+//   }, [])[0]
+// }
+
+// console.log(highestRank(array))
+
+// const domainName = (url) =>
+//   url
+//     .replace('http://', '')
+//     .replace('https://', '')
+//     .replace('www.', '')
+//     .split('.')[0]
+
+// console.log(domainName('http://google.com'))
+// console.log(domainName('www.my-site.ua'))
+
+// function generateHashtag(str) {
+//   const result =
+//     '#' +
+//     str
+//       .split(' ')
+//       .filter((el) => el !== '')
+//       .map((el) => el.replace(el[0], el[0].toUpperCase()))
+//       .join('')
+
+//   return result === '#' || result.length > 140 ? false : result
+// }
+
+// console.log(generateHashtag('multiply function invocation'))
+
+// function validParentheses(parens) {
+//   let openingCount = 0
+//   let closingCount = 0
+//   let noPairless = true
+
+//   parens.split('').forEach((el) => {
+//     if (noPairless && el === ')') {
+//       noPairless = false
+//       return
+//     }
+//     if (el === '(') openingCount += 1
+//     if (el === ')') closingCount += 1
+//     noPairless = openingCount === closingCount
+//   })
+
+//   return noPairless
+// }
+
+// function validParentheses(parens) {
+//   let counter = 0
+
+//   for (let i = 0; i < parens.length; i += 1) {
+//     if (parens[i] === '(') counter += 1
+//     if (parens[i] === ')') counter -= 1
+//     if (counter < 0) return false
+//   }
+
+//   return counter === 0
+// }
+
+// console.log(validParentheses('(())((()())())')) // true
+// console.log(validParentheses('(())((()())())(')) // false
+// console.log(validParentheses(')(())((()())())(')) // false
+// console.log(validParentheses('())(()')) // false
+// console.log(validParentheses('(()((()))()()(()))')) // true
+
+// const countSheep = (arrayOfSheep) =>
+//   arrayOfSheep.filter((el) => el === true).length
+
+/* const openOrSenior = (data) =>
+  data.map(([age, handicap]) => (age >= 55 && handicap > 7 ? 'Senior' : 'Open'))
+
+const input = [
+  [18, 20],
+  [45, 2],
+  [61, 12],
+  [37, 6],
+  [21, 21],
+  [78, 9],
+]
+
+console.log(openOrSenior(input)) //["Open", "Open", "Senior", "Open", "Open", "Senior"]
+ */
+
+// function isTriangle(a, b, c) {
+//   const array = [a, b, c].sort((a, b) => b - a)
+//   return array[0] < array[1] + array[2]
+// }
+
+// console.log(isTriangle(1, 2, 2))
+// console.log(isTriangle(7, 2, 2))
+
+// const noSpace = (x) => x.replaceAll(' ', '')
+// const noSpace = (x) => x.split('')
+// .filter((elem) => elem !== ' ')
+// .join()
+
+// console.log(noSpace(' kajdfkjadf kf afdf '))
+
+// const arrayDiff = (a, b) => {
+//   b.forEach((el) => {
+//     if (a.indexOf(el) !== -1) {
+//       a.splice(a.indexOf(el), 1)
+//     }
+//   })
+//   return a
+// }
+
+const arrayDiff = (a, b) => {
+  let result = []
+
+  for (let i = 0; i < b.length; i += 1) {
+    console.log(i)
+    if (result.length < 1) {
+      result = a.filter((elem) => elem !== b[i])
+    } else {
+      console.log(result)
+      result.filter((elem) => elem !== b[i])
+      console.log(result)
+    }
+  }
+
+  return result
 }
 
-console.log(highestRank(array))
+console.log(arrayDiff([1, 2, 3], [1, 2])) //[3]

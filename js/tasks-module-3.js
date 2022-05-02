@@ -186,12 +186,12 @@ const pizza = {
   },
 
   deleteStuffing(stuffing) {
-    if (this.stuffing.length === 0) {
+    if (this.stuffing.length < 1) {
       return `Error! Stuffing is empty!`
     }
     const index = this.stuffing.findIndex(({ name }) => name === stuffing.name)
 
-    if (index === -1) {
+    if (index < 0) {
       return `Error! Stuffing ${stuffing.name} is missing!`
     }
     this.stuffing.splice(index, 1)
@@ -199,12 +199,12 @@ const pizza = {
   },
 
   deleteSouce(souce) {
-    if (this.souces.length === 0) {
+    if (this.souces.length < 1) {
       return `Error! Souces is empty!`
     }
     const index = this.souces.findIndex(({ name }) => name === souce.name)
 
-    if (index === -1) {
+    if (index < 0) {
       return `Error! Souce ${souce.name} is missing!`
     }
     this.souces.splice(index, 1)
@@ -215,45 +215,39 @@ const pizza = {
     const sizePrice = this.size.price
     const stuffingPrice =
       this.stuffing.length > 0
-        ? this.stuffing
-            .map(({ price }) => price)
-            .reduce((acc, elem) => acc + elem)
+        ? this.stuffing.reduce((acc, elem) => acc + elem.price, 0)
         : 0
     const soucesPrice =
       this.souces.length > 0
-        ? this.souces
-            .map(({ price }) => price)
-            .reduce((acc, elem) => acc + elem)
+        ? this.souces.reduce((acc, elem) => acc + elem.price, 0)
         : 0
     const totalPrice = (sizePrice + stuffingPrice + soucesPrice).toFixed(2)
     return `Total price: ${totalPrice}$.`
   },
 
   geCalories() {
-    const sizeCalories = this.size.cal
-    const stuffingCalories =
+    const sizeCal = this.size.cal
+    const stuffingCal =
       this.stuffing.length > 0
-        ? this.stuffing.map(({ cal }) => cal).reduce((acc, elem) => acc + elem)
+        ? this.stuffing.reduce((acc, elem) => acc + elem.cal, 0)
         : 0
-    const soucesCalories =
+    const soucesCal =
       this.souces.length > 0
-        ? this.souces.map(({ cal }) => cal).reduce((acc, elem) => acc + elem)
+        ? this.souces.reduce((acc, elem) => acc + elem.cal, 0)
         : 0
-    const totalCalories = sizeCalories + stuffingCalories + soucesCalories
-    return `Total calories: ${totalCalories}.`
+    const totalCal = sizeCal + stuffingCal + soucesCal
+    return `Total calories: ${totalCal}.`
   },
 
   getCookingTime() {
     const sizeTime = this.size.time
     const stuffingTime =
       this.stuffing.length > 0
-        ? this.stuffing
-            .map(({ time }) => time)
-            .reduce((acc, elem) => acc + elem)
+        ? this.stuffing.reduce((acc, elem) => acc + elem.time, 0)
         : 0
     const soucesTime =
       this.souces.length > 0
-        ? this.souces.map(({ time }) => time).reduce((acc, elem) => acc + elem)
+        ? this.souces.reduce((acc, elem) => acc + elem.time, 0)
         : 0
     const totalTime = sizeTime + stuffingTime + soucesTime
     return `Total cooking time: ${totalTime} minutes.`
@@ -270,8 +264,8 @@ const pizza = {
     let infoMessage = 'Error!'
 
     if (!this.size) infoMessage += ' Size is empty!'
-    if (this.stuffing.length === 0) infoMessage += ' Stuffing is empty!'
-    if (this.souces.length === 0) infoMessage += ' Souces is empty!'
+    if (this.stuffing.length < 1) infoMessage += ' Stuffing is empty!'
+    if (this.souces.length < 1) infoMessage += ' Souces is empty!'
 
     const valid =
       this.size && this.stuffing.length > 0 && this.souces.length > 0
@@ -285,20 +279,13 @@ const pizza = {
         .map(({ name }) => name)
         .join(', ')}.`
 
-      infoMessage = `
-      ${sizeInfo}
-      ${stuffingInfo} 
-      ${soucesInfo} 
-      ${this.getCookingTime()} 
-      ${this.geCalories()} 
-      ${this.getPrice()}
-      `
+      infoMessage = `${sizeInfo} ${stuffingInfo} ${soucesInfo} ${this.getCookingTime()} ${this.geCalories()} ${this.getPrice()}`
     }
     return infoMessage
   },
 }
 
-console.table(pizza)
+console.log(pizza)
 console.log(pizza.size)
 console.log(pizza.stuffing)
 console.log(pizza.souces)

@@ -1,2 +1,2 @@
 # js-practice
-Some practice. JavaScript
+Just some practice. JavaScript

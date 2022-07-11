@@ -1,2 +1,2 @@
 # js-practice
-Репозиторий для практики программирования JavaScript
+Some practice. JavaScript

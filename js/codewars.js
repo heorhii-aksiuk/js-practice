@@ -418,21 +418,57 @@ console.log(openOrSenior(input)) //["Open", "Open", "Senior", "Open", "Open", "S
 //   return a
 // }
 
-const arrayDiff = (a, b) => {
-  let result = []
+// const arrayDiff = (a, b) => {
+//   let result = []
 
-  for (let i = 0; i < b.length; i += 1) {
-    console.log(i)
-    if (result.length < 1) {
-      result = a.filter((elem) => elem !== b[i])
-    } else {
-      console.log(result)
-      result.filter((elem) => elem !== b[i])
-      console.log(result)
-    }
-  }
+//   for (let i = 0; i < b.length; i += 1) {
+//     console.log(i)
+//     if (result.length < 1) {
+//       result = a.filter((elem) => elem !== b[i])
+//     } else {
+//       console.log(result)
+//       result.filter((elem) => elem !== b[i])
+//       console.log(result)
+//     }
+//   }
 
-  return result
-}
+//   return result
+// }
 
-console.log(arrayDiff([1, 2, 3], [1, 2])) //[3]
+// console.log(arrayDiff([1, 2, 3], [1, 2])) //[3]
+
+/* Create a class Ball. Ball objects should accept one argument for "ball type" when instantiated.
+
+If no arguments are given, ball objects should instantiate with a "ball type" of "regular." */
+
+// class Ball {
+//   constructor(type) {
+//     this.type = type;
+//   }
+
+//   get ballType() {
+//     return this.type ? this.type : 'regular';
+//   }
+// }
+
+// const Ball1 = new Ball('test');
+// const Ball2 = new Ball();
+// console.log(Ball1.ballType, Ball2.ballType);
+
+/* Create a function that accepts a list/array and a number n, and returns a list/array of the first n elements from the list/array. */
+
+// const take = (arr, n) => arr.slice(0, n);
+
+// console.log(take([0, 1, 3, 4, 4, 5, 6, 3, 2], 5));
+
+/* Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+
+Examples (Input -> Output):
+* "String"      -> "SSttrriinngg"
+* "Hello World" -> "HHeelllloo  WWoorrlldd"
+* "1234!_ "     -> "11223344!!__  "
+Good Luck! */
+
+// const doubleChar = (str) => [...str].map((el) => el + el).join('');
+
+// console.log(doubleChar('str'));

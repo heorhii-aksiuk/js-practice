@@ -1401,5 +1401,3 @@
 //   );
 
 // console.log(countBits(0));
-
-console.log('test');

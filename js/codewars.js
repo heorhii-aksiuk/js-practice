@@ -472,3 +472,7 @@ Good Luck! */
 // const doubleChar = (str) => [...str].map((el) => el + el).join('');
 
 // console.log(doubleChar('str'));
+
+const getAge = (inputString) => Number(inputString[0]);
+
+console.log(getAge('4 years old'));

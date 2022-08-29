@@ -473,6 +473,53 @@ Good Luck! */
 
 // console.log(doubleChar('str'));
 
-const getAge = (inputString) => Number(inputString[0]);
+// const getAge = (inputString) => Number(inputString[0]);
 
-console.log(getAge('4 years old'));
+// console.log(getAge('4 years old'));
+
+// const arr = (N) => {
+//   let n = N;
+//   const arr = [];
+
+//   while (n > 0) {
+//     arr.unshift(n - 1);
+//     n -= 1;
+//   }
+//   return arr;
+// };
+
+// console.log(arr(5));
+
+/* function alphabetPosition(text) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const array = [];
+  text
+    .toLowerCase()
+    .split('')
+    .forEach((el) => {
+      const index = alphabet.split('').indexOf(el);
+      if (index !== -1) {
+        array.push(index + 1);
+      }
+    });
+  return array.join(' ');
+} */
+
+function alphabetPosition(text) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+  return text
+    .toLowerCase()
+    .split('')
+    .reduce((acc, el) => {
+      const index = alphabet.split('').indexOf(el);
+
+      if (index !== -1) {
+        acc.push(index + 1);
+      }
+      return acc;
+    }, [])
+    .join(' ');
+}
+
+console.log(alphabetPosition('t ext'));

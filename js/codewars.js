@@ -505,21 +505,56 @@ Good Luck! */
   return array.join(' ');
 } */
 
-function alphabetPosition(text) {
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+// function alphabetPosition(text) {
+//   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-  return text
-    .toLowerCase()
-    .split('')
-    .reduce((acc, el) => {
-      const index = alphabet.split('').indexOf(el);
+//   return text
+//     .toLowerCase()
+//     .split('')
+//     .reduce((acc, el) => {
+//       const index = alphabet.split('').indexOf(el);
 
-      if (index !== -1) {
-        acc.push(index + 1);
-      }
-      return acc;
-    }, [])
-    .join(' ');
+//       if (index !== -1) {
+//         acc.push(index + 1);
+//       }
+//       return acc;
+//     }, [])
+//     .join(' ');
+// }
+
+// console.log(alphabetPosition('t ext'));
+
+// const sum = (numbers) => numbers.reduce((acc, elem) => (acc += elem), 0);
+
+// console.log(sum([1, 5.2, 4, 0, -1]));
+
+// const sumArray = (array) =>
+//   array.length > 0
+//     ? array
+//         .sort((a, b) => a - b)
+//         .map((el) => {
+//           console.log(el);
+//           return el;
+//         })
+//         .slice(1, -1)
+//         .map((el) => console.log(el))
+//         .reduce((acc, elem) => (acc += elem), 0)
+//     : 0;
+
+// console.log(sumArray([6, 2, 1, 8, 10]));
+
+function squareDigits(num) {
+  return Number(
+    num
+      .toString()
+      .split('')
+      .map((el) => {
+        console.log(el);
+        return el ** 2;
+      })
+
+      .join(''),
+  );
 }
 
-console.log(alphabetPosition('t ext'));
+console.log(squareDigits(34565));

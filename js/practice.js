@@ -1401,3 +1401,17 @@
 //   );
 
 // console.log(countBits(0));
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//   return message.split(' ').length * pricePerWord;
+// }
+
+// console.log(calculateEngravingPrice('Web-development is creative work', 40));
+
+// function slugify(title) {
+//   return title.split(' ').join('-').toLowerCase();
+// }
+
+const slugify = (title) => title.split(' ').join('-').toLowerCase();
+
+console.log(slugify('Test test'));

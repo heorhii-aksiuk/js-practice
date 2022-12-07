@@ -1412,6 +1412,42 @@
 //   return title.split(' ').join('-').toLowerCase();
 // }
 
-const slugify = (title) => title.split(' ').join('-').toLowerCase();
+// const slugify = (title) => title.split(' ').join('-').toLowerCase();
 
-console.log(slugify('Test test'));
+// console.log(slugify('Test test'));
+
+// function calculateTotal(number) {
+//   let total = 0;
+//   for (let i = 0; i <= number; i += 1) {
+//     total += i;
+//   }
+//   return total;
+// }
+
+// console.log(calculateTotal(35));
+
+// function findLongestWord(string) {
+//   let longestWord = '';
+//   const allWords = string.split(' ');
+//   for (let i = 0; i < allWords.length; i += 1) {
+//     if (longestWord < allWords[i]) {
+//       longestWord = allWords[i];
+//     }
+//   }
+//   return longestWord;
+// }
+
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+
+function getCommonElements(array1, array2) {
+  const resultArray = [];
+
+  for (element of array1) {
+    if (array2.includes(element)) {
+      resultArray.push(element);
+    }
+  }
+  return resultArray;
+}
+
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));

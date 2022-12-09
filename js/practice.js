@@ -1439,15 +1439,32 @@
 
 // console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
 
-function getCommonElements(array1, array2) {
-  const resultArray = [];
+// function getCommonElements(array1, array2) {
+//   const resultArray = [];
 
-  for (element of array1) {
-    if (array2.includes(element)) {
-      resultArray.push(element);
-    }
-  }
-  return resultArray;
-}
+//   for (element of array1) {
+//     if (array2.includes(element)) {
+//       resultArray.push(element);
+//     }
+//   }
+//   return resultArray;
+// }
 
-console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+// const getCommonElements = (array1, array2) =>
+//   array1.filter((item) => array2.includes(item));
+
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+
+// function findMatches(array, ...rest) {
+//   const matches = []; // Don't change this line
+
+//   for (const item of array) {
+//     if (rest.includes(item)) {
+//       matches.push(item);
+//     }
+//   }
+
+//   return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));

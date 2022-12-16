@@ -543,18 +543,78 @@ Good Luck! */
 
 // console.log(sumArray([6, 2, 1, 8, 10]));
 
-function squareDigits(num) {
-  return Number(
-    num
-      .toString()
-      .split('')
-      .map((el) => {
-        console.log(el);
-        return el ** 2;
-      })
+// function squareDigits(num) {
+//   return Number(
+//     num
+//       .toString()
+//       .split('')
+//       .map((el) => {
+//         console.log(el);
+//         return el ** 2;
+//       })
 
-      .join(''),
-  );
+//       .join(''),
+//   );
+// }
+
+// console.log(squareDigits(34565));
+
+// const solution = (str, ending) =>
+//   ending.split('').reverse().join('') ===
+//   str.split('').reverse().join('').slice(0, ending.length);
+
+// console.log(solution('abcde', 'cde'));
+
+// function passed(list) {
+//   const passedScores = list.filter((score) => score <= 18);
+
+//   if (passedScores.length === 0) {
+//     return 'No pass scores registered.';
+//   }
+
+//   const averagePassed = Math.round(
+//     passedScores.reduce((total, score) => total + score) / passedScores.length,
+//   );
+
+//   return averagePassed;
+// }
+
+// function spinWords(string) {
+//   const arrayOfWords = string.split(' ');
+//   const resultArray = arrayOfWords.map((word) => {
+//     if (word.length >= 5) {
+//       return word.split('').reverse().join('');
+//     }
+//     return word;
+//   });
+
+//   const result = resultArray.join(' ');
+
+//   return result;
+// }
+
+// const spinWords = (string) =>
+//   string
+//     .split(' ')
+//     .map((word) =>
+//       word.length >= 5 ? word.split('').reverse().join('') : word,
+//     )
+//     .join(' ');
+
+function findOdd(array) {
+  const resultArray = [];
+
+  array.forEach((number) => {
+    const index = resultArray.indexOf(number);
+
+    if (index === -1) {
+      resultArray.push(number);
+    } else {
+      resultArray.splice(index, 1);
+    }
+  });
+
+  return resultArray[0];
 }
 
-console.log(squareDigits(34565));
+console.log(findOdd([1, 1, 2]));

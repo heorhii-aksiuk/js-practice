@@ -56,33 +56,55 @@
 //     .map(({ name }) => name);
 // };
 
-class Car {
-  // Change code below this line
-  static MAX_PRICE = 50000;
-  #price;
+// class Car {
+//   // Change code below this line
+//   static MAX_PRICE = 50000;
+//   #price;
 
-  constructor({ price }) {
-    this.#price = price;
-  }
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
 
-  get price() {
-    return this.#price;
-  }
+//   get price() {
+//     return this.#price;
+//   }
 
-  set price(newPrice) {
-    if (newPrice > Car.MAX_PRICE) {
-      this.#price = newPrice;
+//   set price(newPrice) {
+//     if (newPrice > Car.MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//     console.log(this.MAX_PRICE);
+//     // Change code above this line
+//   }
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+function findPrimeNumbers(maximum) {
+  const resultArray = [];
+
+  for (let i = 1; i <= maximum; i += 2) {
+    resultArray.push(i);
+
+    for (let j = i; j > 2; j -= 1) {
+      if (i === j) {
+        continue;
+      }
+      if (i % j === 0) {
+        resultArray.pop();
+        break;
+      }
     }
-    console.log(this.MAX_PRICE);
-    // Change code above this line
   }
+
+  return resultArray;
 }
 
-const audi = new Car({ price: 35000 });
-console.log(audi.price); // 35000
-
-audi.price = 49000;
-console.log(audi.price); // 49000
-
-audi.price = 51000;
-console.log(audi.price); // 49000
+console.log(findPrimeNumbers(100));

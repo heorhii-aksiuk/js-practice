@@ -1,7 +1,7 @@
 'use strict';
 
 // const pizzaPalace = {
-//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   pizzas: ['UltraCheese', 'Smoked', 'Four meats'],
 //   order(pizzaName, onSuccess, onError) {
 //     if (!this.pizzas.includes(pizzaName)) {
 //       const message = `There is no pizza with a name ${pizzaName} in the assortment.`;
@@ -150,9 +150,17 @@ At the end of the 3rd year there will be:
 
 It will need 3 entire years. */
 
-function nbYear(p0, percent, aug, p) {
-  const oneYearGrow = p0 + p0 * (percent / 100) + aug - p0;
-  return (p - p0) / oneYearGrow;
-}
+// function nbYear(p0, percent, aug, p) {
+//   let currentP = p0;
+//   let years = 0;
 
-console.log(nbYear(1500, 5, 100, 5000)); //15
+//   do {
+//     currentP += Math.floor(currentP * (percent / 100) + aug);
+//     years += 1;
+//     console.log(currentP);
+//   } while (currentP < p);
+
+//   return years;
+// }
+
+console.log(nbYear(1000, 2, 50, 1200)); //3

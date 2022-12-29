@@ -601,20 +601,36 @@ Good Luck! */
 //     )
 //     .join(' ');
 
-function findOdd(array) {
-  const resultArray = [];
+// function findOdd(array) {
+//   const resultArray = [];
 
-  array.forEach((number) => {
-    const index = resultArray.indexOf(number);
+//   array.forEach((number) => {
+//     const index = resultArray.indexOf(number);
 
-    if (index === -1) {
-      resultArray.push(number);
-    } else {
-      resultArray.splice(index, 1);
-    }
-  });
+//     if (index === -1) {
+//       resultArray.push(number);
+//     } else {
+//       resultArray.splice(index, 1);
+//     }
+//   });
 
-  return resultArray[0];
+//   return resultArray[0];
+// }
+
+// console.log(findOdd([1, 1, 2]));
+
+function seriesSum(n) {
+  let i = 0;
+  let x = 1;
+  let result = 0;
+
+  while (i < n) {
+    result += 1 / x;
+    x += 3;
+    i += 1;
+  }
+
+  return result.toFixed(2);
 }
 
-console.log(findOdd([1, 1, 2]));
+console.log(seriesSum(4));

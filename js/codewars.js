@@ -619,7 +619,7 @@ Good Luck! */
 
 // console.log(findOdd([1, 1, 2]));
 
-function seriesSum(n) {
+/* function seriesSum(n) {
   let i = 0;
   let x = 1;
   let result = 0;
@@ -631,6 +631,42 @@ function seriesSum(n) {
   }
 
   return result.toFixed(2);
-}
+} */
 
-console.log(seriesSum(4));
+// console.log('test')
+
+// function highAndLow(numbers){
+//   return `${numbers.split(' ').sort((a, b) => b - a)[0]} ${numbers.split(' ').sort((a, b) => a - b)[0]}`
+// }
+
+// const highAndLow = (numbers) => {
+//   const array = numbers.split(' ')
+//   const sortedArray = [...array].sort((a, b) => b - a)
+//   const resultArray = [sortedArray[0], sortedArray]
+//   return
+// }
+
+// console.log(highAndLow("1 2 3 4 5"))
+
+// const findNeedle = (haystack) => {
+//   const index = haystack.indexOf("needle")
+//   return `found the needle at position ${index}`
+// };
+
+// console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]))
+
+// complete the function
+// const solution = (string) => {
+//   const array = [...string];
+//   const indexes = [];
+//   array.map((item, index) => {
+//     if (item.toUpperCase() === item) {
+//       indexes.push(index);
+//     }
+//   });
+//   indexes.map((item, index) => array.splice(item + index, 0, ' '));
+//   const result = array.join('');
+//   return result;
+// };
+
+// console.log(solution('sortedArrayTest'));

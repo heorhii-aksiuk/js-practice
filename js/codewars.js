@@ -670,3 +670,40 @@ Good Luck! */
 // };
 
 // console.log(solution('sortedArrayTest'));
+
+/* You should write a function that takes a string and a positive integer n, splits the string into parts of length n and returns them in an array. It is ok for the last element to have less than n characters.
+
+If n is not a number or not a valid size (> 0) (or is absent), you should return an empty array.
+
+If n is greater than the length of the string, you should return an array with the only element being the same string.
+
+Examples:
+
+stringChunk('codewars', 2) // ['co', 'de', 'wa', 'rs']
+stringChunk('thiskataeasy', 4) // ['this', 'kata', 'easy']
+stringChunk('hello world', 3) // ['hel', 'lo ', 'wor', 'ld']
+stringChunk('sunny day', 0) // [] */
+
+const stringChunk = (string, length) => {
+  let number = 0;
+
+  if (
+    !length ||
+    typeof length !== 'number' ||
+    Number.isNaN(length) ||
+    length < 0
+  ) {
+    return [];
+  }
+
+  const resultArray = [];
+
+  do {
+    resultArray.push(string.slice(number, length + number));
+    number += length;
+  } while (number < string.length);
+
+  return resultArray;
+};
+
+console.log(stringChunk('thiskataeasy', 4));

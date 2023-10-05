@@ -684,7 +684,7 @@ stringChunk('thiskataeasy', 4) // ['this', 'kata', 'easy']
 stringChunk('hello world', 3) // ['hel', 'lo ', 'wor', 'ld']
 stringChunk('sunny day', 0) // [] */
 
-const stringChunk = (string, length) => {
+/* const stringChunk = (string, length) => {
   let number = 0;
 
   if (
@@ -706,4 +706,123 @@ const stringChunk = (string, length) => {
   return resultArray;
 };
 
-console.log(stringChunk('thiskataeasy', 4));
+console.log(stringChunk('thiskataeasy', 4)); */
+
+/* You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
+
+Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+
+Function should return true if it is possible and false if not. */
+
+/* const zeroFuel = (distanceToPump, mpg, fuelLeft) =>
+  fuelLeft * mpg >= distanceToPump;
+
+console.log(zeroFuel(50, 25, 1));
+ */
+
+/* Kids drink toddy.
+Teens drink coke.
+Young adults drink beer.
+Adults drink whisky.
+Make a function that receive age, and return what they drink.
+
+Rules:
+
+Children under 14 old.
+Teens under 18 old.
+Young under 21 old.
+Adults have 21 or more.
+Examples: (Input --> Output)
+
+13 --> "drink toddy"
+17 --> "drink coke"
+18 --> "drink beer"
+20 --> "drink beer"
+30 --> "drink whisky" */
+
+/* const peopleWithAgeDrink = (old) => {
+  if (old < 14) return 'drink toddy';
+  if (old < 18) return 'drink coke';
+  if (old < 21) return 'drink beer';
+  if (old >= 21) return 'drink whisky';
+};
+ */
+
+/* const digitize = (number) =>
+  number
+    .toString()
+    .split('')
+    .map((el) => Number(el))
+    .reverse();
+ */
+
+/* const high = (string) => {
+  let words = string.split(' ');
+  let highestScoringWordIndex = 0;
+  let highestScore = 0;
+
+  for (let index = 0; index < words.length; index += 1) {
+    let currentWordScore = 0;
+    const currentWord = words[index];
+
+    currentWord
+      .split('')
+      .map((character) => (currentWordScore += character.charCodeAt(0) - 96));
+
+    if (currentWordScore > highestScore) {
+      highestScore = currentWordScore;
+      highestScoringWordIndex = index;
+    }
+  }
+  return words[highestScoringWordIndex];
+};
+
+console.log(high('man i need a taxi up to ubud')); */
+
+/* If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+Additionally, if the number is negative, return 0.
+
+Note: If the number is a multiple of both 3 and 5, only count it once. */
+
+/* const solution = (number) => {
+  let sum = 0;
+
+  for (let index = 0; index < number; index += 1) {
+    if (index % 3 === 0 || index % 5 === 0) {
+      sum += index;
+    }
+  }
+  return sum;
+};
+
+console.log(solution(0));
+ */
+
+/* Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
+
+HH = hours, padded to 2 digits, range: 00 - 99
+MM = minutes, padded to 2 digits, range: 00 - 59
+SS = seconds, padded to 2 digits, range: 00 - 59
+The maximum time never exceeds 359999 (99:59:59)
+
+You can find some examples in the test fixtures. */
+
+/* var date = new Date(0);
+date.setSeconds(45); // specify value for SECONDS here
+var timeString = date.toISOString().substring(11, 19);
+console.log(timeString) */
+
+function humanReadable(seconds) {
+  let sec = seconds;
+
+  const HH = sec / 60 / 24;
+  const MM = seconds;
+  const SS = seconds;
+
+  return HH;
+}
+
+console.log(humanReadable(99));

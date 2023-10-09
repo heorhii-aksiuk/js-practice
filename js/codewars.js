@@ -815,14 +815,39 @@ date.setSeconds(45); // specify value for SECONDS here
 var timeString = date.toISOString().substring(11, 19);
 console.log(timeString) */
 
-function humanReadable(seconds) {
-  let sec = seconds;
+// function humanReadable(seconds) {
+//   const HH = ('0' + Math.floor(seconds / 60 / 60)).slice(-2);
+//   const MM = ('0' + Math.floor((seconds / 60) % 60)).slice(-2);
+//   const SS = ('0' + (seconds % 60)).slice(-2);
+//   return `${HH}:${MM}:${SS}`;
+// }
 
-  const HH = sec / 60 / 24;
-  const MM = seconds;
-  const SS = seconds;
+// console.log(humanReadable(359999));
 
-  return HH;
-}
+/* const century = (year) => Math.ceil(year / 100);
 
-console.log(humanReadable(99));
+console.log(century(1801)); */
+
+/* const firstNonRepeatingLetter = (string) => {
+  if (!string) {
+    return '';
+  }
+  const array = string.split('');
+  const resultArray = [array.shift()];
+  array.map((el) =>
+    resultArray.indexOf(el.toLowerCase || el) === -1
+      ? resultArray.push(el)
+      : resultArray.splice(resultArray.indexOf(el), 1),
+  );
+  return resultArray[0];
+};
+
+console.log(firstNonRepeatingLetter('streSTs')); */
+
+const firstNonRepeatingLetter = (string) => {
+  const array = string.split('');
+
+  return array.includes(array.shift());
+};
+
+console.log(firstNonRepeatingLetter('streSTs'));

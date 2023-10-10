@@ -844,10 +844,38 @@ console.log(century(1801)); */
 
 console.log(firstNonRepeatingLetter('streSTs')); */
 
-const firstNonRepeatingLetter = (string) => {
+/* const firstNonRepeatingLetter = (string) => {
   const array = string.split('');
+  let result = '';
 
-  return array.includes(array.shift());
-};
+  for (let index = 0; index < string.length; index++) {
+    let currentElement = array[index];
+    let upperCaseElement = currentElement.toUpperCase();
+    let lowerCaseElement = currentElement.toLowerCase();
+    array.splice(index, 1);
+    if (array.includes(lowerCaseElement) || array.includes(upperCaseElement)) {
+      array.splice(index, 0, currentElement);
+    } else {
+      result = currentElement;
+      break;
+    }
+  }
+  return result;
+}; */
 
-console.log(firstNonRepeatingLetter('streSTs'));
+/* "the-stealth-warrior" gets converted to "theStealthWarrior"
+
+"The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+
+"The_Stealth-Warrior" gets converted to "TheStealthWarrior" */
+
+const toCamelCase = (string) =>
+  string
+    .replace(/[-_]/g, ' ')
+    .split(' ')
+    .map((item, index) =>
+      index > 0 ? item[0].toUpperCase() + item.substring(1) : item,
+    )
+    .join('');
+
+console.log(toCamelCase('the-stealth-warrior'));

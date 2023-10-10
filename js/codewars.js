@@ -869,7 +869,7 @@ console.log(firstNonRepeatingLetter('streSTs')); */
 
 "The_Stealth-Warrior" gets converted to "TheStealthWarrior" */
 
-const toCamelCase = (string) =>
+/* const toCamelCase = (string) =>
   string
     .replace(/[-_]/g, ' ')
     .split(' ')
@@ -879,3 +879,12 @@ const toCamelCase = (string) =>
     .join('');
 
 console.log(toCamelCase('the-stealth-warrior'));
+ */
+
+const isIsogram = (string) =>
+  string
+    .toLowerCase()
+    .split('')
+    .every((item, index, array) => array.indexOf(item) === index);
+
+console.log(isIsogram(''));

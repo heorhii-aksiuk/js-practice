@@ -881,10 +881,18 @@ console.log(firstNonRepeatingLetter('streSTs')); */
 console.log(toCamelCase('the-stealth-warrior'));
  */
 
-const isIsogram = (string) =>
+/* const isIsogram = (string) =>
   string
     .toLowerCase()
     .split('')
     .every((item, index, array) => array.indexOf(item) === index);
 
-console.log(isIsogram(''));
+console.log(isIsogram('')); */
+
+function checkForSpam(message) {
+  let result;
+  const normalizeMessage = message.toLowerCase();
+  result =
+    normalizeMessage.includes('spam') || normalizeMessage.includes('sale');
+  return result;
+}

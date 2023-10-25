@@ -888,11 +888,3 @@ console.log(toCamelCase('the-stealth-warrior'));
     .every((item, index, array) => array.indexOf(item) === index);
 
 console.log(isIsogram('')); */
-
-function checkForSpam(message) {
-  let result;
-  const normalizeMessage = message.toLowerCase();
-  result =
-    normalizeMessage.includes('spam') || normalizeMessage.includes('sale');
-  return result;
-}

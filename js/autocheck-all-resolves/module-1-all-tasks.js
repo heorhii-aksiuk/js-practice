@@ -10,7 +10,7 @@ function runTest(testName, tests) {
   let testResultMessage;
 
   function subTestRunner() {
-    const subTestLogger = message => console.log(message);
+    const subTestLogger = (message) => console.log(message);
     const subTestResultMessage = (subTestNumber, subTestResult) =>
       subTestResult
         ? `✔ Test #${subTestNumber}: passed`
@@ -652,7 +652,8 @@ console.log("Repair droid".length); // 12
 
 // Task 30 Solution 2
 
-const getNameLength = name => `Name ${name} is ${name.length} characters long`;
+const getNameLength = (name) =>
+  `Name ${name} is ${name.length} characters long`;
 
 // Task 30 Testing
 
@@ -666,6 +667,22 @@ const task30Tests = [
 runTest('Task 30', task30Tests);
 
 // Task 33 ======================================================
+
+/* Функція formatMessage(message, maxLength) приймає рядок (параметр message) і форматує його, якщо довжина перевищує значення в параметрі maxLength.
+
+Доповни код функції таким чином, що якщо довжина рядка:
+
+не перевищує maxLength, функція повертає його в початковому вигляді.
+більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...", після чого повертає скорочену версію.
+
+Тести
+Оголошена функція formatMessage(message, maxLength)
+Виклик функції formatMessage("Curabitur ligula sapien", 16) повертає "Curabitur ligula..."
+Виклик функції formatMessage("Curabitur ligula sapien", 23) повертає "Curabitur ligula sapien"
+Виклик функції formatMessage("Vestibulum facilisis purus nec", 20) повертає "Vestibulum facilisis..."
+Виклик функції formatMessage("Vestibulum facilisis purus nec", 30) повертає "Vestibulum facilisis purus nec"
+Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) повертає "Nunc sed turpis..."
+Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) повертає "Nunc sed turpis a felis in nunc fringilla" */
 
 // Task 33 Solution
 
@@ -683,8 +700,38 @@ const task33Tests = [
 
 runTest('Task 33', task33Tests);
 
-const checkForSpam = message =>
+// Task 36 ======================================================
+
+/* Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути у довільному регістрі, наприклад SPAM або sAlE.
+
+Тести
+Якщо знайшли заборонене слово (spam або sale) то функція повертає буль true.
+Якщо в рядку відсутні заборонені слова, функція повертає буль false.
+Оголошена функція checkForSpam(message).
+Виклик функції checkForSpam("Latest technology news") повертає false
+Виклик функції checkForSpam("JavaScript weekly newsletter")повертає false
+Виклик функції checkForSpam("Get best sale offers now!") повертає true
+Виклик функції checkForSpam("Amazing SalE, only tonight!") повертає true
+Виклик функції checkForSpam("Trust me, this is not a spam message") повертає true
+Виклик функції checkForSpam("Get rid of sPaM emails. Our book in on sale!") повертає true
+Виклик функції checkForSpam("[SPAM] How to earn fast money?") повертає true */
+
+// Task 36 Solution
+
+const checkForSpam = (message) =>
   message.toLowerCase().includes('spam') ||
   message.toLowerCase().includes('sale');
 
-console.log(checkForSpam('JavaScript weekly newsletter'));
+// Task 36 Testing
+
+const task36Tests = [
+  test(checkForSpam('Latest technology news'), false),
+  test(checkForSpam('JavaScript weekly newsletter'), false),
+  test(checkForSpam('Get best sale offers now!'), true),
+  test(checkForSpam('Amazing SalE, only tonight!'), true),
+  test(checkForSpam('Trust me, this is not a spam message'), true),
+  test(checkForSpam('Get rid of sPaM emails. Our book in on sale!'), true),
+  test(checkForSpam('[SPAM] How to earn fast money?'), true),
+];
+
+runTest('Task 36', task36Tests);

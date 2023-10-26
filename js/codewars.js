@@ -888,3 +888,35 @@ console.log(toCamelCase('the-stealth-warrior'));
     .every((item, index, array) => array.indexOf(item) === index);
 
 console.log(isIsogram('')); */
+
+/* [[5,3,7],[3,3,1],[4,1,2]] ((5+3+7) * (3+3+1) * (4+1+2)) = 735 */
+
+const strongEnough = (earthquake, age) => {
+  const safe = 'Safe!';
+  const needsReinforcement = 'Needs Reinforcement!';
+  let maxStrong = 1000;
+
+  const earthquakeSubPoints = earthquake.map((el) => el[0] + el[1] + el[2]);
+  const earthquakePoints =
+    earthquakeSubPoints[0] * earthquakeSubPoints[1] * earthquakeSubPoints[1];
+
+  for (let index = 0; index < age; index += 1) {
+    maxStrong *= 1 - 0.01;
+  }
+
+  const result = maxStrong > earthquakePoints ? safe : needsReinforcement;
+  console.log(earthquakePoints);
+  return result;
+};
+// Need refactoring!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+console.log(
+  strongEnough(
+    [
+      [5, 8, 7],
+      [3, 3, 1],
+      [4, 1, 2],
+    ],
+    3,
+  ),
+);

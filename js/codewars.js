@@ -891,24 +891,42 @@ console.log(isIsogram('')); */
 
 /* [[5,3,7],[3,3,1],[4,1,2]] ((5+3+7) * (3+3+1) * (4+1+2)) = 735 */
 
-const strongEnough = (earthquake, age) => {
-  const safe = 'Safe!';
-  const needsReinforcement = 'Needs Reinforcement!';
-  let maxStrong = 1000;
+// const strongEnough = (earthquake, age) => {
+//   const safe = 'Safe!';
+//   const needsReinforcement = 'Needs Reinforcement!';
+//   let maxStrong = 1000;
 
-  const earthquakeSubPoints = earthquake.map((el) => el[0] + el[1] + el[2]);
-  const earthquakePoints =
-    earthquakeSubPoints[0] * earthquakeSubPoints[1] * earthquakeSubPoints[1];
+//   const earthquakeSubPoints = earthquake.map((el) => el[0] + el[1] + el[2]);
+//   const earthquakePoints =
+//     earthquakeSubPoints[0] * earthquakeSubPoints[1] * earthquakeSubPoints[1];
+
+//   for (let index = 0; index < age; index += 1) {
+//     maxStrong *= 1 - 0.01;
+//   }
+
+//   const result = maxStrong > earthquakePoints ? safe : needsReinforcement;
+
+//   return result;
+// };
+// Need refactoring!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+const strongEnough = (earthquake, age) => {
+  let maxStrong = 1000;
 
   for (let index = 0; index < age; index += 1) {
     maxStrong *= 1 - 0.01;
   }
 
-  const result = maxStrong > earthquakePoints ? safe : needsReinforcement;
-  console.log(earthquakePoints);
-  return result;
+  let earthquakePoints = 0;
+
+  const earthquakeSubPoints = earthquake.map((el) => el[0] + el[1] + el[2]);
+
+  earthquakeSubPoints.forEach((el) =>
+    earthquakePoints ? (earthquakePoints *= el) : (earthquakePoints = el),
+  );
+
+  return maxStrong > earthquakePoints ? 'Safe!' : 'Needs Reinforcement!';
 };
-// Need refactoring!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 console.log(
   strongEnough(

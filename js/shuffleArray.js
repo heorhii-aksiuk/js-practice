@@ -57,7 +57,13 @@ const shuffle = (array) => {
     const element = array.splice(randomIndex, 1);
     resultArray.push(...element);
   } while (array.length > 0);
-  return resultArray;
+
+  resultArray.map((word) => console.log(word));
 };
 
-console.log(shuffle(words));
+const date = new Date();
+
+shuffle(words);
+
+console.log('Toral words: ', words.length);
+console.log('Date: ', date);

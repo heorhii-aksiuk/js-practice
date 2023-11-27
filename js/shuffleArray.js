@@ -61,7 +61,8 @@ const shuffle = (array) => {
     const element = array.splice(randomIndex, 1);
     resultArray.push(...element);
   } while (array.length > 0);
-  return resultArray;
+
+  resultArray.map((word) => console.log(word));
 };
 
 const resultArray = shuffle(words);

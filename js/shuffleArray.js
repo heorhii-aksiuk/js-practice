@@ -13,7 +13,7 @@ const words = [
   'горіти',
   'вивчати',
   'нюхати',
-  'зберігати',
+  'утримувати',
   'спати',
   'відчувати',
   'залишати',
@@ -48,6 +48,10 @@ const words = [
   'говорити',
   'красти',
   'прокидатися',
+  'кермувати',
+  'кататися(на)',
+  'підійматися',
+  'писати',
 ];
 
 const shuffle = (array) => {
@@ -60,4 +64,6 @@ const shuffle = (array) => {
   return resultArray;
 };
 
-console.log(shuffle(words));
+const resultArray = shuffle(words);
+
+resultArray.map((word) => console.log(word));

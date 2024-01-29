@@ -65,6 +65,6 @@ const shuffle = (array) => {
   resultArray.map((word) => console.log(word));
 };
 
-const resultArray = shuffle(words);
+console.log(words.length);
 
-resultArray.map((word) => console.log(word));
+const resultArray = shuffle(words);

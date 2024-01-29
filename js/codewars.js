@@ -910,31 +910,35 @@ console.log(isIsogram('')); */
 // };
 // Need refactoring!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const strongEnough = (earthquake, age) => {
-  let maxStrong = 1000;
+// const strongEnough = (earthquake, age) => {
+//   let maxStrong = 1000;
 
-  for (let index = 0; index < age; index += 1) {
-    maxStrong *= 1 - 0.01;
-  }
+//   for (let index = 0; index < age; index += 1) {
+//     maxStrong *= 1 - 0.01;
+//   }
 
-  let earthquakePoints = 0;
+//   let earthquakePoints = 0;
 
-  const earthquakeSubPoints = earthquake.map((el) => el[0] + el[1] + el[2]);
+//   const earthquakeSubPoints = earthquake.map((el) => el[0] + el[1] + el[2]);
 
-  earthquakeSubPoints.forEach((el) =>
-    earthquakePoints ? (earthquakePoints *= el) : (earthquakePoints = el),
-  );
+//   earthquakeSubPoints.forEach((el) =>
+//     earthquakePoints ? (earthquakePoints *= el) : (earthquakePoints = el),
+//   );
 
-  return maxStrong > earthquakePoints ? 'Safe!' : 'Needs Reinforcement!';
-};
+//   return maxStrong > earthquakePoints ? 'Safe!' : 'Needs Reinforcement!';
+// };
 
-console.log(
-  strongEnough(
-    [
-      [5, 8, 7],
-      [3, 3, 1],
-      [4, 1, 2],
-    ],
-    3,
-  ),
-);
+// console.log(
+//   strongEnough(
+//     [
+//       [5, 8, 7],
+//       [3, 3, 1],
+//       [4, 1, 2],
+//     ],
+//     3,
+//   ),
+// );
+
+// function sumMix(x) {
+//   return x.reduce((sum, current) => Number(current) + sum, 0);
+// }

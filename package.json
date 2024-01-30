@@ -1,7 +1,7 @@
 {
   "name": "js-practice",
   "version": "1.0.0",
-  "description": "Репозиторий для практики программирования JavaScript",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest"

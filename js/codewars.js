@@ -978,6 +978,12 @@ console.log(isIsogram('')); */
 //   return 'Draw!';
 // };
 
-const greet = (name, owner) => (name === owner ? 'Hello boss' : 'Hello guest');
+// const greet = (name, owner) => (name === owner ? 'Hello boss' : 'Hello guest');
 
-console.log(greet('Dan', 'Monica'));
+// console.log(greet('Dan', 'Monica'));
+
+function reverseWords(str) {
+  return str.split(' ').reverse().join(' ');
+}
+
+console.log(reverseWords('test this string'));

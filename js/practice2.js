@@ -163,4 +163,12 @@ It will need 3 entire years. */
 //   return years;
 // }
 
-console.log(nbYear(1000, 2, 50, 1200)); //3
+// console.log(nbYear(1000, 2, 50, 1200)); //3
+
+function sayHello(name) {
+  return `Hello ${name}`;
+}
+
+console.log(sayHello('Rik'));
+
+
